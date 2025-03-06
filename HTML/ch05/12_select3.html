@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head><title>optgroup</title></head>
+  <body>
+    <h3>그룹별 선택 항목을 제공합니다.</h3>
+    <form>   
+      <label>
+        전공 분야를 선택하세요
+        <select name="major">
+          <optgroup label="Computer">
+            <option value="1">Software</option>
+            <option value="2">Robot</option>
+            <option value="3">System</option>
+          </optgroup>
+          <optgroup label="language">
+            <option value="4">Korea</option>
+            <option value="5">English</option>
+            <option value="6">China</option>
+            <option value="7">Germany</option> 
+          </optgroup>
+          <optgroup label="business">
+            <option value="8">Service</option>
+            <option value="9">Education</option>
+            <option value="10">Communication</option>
+            <option value="11">Marketing</option>
+          </optgroup>
+        </select><p/>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시 작성">
+      </label>
+    </form>
+  </body>
+</html>
