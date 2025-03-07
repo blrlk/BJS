@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table example</title>
+  <style>
+    table {
+        border-collapse: collapse;
+        width: 70%;
+    }
+    tr, td {
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>강의시간표</h1>
+  <table border="1">
+    <!-- <caption>강의시간표</caption> -->
+    <tr>
+        <td>구분</td>
+        <td>월</td>
+        <td>화</td>
+        <td>수</td>
+        <td>목</td>
+        <td>금</td>
+    </tr>
+    <tr>
+        <td>1교시</td>
+        <td rowspan="2">웹기획</td>
+        <td rowspan="2">웹디자인</td>
+        <td rowspan="2">HTML</td>
+        <td rowspan="2">웹디자인</td>
+        <td>영어</td>
+    </tr>
+    <tr>
+        <td>2교시</td>
+        <!-- <td rowspan="4">야외수업</td> -->
+        <td rowspan="4">야외수업</td>
+    </tr>
+    <tr>
+        <td>3교시</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td >4교시</td>
+        <td rowspan="2">UI 디자인</td>
+        <td rowspan="2">자바스크립트</td>
+        <td rowspan="2">모바일 디자인</td>
+        <td rowspan="2">HTML</td>
+    </tr>
+    <tr>
+        <td>5교시</td>
+    </tr>
+</table>
+</body>
+</html>
