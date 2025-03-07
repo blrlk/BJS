@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>join</title>
+  </head>
+  <body>
+    <h3>회원 가입 양식</h3>
+    <section>
+      <article>
+        <table>
+          <tr>
+            <td>- 아이디</td>
+            <td><input type="text" name="id"></td>
+          </tr>
+
+          <tr>
+            <td>- 비밀번호</td>
+            <td><input type="password" name="pwd"></td>
+          </tr>
+          <tr>
+            <td>- 비밀번호 확인</td>
+            <td><input type="password" name="checkpwd"></td>
+          </tr>
+
+          <tr>
+            <td>- 이름</td>
+            <td><input type="text" name="name"></td>
+          </tr>
+
+          <tr>
+            <td>- 성별</td>
+            <td>
+              <label><input type="radio" name="sex" value="female"> 여성</label>
+              <label><input type="radio" name="sex" value="male"> 남성</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>- 전화번호</td>
+            <td>
+              <select name="tel" id="">
+                <option value="">02</option>
+                <option value="">010</option>
+                <option value="">011</option>
+              </select>
+              - <input type="text" name="tel"> - <input type="text" name="tel">
+              <!-- <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{4}"> -->
+            </td>
+          </tr>
+
+          <tr>
+            <td>- 이메일</td>
+            <td>
+              <input type="text" name="email"> @
+              <select name="email" id="">
+                <option value="" disabled selected>선택</option>
+                <option value="">naver.com</option>
+                <option value="">daum.net</option>
+                <option value="">google.com</option>
+              </select>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>- 자기소개</td>
+            <td>
+              <textarea name="intro" id="" cols="50px" rows="5"></textarea>
+            </td>
+          </tr>
+          
+          <tr>
+            <td><input type="submit" name="submit"></td>
+            <td><input type="reset" name="reset"></td>
+          </tr>
+        </table>
+      </article>
+    </section>
+  </body>
+</html>
