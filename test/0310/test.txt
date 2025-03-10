@@ -1,0 +1,106 @@
+1.
+  <!-- 1 -->
+  요구사항 1 : 2<sup>3</sup><br>
+  <!-- 2 -->
+  요구사항 2 : <mark>안녕하세요 (형광색 바탕)</mark><br>
+  <!-- 3 -->
+  요구사항 3 : 줄바꿈<br>(줄만변경됨)<br>
+  <!-- 4 -->
+  요구사항 4 : C<sub>8</sub>H<sub>10</sub><br>
+  <!-- 5 -->
+  요구사항 5 : <del>nothing</del><br>
+
+2.
+<a href="#point4">포인트 4으로 이동하기</a>
+<a href="#top">탑으로 이동</a>
+
+3. 
+<img src="../img/test.jpg">
+
+4.
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exam4</title>
+  </head>
+  <body>
+    <table border="1" height="250px">
+      <tr>
+        <td style="background-color: yellow;">월</td>
+        <td>화</td>
+        <td>수</td>
+        <td>목</td>
+        <td>금</td>
+        <td>토</td>
+        <td>일</td>
+      </tr>
+      <tr>
+        <td colspan="2">쌀밥</td>
+        <td colspan="3">잡곡밥</td>
+        <td>스파게티</td>
+        <td>짜장면</td>
+      </tr>
+      <tr>
+        <td rowspan="2">불고기</td>
+        <td>떡갈비</td>
+        <td>돈까스</td>
+        <td>오징어볶음</td>
+        <td rowspan="3">제육볶음</td>
+        <td rowspan="2">피클</td>
+        <td rowspan="2">단무지</td>
+      </tr>
+      <tr>
+        <td colspan="3">단무지</td>
+      </tr>
+      <tr>
+        <td colspan="4">특식 : 라면</td>
+        <td colspan="2">특식 : 냉면</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+5.
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exam5</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>회원가입양식</legend>
+        아이디: <input type="text" required placeholder="원하는 아이디를 입력하세요"><p/>
+        비밀번호: <input type="password"><p/>
+        이메일: <input type="email"><p/>
+        성별: <input type="radio" name="sex" value="male" checked>남자
+        <input type="radio" name="sex" value="female">여자<p/>
+        생년월일: <input type="date"max="2020-01-01"><p/>
+        나이: <input type="number" min="1" max="100"><p/>
+
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+6.
+블록
+- 크기 변경 가능
+- 세로로 쌓임
+- 블록 크기만큼이 본인의 영역
+
+인라인
+- 크기 변경 불가능
+- 가로로 쌓임
+- 텍스트 크기만큼 본인의 영역
+
+7. 
+상대경로: 현재 위치에서부터 원하는 위치까지의 경로
+절대경로: 원하는 위치까지의 전체 경로
+
+
+
+
+
