@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pseudo2</title>
+    <style>
+      div{
+        width: 200px;
+        height: 100px;
+        color: blue;
+        background-color: green;
+        opacity: 0.9;
+      }
+      /* 가상 클래스 */
+      div:hover{
+        width: 400px;
+        height: 50px;
+        color: red;
+        background-color: yellow;
+        opacity: 0.5;   /* 투명도 0.5 */
+        /* 모든 속성에 대해 1.5초동안 일정한 속도로 전환. 시작 전 0.5s의 지연 시간 발생  */
+        transition: all 1.5s linear 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>가상 선택자</h2>
+    <div>
+      가상 클래스를 이용한 애니메이션 효과<br>
+      마우스가 위에 있으면 박스가 늘어나요
+    </div>
+  </body>
+</html>
