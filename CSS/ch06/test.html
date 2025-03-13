@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    h2:last-of-type{
+    :root{
+      /* 텍스트 관련 스타일만 후손에게로 상속 됨 */
       color:red;
+      /* display: flex; */
+    }
+
+    body {
+      /* 상속 x */
+      display: flex;
+    }
+
+    body {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <h1>1번</h1>
-  <h2>2번</h2>
-  <h3>3번</h3>
-
-  <h1>1번</h1>
-  <h2>2번</h2>
-  <h3>3번</h3>
-
-  <h1>1번</h1>
-  <h1>2번</h1>
-  <h3>3번</h3>
-
+  <p1>1</p1><br>
+  <p1>2</p1><br>
+  <h1>hi</h1>
+  <p1>3</p1><br>
+  <p1>4</p1><br>
+  <p1>5</p1><br>
+  <div>
+    <h1>hi</h1>
+    <h1>h1</h1>
+  </div>
+  <div>
+    <h1>hi2</h1>
+  </div>
 
 </body>
 </html>
