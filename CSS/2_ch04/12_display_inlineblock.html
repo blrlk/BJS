@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>inline-block</title>
+    <style>
+      input{
+        display: inline-block;
+        width: 100px;
+        height: 20px;
+        margin: 50px 0px;
+        padding: 20px 0;
+      }
+      div{
+        text-align: center;
+      }
+      input:nth-child(2){
+        display: none;
+      }
+      input:focus{
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" value="1">
+      <input type="text" value="2">
+      <input type="text" value="3">
+    </div>
+  </body>
+</html>

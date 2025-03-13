@@ -1,0 +1,26 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+header .h_top{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+}
+
+header .h_top ul{
+  display: flex;
+  background-color: blue;
+  justify-content: space-around;
+}
+
+header .h_top ul li{
+  padding: 10px 20px;
+}
