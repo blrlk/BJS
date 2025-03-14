@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>menu</title>
+  <style>
+    * {
+      color: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      /* div에 속성을 주고 자식에게 상속해주는 상속의 속성보다 a의 속성이 더 강해서 div:hover 시에 color 속성을 변경해주면 적용이 되지 않음 */
+      /* color: white; */
+    }
+
+    div {
+      position: absolute;
+      background-color: lightblue;
+      left: 0px;
+      border: 1px solid black;
+      width: 80px;
+      height: 50px;
+      line-height: 50px;
+      transition: width 0.5s, background-color 0.5s;
+      padding-left: 10px;
+      color: white;
+    }
+
+    div:hover {
+      background-color: lightcoral;
+      width: 200px;
+      transition-timing-function: linear;
+      text-align: center;
+      font-size: 30px;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="top:50px"><a href="#">HOME</a></div>
+  <div style="top:100px"><a href="#">ABOUT</a></div>
+  <div style="top:150px"><a href="#">NEWS</a></div>
+  <div style="top:200px"><a href="#">STUDY</a></div>
+  <div style="top:250px"><a href="#">CONTACT</a></div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>transition</title>
+    <style>
+      .box{
+        width: 100px;
+        height: 100px;
+        background-color:red;
+        transition-property: width, background-color;
+        transition-duration: 1s, 10s;
+      }
+      .box:hover{
+        width: 300px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
