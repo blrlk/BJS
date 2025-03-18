@@ -1,0 +1,231 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+.h_top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 3px 60px;
+}
+
+.h_top ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.h_top ul li{
+  padding: 0px 10px;
+}
+
+header .h_bottom{
+  background-color: #EAE9E5;
+  display: flex;
+  padding: 10px 60px;
+  justify-content: space-between;
+}
+
+header .h_bottom .menu{
+  display: inline-block;
+}
+
+header .h_bottom .menu_home{
+  display: flex;
+  justify-content: flex-start;
+}
+
+header .h_bottom .menu_home li{
+  padding: 0px 5px;
+}
+
+header .h_bottom .right a{
+  padding: 0px 5px;
+}
+
+#main{
+  background-image: url("img/slide-02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+#main .text_box{
+  margin-left: 60px;
+}
+
+#main .text_box h1{
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#main .text_box h2{
+  font-family: cursive;
+  font-size: 40px;
+  margin: 30px 0px;
+}
+
+#main .text_box a{
+  background-color: #717FE0;
+  color: white;
+  font-size: 14px;
+  padding: 10px 30px;
+  border-radius: 40px;
+}
+
+#category div.cate{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 60px;
+}
+
+#category .card{
+  width: 33%;
+  height: 300px;
+  border: 1px solid lightgray;
+  background-size: cover;
+}
+
+#category .card .text_box{
+  padding: 15px 0px 0px 15px;
+}
+
+#tab{
+  padding: 20px 0px;
+}
+
+#tab h1{
+  padding: 5px 60px;
+  font-size: 30px;
+}
+
+#tab .search{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 60px;
+}
+
+#tab .search button{
+  border: none;
+  background-color: transparent;
+  padding: 5px 8px;
+  color: gray;
+}
+
+#tab .search .tab_btns #all{
+  text-decoration-line: underline;
+}
+
+#tab .contents{
+  display: flex;
+  margin: 0px 60px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#tab .contents .card{
+  width: 270px;
+  height: 380px;
+  margin: 5px;
+  /* border: 1px solid black; */
+}
+
+#tab .contents img{
+  width: 100%;
+  height: 310px;
+}
+
+#tab .contents .card div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tab .contents .card div span, #tab .contents .card .price{
+  margin: 5px 0px 5px 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#tab .contents .card div i{
+  margin: 5px 10px 5px 0px;
+}
+
+#tab button{
+  border: none;
+  background-color: lightgray;
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-size: 17px;
+}
+
+#tab .more{
+  text-align: center;
+  padding: 40px 0px;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 20px 60px;
+}
+
+footer .f_top{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer .f_top div{
+  width: 200px;
+  height: 200px;
+}
+
+footer .f_top h3{
+  padding: 20px 0px;
+  font-size: 17px;
+}
+
+footer .f_top ul{
+  margin: 10px 0px;
+}
+
+footer .f_top li{
+  padding: 8px 0px;
+  font-size: 13px;
+  color: lightgray;
+}
+
+footer .f_top p{
+  color: lightgray;
+  font-size: 13px;
+  padding: 10px 10px 10px 0px;
+}
+
+footer .f_top input[type="email"]{
+  background-color: transparent;
+  border: 0px;
+  margin-bottom: 15px;
+}
+
+footer .f_top input[type="submit"]{
+  background-color: #717FE0;
+  border-radius: 40px;
+  padding: 10px 40px;
+}
+
+footer .f_bottom{
+  margin: 70px 0px 20px 0px;
+  text-align: center;
+  font-size: 13px;
+  color: lightgray;
+}
