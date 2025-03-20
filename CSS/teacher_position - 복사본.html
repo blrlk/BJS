@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 위치속성</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 세로스크롤바생성 */
+        body {
+            height: 2000px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* 1. static : 기본값, 자신위치에 고정된 상태 */
+        .box01 {
+            background-color: pink;
+            position: static;
+            top: 200px;
+            left: 200px;
+        }
+
+        /* 2. relative : 현재 위치에서 상대적 이동 */
+        .box02 {
+            background-color: lightblue;
+            position: relative;
+            top: -50px;
+            left: 50px;
+        }
+
+        /* 3. absolute : html를 기준으로 절대적 이동 */
+        .box03 {
+            background-color: coral;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+
+        /* 4. fixed : 스크롤시 따라다님 */
+        .box04 {
+            background-color: yellowgreen;
+            position: fixed;
+            top: 200px;
+            right: 100px;
+        }
+
+        .box05 {
+            background-color: gray;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+
+        /* absolute의 기준 변경 */
+        /* 띄우려는 요소의 부모 혹은 조상 중에
+            positon: relative; 가 있으면 됨
+
+            static 외의 값이면 되지만 
+            일반적으로 position: relative; 많이 씀
+        */
+        /* .grand_parent {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        .parent {
+            width: 300px;
+            height: 300px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box01">static</div>
+    <div class="box02">relative</div>
+    <div class="box03">absolute</div>
+    <!-- <div class="grand_parent">
+        <div class="parent">
+            <div class="box03">absolute</div>
+        </div>
+    </div> -->
+    <div class="box04">fixed</div>
+    <div class="box05">sticky</div>
+</body>
+
+</html>
