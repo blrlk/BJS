@@ -1,0 +1,235 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+.container{
+  width:85%;
+  margin:0 auto;
+}
+
+/* h_top start */
+header .h_top{
+  background-color: #f2f5f9;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+header .h_top .container{
+  display: flex;
+  justify-content: space-between;
+}
+
+header .h_top ul{
+  display: flex;
+}
+
+header .h_top li{
+  padding-right: 20px;
+  color: gray;
+}
+
+header nav.sns li i{
+  padding: 0px 5px;
+}
+/* h_top end */
+
+/* h_bottom start */
+header .h_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+header .h_bottom_left{
+  display: flex;
+}
+
+header .h_bottom_left h1{
+  color: #015fc9;
+  font-weight: normal;
+}
+
+header .h_bottom_center{
+  background-color: #f2f5f9;
+  border-radius: 15px;
+  padding: 10px 30px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .h_bottom_center ul{
+  display: flex;
+  align-items: center;
+  padding-right: 70px;
+}
+
+header .h_bottom_center ul li{
+  padding: 0px 15px;
+  color: gray;
+}
+
+header .h_bottom_center div{
+  display: flex;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+header .h_bottom_center div i{
+  margin-right: 10px;
+}
+
+header .h_bottom_right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .h_bottom_right i{
+  margin-right: 15px;
+}
+
+header .h_bottom_right .experts{
+  color: gray;
+}
+
+.search{
+  background-color: #015fc9;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.quote{
+  background-color: #015fc9;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.call{
+  position: relative;
+}
+
+.call .cellphone{
+  background-color: #f2f5f9;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.call .fa-regular{
+  position: absolute;
+  font-size: 13px;
+  top: 20%;
+  right: 15%;
+  color: #2383e2;
+}
+/* h_bottom end */
+
+/* section start */
+section{
+  flex: 0 1 calc(25% - 20px);
+  margin: 20px;
+  display: flex;
+}
+
+section .product{
+  width: 25%;
+  border: 1px solid gray;
+  padding: 20px; 
+  margin: 80px 20px;
+  position: relative;
+}
+
+section .product:hover{
+  cursor: pointer;
+}
+
+section .product img{
+  width: 100%;
+}
+
+section .product .text_box{
+  text-align: center;
+}
+
+section .product .price{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+section .product .price .now{
+  color: red;
+}
+
+section .product .price .pre{
+  text-decoration: line-through;
+  color: gray;
+}
+
+h4{
+  color: gray;
+}
+
+h2{
+  color: red;
+  font-size: 30px;
+  margin: 20px 0px;
+}
+
+b{
+  margin: 0px 10px 10px 0px;
+}
+
+section .product .rating{
+  position: relative;
+}
+
+section .product .rating hr{
+  width: 80%;
+  height: 1px;
+  color: gray;
+  background-color: gray;
+  border:none;
+  margin: 0px auto;
+}
+ 
+section .product .rating .star{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+section .product .icon{
+  margin: 40px 0px 10px 0px;
+}
+
+section .product .icon i{
+  margin: 0px 10px;
+  font-size: 20px;
+}
+
+section .product .badge{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+section .product .badge span{
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+}

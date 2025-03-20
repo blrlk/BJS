@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+/* 
+컨텐츠를 특정 너비 안에 배치
+그 외에 스타일은 넣지 않음
+*/
+.container{ 
+    width: 80%;  
+    margin: 0 auto;
+}
+
+/* header_top start */
+#h_top{
+    background-color: #f2f5f9;
+}
+
+#h_top .container{
+    /* 큰 정렬 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* 세부 정렬 */
+    padding: 10px 0;
+
+    /* 크기 지정 : .container에서 작업함 */
+}
+
+/* #h_top a {
+    border: 2px solid purple;
+} */
+
+#h_top i, #h_top .bar{
+    /* 세부 정렬 */
+    margin-right: 7px;
+
+    color: blue;
+    font-size: 16px;
+}
+/* header_top end */
+
+/* header_bottom start */
+#h_bottom{
+    /* 큰 정렬 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* 세부 정렬 */
+    padding: 20px 0;
+
+    /* 크기 지정 : .container에서 작업함 */
+}
+
+/* header_bottom의 1번째 div */
+#h_bottom #logo{
+    font-size: 40px;
+    color: blue;
+}
+
+/* header_bottom의 2번째 div */
+#h_bottom #menu{
+    /* 큰정렬 */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    /* 세부정렬 */
+    padding: 20px 10px;
+
+    /* 크기 지정 */
+    width: 60%;    
+    
+    /* 그외 꾸미기 */
+    background-color: #f2f5f9;
+    border-radius: 10px;
+}
+#h_bottom #menu > ul{
+    /* 큰 정렬 */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+/* #h_bottom #menu ul li {
+    border: 2px solid black;
+} */
+
+#h_bottom #menu ul li a{
+    /* 세부 정렬 */
+    padding: 10px 20px;
+
+    /* 
+    a태그는 인라인요소라서 상하 마진, 패딩
+    안 먹힘. 시각적으로 되는 것처럼 보여도 li태그의
+    영역을 확인해보면 구조적으로 적용이 안되어있음
+    */
+    display: block;
+    
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
+
+#h_bottom #menu .menu_search i{
+    margin-right: 10px;
+    padding: 15px;
+
+    background-color: blue;
+    color: white;
+    border-radius: 50%;    
+}
+
+#h_bottom #menu .menu_search a:nth-child(2){
+    padding: 15px;
+
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+}
+
+/* header_bottom의 3번째 div */
+#h_bottom #contact{
+    /* 큰 정렬 */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#h_bottom #contact #call {
+    padding: 20px;
+    margin-right: 20px;
+
+    background-color:#f2f5f9;    
+    border-radius: 50%;
+    
+    /* 점3개에 대한 아이콘의 absolute 기준점 제시 */
+    position: relative;
+}
+#h_bottom #contact #call .fa-phone{
+    color: blue;
+    font-size: 30px;
+}
+
+#h_bottom #contact #call .fa-comment-dots{
+    /* 요소 위에 요소 띄우기 */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color:aqua;
+    border: none;
+}
+
+#h_bottom #contact .contact_desc .text{
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+/* header_bottom end */

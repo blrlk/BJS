@@ -7,18 +7,27 @@
 	color: inherit;
 }
 
-.h_top{
+.container{
+  width:70%;
+  margin:0 auto;
+}
+
+/*
+header .h_top .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.h_top{
   background-color: black;
   color: white;
-  padding: 3px 60px;
 }
 
 .h_top ul{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .h_top ul li{
@@ -28,17 +37,17 @@
 header .h_bottom{
   background-color: #EAE9E5;
   display: flex;
-  padding: 10px 60px;
   justify-content: space-between;
+  align-items: center;
 }
 
-header .h_bottom .menu{
-  display: inline-block;
+header .h_bottom .left{
+  display: flex;
+  align-items: center;
 }
 
 header .h_bottom .menu_home{
   display: flex;
-  justify-content: flex-start;
 }
 
 header .h_bottom .menu_home li{
@@ -48,25 +57,105 @@ header .h_bottom .menu_home li{
 header .h_bottom .right a{
   padding: 0px 5px;
 }
+ */
+
+/* header start */
+
+header .h_top {
+  background-color: black;
+  color: white;
+}
+
+header .h_top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .h_top ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .h_top ul li {
+  padding: 10px 15px;
+  border: 1px solid white;
+}
+
+header .h_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .left {
+  display: flex;
+  align-items: center; 
+}
+
+header .left nav {
+  margin-left: 20px;
+}
+
+header .left ul{
+  display: flex;
+}
+
+header .left ul li a {
+  display: inline-block;
+  padding: 20px 10px;
+  /* background-color: red; */
+}
+
+header .right a{
+  margin: 0 5px;
+}
+
+/* header end */
 
 #main{
-  background-image: url("img/slide-02.jpg");
+  /* background-image: url("img/slide-02.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 600px;
   display: flex;
-  align-items: center;
+  align-items: center; */
+  position: relative;
 }
 
+#main i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#main i.left{
+  left:100px;
+}
+
+
+#main i.right{
+  right:100px;
+}
+
+
 #main .text_box{
-  margin-left: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15%;
 }
 
 #main .text_box h1{
   font-family: sans-serif;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 30px;
+}
+
+#main img{
+  width: 100%;
 }
 
 #main .text_box h2{
@@ -78,27 +167,40 @@ header .h_bottom .right a{
 #main .text_box a{
   background-color: #717FE0;
   color: white;
+  display: inline-block;
   font-size: 14px;
   padding: 10px 30px;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 
-#category div.cate{
-  width: 100%;
+
+
+#category{
   display: flex;
-  justify-content: space-around;
-  padding: 20px 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
 }
 
 #category .card{
-  width: 33%;
-  height: 300px;
+  width: 31%;
+  position: relative;
   border: 1px solid lightgray;
-  background-size: cover;
+  cursor: pointer;
+}
+
+
+#category .card img{
+  width: 100%;
+  display: block;
 }
 
 #category .card .text_box{
   padding: 15px 0px 0px 15px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
 }
 
 #tab{
@@ -121,6 +223,15 @@ header .h_bottom .right a{
   background-color: transparent;
   padding: 5px 8px;
   color: gray;
+  cursor: pointer;
+  /* width: 100px; */
+  /* height: 30px; */
+  /* background-color: aqua; */
+}
+
+#tab .search button:hover{
+  transform: scale(1.1);
+  color: black;
 }
 
 #tab .search .tab_btns #all{
@@ -130,26 +241,27 @@ header .h_bottom .right a{
 #tab .contents{
   display: flex;
   margin: 0px 60px;
-  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 #tab .contents .card{
-  width: 270px;
-  height: 380px;
-  margin: 5px;
+  /* width: 270px;
+  height: 380px; */
+  margin: 10px;
+  
+  flex: 0 1 calc(20% - 20px);
   /* border: 1px solid black; */
+  cursor: pointer;
 }
 
 #tab .contents img{
   width: 100%;
-  height: 310px;
 }
+
 
 #tab .contents .card div{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 #tab .contents .card div span, #tab .contents .card .price{
@@ -161,46 +273,48 @@ header .h_bottom .right a{
   margin: 5px 10px 5px 0px;
 }
 
-#tab button{
+#tab > button{
   border: none;
+  display: block;
   background-color: lightgray;
-  padding: 15px 40px;
-  border-radius: 40px;
+  padding: 20px 30px;
+  border-radius: 30px;
   font-size: 17px;
+  margin: 50px auto 0px auto;
+  cursor: pointer;
 }
 
-#tab .more{
-  text-align: center;
-  padding: 40px 0px;
+#tab > button:hover{
+  font-size: 20px;
+  background-color: #717FE0;
+  color: white;
 }
 
 footer{
   background-color: black;
   color: white;
-  padding: 20px 60px;
+  padding: 50px 0px;
+  margin-top: 100px;
 }
 
 footer .f_top{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-footer .f_top div{
-  width: 200px;
-  height: 200px;
+footer .f_top > div{
+  flex: 0 1 calc(25% - 40px);
+  margin: 20px;
 }
 
 footer .f_top h3{
-  padding: 20px 0px;
-  font-size: 17px;
+  margin-bottom: 20px;
 }
 
-footer .f_top ul{
-  margin: 10px 0px;
-}
 
 footer .f_top li{
-  padding: 8px 0px;
+  margin-bottom: 10px;
   font-size: 13px;
   color: lightgray;
 }
@@ -208,24 +322,46 @@ footer .f_top li{
 footer .f_top p{
   color: lightgray;
   font-size: 13px;
-  padding: 10px 10px 10px 0px;
+}
+
+footer .f_top > div > div{
+  margin-bottom: 10px;
+}
+
+footer .f_top .sns{
+  margin-top: 20px;
+}
+
+footer .f_top .sns i{
+  margin-right: 10px;
 }
 
 footer .f_top input[type="email"]{
   background-color: transparent;
-  border: 0px;
-  margin-bottom: 15px;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: black;
+  outline: none;
+  border-right: none;
 }
 
 footer .f_top input[type="submit"]{
   background-color: #717FE0;
-  border-radius: 40px;
-  padding: 10px 40px;
+  border-radius: 20px;
+  padding: 10px 30px;
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  color: lightgray;
 }
 
 footer .f_bottom{
-  margin: 70px 0px 20px 0px;
+  margin: 50px 0px 20px 0px;
   text-align: center;
   font-size: 13px;
   color: lightgray;
 }
+

@@ -1,0 +1,289 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* header start */
+header .h_top {
+  background-color: black;
+  color: white;
+}
+
+header .h_top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .h_top ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .h_top ul li {
+  padding: 10px 15px;
+  border: 1px solid white;
+}
+
+header .h_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .h_bottom_left {
+  display: flex;
+  align-items: center; 
+}
+
+header .h_bottom_left nav {
+  margin-left: 20px;
+}
+
+header .h_bottom_left ul{
+  display: flex;
+}
+
+header .h_bottom_left ul li a {
+  display: inline-block;
+  padding: 20px 10px;
+  /* background-color: red; */
+}
+
+header .h_bottom_right a{
+  margin: 0 5px;
+}
+
+/* header end */
+
+/* main section start */
+#main{
+  position: relative;
+}
+
+#main i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #222;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#main i.left{
+  left: 100px;
+}
+
+#main i.right {
+  right: 100px;
+}
+
+#main .text_box{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15%;
+}
+
+#main img{
+  width: 100%;
+}
+
+#main h1{
+  margin: 30px 0;
+}
+
+#main .slide .text_box a {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+}
+/* main section end */
+
+/* category section start */
+#category{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+#category .card{
+  width: 31%;
+  border: 1px solid rgb(201, 200, 200);
+  position: relative;
+}
+
+#category .card img{
+  width: 100%;
+  display: block;
+}
+
+#category .card .text_box{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+#category .filter_box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #7180e097;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#category .filter_box a {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+#category .card:hover .filter_box{
+  opacity: 1;
+}
+
+#category .card:hover .text_box {
+  color: white;
+}
+/* category section end */
+
+/* tab section start */
+#tab .search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#tab .search button{
+  padding: 10px 7px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#tab .tab_btns button:hover {
+  color: #b2b2b2;
+}
+
+#tab .contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#tab .contents .card {
+  flex: 0 1 calc(25% - 20px); 
+  /* 카드 너비를 4개로 나누고 여백을 고려 */
+  margin: 10px; /* 카드 간의 여백 */
+}
+
+#tab .contents .card div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tab .contents img{
+  width: 100%;
+}
+
+#tab > button {
+  display: block;
+  margin: 50px auto 0px auto;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;  
+}
+/* tab section end */
+
+/* footer start */
+footer{
+  background-color: #222;
+  color: white;
+  font-size: 13px;
+  padding: 50px 0;
+  margin-top: 100px;
+}
+
+footer .f_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+footer .f_top > div {
+  flex: 0 1 calc(25% - 40px);
+  margin: 20px;
+}
+
+footer .f_top h3 {
+  margin-bottom: 20px;
+}
+
+footer .f_top li {
+  margin-bottom: 10px;
+}
+
+footer .f_top > div > div{
+  margin-bottom: 10px;
+}
+
+footer .f_top .sns{
+  margin-top: 20px;
+}
+
+footer .f_top .sns i{
+  margin-right: 10px;
+}
+
+footer .f_top input[type="email"]{
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+
+  background-color: #222;
+  border-bottom: 1px solid white;
+  border-right: none;
+  outline: none;
+}
+
+footer .f_top input[type="submit"] {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 30px;
+  background-color: #717fe0;
+  border-radius: 20px;
+}
+
+footer .f_bottom {
+  text-align: center;
+  margin-top: 50px;
+}
+/* footer end */
