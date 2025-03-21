@@ -15,7 +15,7 @@
 
 /* h1 태그에 대해 글자 크기 및 두께 변경 */
 h1{
-  font-size: 40px;
+  font-size: 60px;
   font-weight: normal;
   margin-bottom: 20px;
 }
@@ -26,12 +26,12 @@ button{
   border: none;
   background-color: red;
   color: white;
-  font-weight: bold;
+  font-size: 20px;
 
   /* 세부 크기 조정 */
   /* width: 200px;
   height: 40px; */
-  padding: 10px 30px;
+  padding: 15px 35px;
   margin: 20px 0px;
   
   /* 마우스 커서 변경 */
@@ -84,7 +84,6 @@ hr{
 
 /* section banner */
 #banner{
-  background-color: #d0cecf;
 
   /* banner 내의 banner_text_box의 absolute 기준점 제시 */
   position: relative;
@@ -102,13 +101,13 @@ hr{
   transform: translateY(-50%);
   
   /* 세부 크기 조절 */
-  width: 380px;
-  padding-left: 40px;
+  width: 45%;
+  padding-left: 15%;
 }
 
 /* text_box의 직계 자식 p의 스타일 지정 및 세부 크기 조절 */
 #banner .banner_text_box > p{
-  font-size: 13px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -132,6 +131,15 @@ hr{
   background-color: red;
   transform: scale(1.5);
 }
+
+/* #banner label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 10px;
+} */
 /* section banner */
 
 /* section s_top */
@@ -192,14 +200,14 @@ hr{
 #s_bottom .bottom_text_box{
   position: absolute;
   top: 50%;
-  right: 20%;
+  right: 23%;
   transform: translateY(-50%);
-  width: 300px;
+  width: 500px;
 }
 
 /* 글자 크기 변경 및 세부 정렬 */
 #s_bottom .bottom_text_box p{
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 /* section s_bottom */
@@ -375,7 +383,7 @@ hr{
 /* f_top 내부의 input의 type이 email인 항목에 대한 세부 정렬(크기, 경계선, 여백) */
 #f_top input[type="email"]{
   width: 150px;
-  height: 34px;
+  height: 35px;
   border: 1px solid gray;
   padding: 10px;
 }
@@ -390,6 +398,7 @@ hr{
   width: 100px;
   padding: 10px 0px;
   margin: 0px;
+  font-size: 14px;
 }
 
 /* footer f_bottom */
