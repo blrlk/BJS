@@ -1,0 +1,404 @@
+/* 초기화 */
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+.container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* h1 태그에 대해 글자 크기 및 두께 변경 */
+h1{
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+/* 모든 버튼 태그 */
+button{
+  /* 배경색 및 글자 크기, 두께 지정 */
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+
+  /* 세부 크기 조정 */
+  /* width: 200px;
+  height: 40px; */
+  padding: 10px 30px;
+  margin: 20px 0px;
+  
+  /* 마우스 커서 변경 */
+  cursor: pointer;
+}
+
+/* 구분선 길이, 두께, 색상 변경 */
+hr{
+  width: 8%;
+  border: 2px solid red;
+  /* 세부 크기 조정, 가운데 정렬 */
+  margin: 25px auto;
+}
+
+/* class명이 red인 태그에 대해 글자색 red로 변경, 세부 위치 조절*/
+.red{
+  color: red;
+  margin-bottom: -15px;
+}
+
+/* header */
+/* 헤더의 이미지 태그에 대해 크기 조정 */
+.h_img{
+  width: 200px;
+}
+
+/* header 부분에 대한 큰 정렬 */
+#header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* header의 직계 자삭인 div와 후손 태그 ul에 대해 큰 정렬 */
+#header > div, #header ul{
+  display: flex;
+}
+
+/* 세부 크기 정렬 */
+#header ul li{
+  margin: 0px 10px;
+}
+
+/* 아이콘 세부 크기 정렬 */
+.fa-cart-shopping{
+  margin: 0px 10px;
+}
+/* header */
+
+/* section banner */
+#banner{
+  background-color: #d0cecf;
+
+  /* banner 내의 banner_text_box의 absolute 기준점 제시 */
+  position: relative;
+}
+
+/* 이미지 크기를 너비에 딱 맞게 조정 */
+#banner .banner_img{
+  width: 100%;
+}
+
+#banner .banner_text_box{
+  /* text_box에 대한 세부 위치 조정 -> 요소 위에 요소 띄우기 */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* 세부 크기 조절 */
+  width: 380px;
+  padding-left: 40px;
+}
+
+/* text_box의 직계 자식 p의 스타일 지정 및 세부 크기 조절 */
+#banner .banner_text_box > p{
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* ... 나타내기 위한 태그 */
+#banner .banner_text_box .dot{
+  /* 가로로 정렬 */
+  display: flex;
+}
+
+/* ... 디자인 속성 지정 */
+#banner .banner_text_box .dot > p{
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+/* 해당 . 위에 마우스 올려뒀을 때 색상 및 크기(1.5배) 변경 */
+#banner .banner_text_box .dot > p:hover{
+  background-color: red;
+  transform: scale(1.5);
+}
+/* section banner */
+
+/* section s_top */
+/* s_top 부분에 대한 세부 정렬 */
+#s_top{
+  text-align: center;
+  padding: 50px 0px;
+}
+
+/* 혜택들이 저장된 div들의 모음인 .boon에 대한 전체 정렬 */
+#s_top .boon{
+  display: flex;
+}
+
+/* 각각의 div에 대한 디자인 속성 및 세부 정렬 */
+#s_top .boon div{
+  flex: 0 1 calc((100%/3) - 20px);
+  background-color: #002c3e;
+  color: white;
+  margin: 10px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* div 내의 아이콘 크기 변경 */
+#s_top .boon div i{
+  font-size: 35px;
+}
+
+#s_top .boon div h4{
+  /* 세부 정렬 */
+  margin: 14px 0px;
+}
+
+/* 글자 크기 변경 */
+#s_top .boon div p{
+  font-size: 15px;
+}
+/* section s_top */
+
+/* section s_bottom */
+/* s_bottom에 대한 배경색 지정 및 bottom_text_box의 absolute 기준점 제시 */
+#s_bottom{
+  background-color: #d0cecf;
+  position: relative;
+}
+
+#s_bottom .container{
+  display: flex;
+}
+
+/* 이미지 크기 가로 너비에 맞춰 지정 */
+#s_bottom img{
+  width: 100%;
+}
+
+/* text_box에 대한 세부 위치 조정 -> 요소 위에 요소 띄우기 */
+#s_bottom .bottom_text_box{
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  width: 300px;
+}
+
+/* 글자 크기 변경 및 세부 정렬 */
+#s_bottom .bottom_text_box p{
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+/* section s_bottom */
+
+/* section product */
+/* product 위치 세부 정렬 */
+#product{
+  /* 위아래 여백 50, 가운데 정렬 */
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* 상품들이 모여있는 .boxes의 큰 정렬, 줄바꿈 허용 */
+#product .boxes{
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  flex-wrap: wrap;
+}
+
+/* .box의 세부 정렬 및 디자인 적용 */
+#product .boxes .box{
+  /* 각각의 상품 박스들 가로 너비의 33%씩만큼 크기 나눠가짐 */
+  flex: 0 1 calc((100% / 3) - 20px);
+  margin: 10px;
+  background-color: #f7f8f9;
+  padding: 40PX 20px;
+  width: 300px;
+  height: 300px;
+}
+
+/* 상품 박스 내의 이미지 크기 조정 및 세부 정렬 */
+#product .boxes .box img{
+  width: 80px;
+  height: 150px;
+  margin-bottom: 40px;
+}
+
+/* product text_box 큰 정렬 */
+#product .boxes .box .text_box{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+/* section product */
+
+/* section subscribe */
+/* subscribe 영역 디자인 적용 및 세부 정렬 */
+#subscribe{
+  background-color:#d0cecf;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+/* 글자 크기 및 두께 변경, 세부 정렬 */
+#subscribe h3{
+  font-size: 27px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+/* 글자 크기 및 세부 정렬 */
+#subscribe p{
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+/* input 박스 크기 및 디자인 조정, 세부 정렬 */
+#subscribe input{
+  width: 600px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 0px 15px;
+}
+
+/* subscribe 영역의 button 디자인 조정 -> 앞에서의 스타일보다 우선순위 높음 */
+#subscribe button{
+  border-radius: 29px;
+  width: 200px;
+}
+/* section subscribe */
+
+/* section customer */
+/* customer 영역 세부 정렬 */
+#customer{
+  padding: 50px 0px;
+  text-align: center;
+}
+
+/* container의 직계 자식 div의 큰 정렬 및 세부 정렬 */
+#customer .container > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px;
+}
+
+/* div 내부 아이콘의 둥근 배경 지정 */
+#customer .container > div i{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  /* 마우스 커서 포인터로 변경 */
+  cursor: pointer;
+}
+
+/* class가 profile인 영역의 세부 정렬 */
+#customer .profile{
+  margin: 0px 120px;
+}
+
+/* profile 내부의 이미지 크기 및 세부 정렬 */
+#customer .profile img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* profile 내부의 p 태그 중 마지막 부분에 대해 색상 변경 */
+#customer .profile p:last-of-type{
+  color: gray;
+}
+
+/* container의 직계 자식 p의 세부 크기 조정 */
+#customer .container > p{
+  font-size: 13px;
+  width: 80%;
+  margin: 0px auto;
+} 
+/* section customer */
+
+/* footer f_top */
+/* f_top 영역 배경색 지정 및 세부 정렬 */
+#f_top{
+  background-color: #f8f8f8;
+  padding: 50px 0px;
+}
+
+/* f_top 내의 container 영역 큰 정렬 가로로 가운데 정렬 */
+#f_top .container{
+  display: flex;
+  justify-content: center;
+}
+
+/* container의 직계 자식 div의 큰 정렬 */
+#f_top .container > div{
+  /* 전체 영역을 25%씩 나눠 가짐 */
+  flex: 0 1 calc(25%-20px);
+  margin: 20px;
+}
+
+/* info영역 내의 img 태그 크기 및 세부 정렬 */
+#f_top .info img{
+  width: 130px;
+  margin-bottom: 20px;
+}
+
+/* f_top 내부 h3 태그의 크기 및 세부 정렬 */
+#f_top h3{
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+/* f_top 내부 li와 p의 크기 및 세부 정렬 */
+#f_top li, #f_top p{
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+/* f_top 내부의 input의 type이 email인 항목에 대한 세부 정렬(크기, 경계선, 여백) */
+#f_top input[type="email"]{
+  width: 150px;
+  height: 34px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+/* f_top 영역의 submit 부분의 큰 정렬 */
+#f_top .newsletter .submit{
+  display: flex;
+}
+
+/* button의 세부 정렬 -> 앞선 button 스타일보다 우선순위 높음 */
+#f_top .newsletter .submit button{
+  width: 100px;
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+/* footer f_bottom */
+/* f_bottom 영역의 디자인 조정 및 세부 정렬 */
+#f_bottom{
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0px;
+}
+/* footer f_bottom */
