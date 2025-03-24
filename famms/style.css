@@ -184,25 +184,33 @@ hr{
 /* s_bottom에 대한 배경색 지정 및 bottom_text_box의 absolute 기준점 제시 */
 #s_bottom{
   background-color: #d0cecf;
-  position: relative;
+  /* position: relative; */
 }
 
 #s_bottom .container{
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#s_bottom .img_box{
+  width: 50%;
+  overflow: hidden;
 }
 
 /* 이미지 크기 가로 너비에 맞춰 지정 */
 #s_bottom img{
-  width: 100%;
+  width: 150%;
+  display: block;
 }
 
 /* text_box에 대한 세부 위치 조정 -> 요소 위에 요소 띄우기 */
 #s_bottom .bottom_text_box{
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   right: 23%;
-  transform: translateY(-50%);
-  width: 500px;
+  transform: translateY(-50%); */
+  width: 50%;
 }
 
 /* 글자 크기 변경 및 세부 정렬 */

@@ -1,0 +1,166 @@
+/* 프로젝트 시 CSS 기본 설정으로 하면 좋은 것 */
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+:root{
+  --banner_clr: #efefef;
+}
+
+h1{
+  font-weight: normal;
+  font-size: 55px;
+}
+
+h3{
+  font-weight: normal;
+  font-size: 30px;
+}
+
+p{
+  font-size: 16px;
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+#h_top{
+  background-color: black;
+  color: lightgray;
+}
+
+#h_top .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+#h_top .container .contact ul{
+  display: flex;
+}
+
+#h_top .container i, #h_bottom i{
+  margin-left: 15px;
+}
+
+#h_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#h_bottom img{
+  width: 60px;
+}
+
+#h_bottom .menu a{
+  margin-right: 100px;
+}
+
+#banner{
+  background-color: var(--banner_clr);
+  position: relative;
+  padding: 20px;
+}
+
+#banner .content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner .text_box{
+  width: 40%;
+}
+
+#banner .img_box{
+  width: 40%;
+}
+
+#banner img{
+  width: 100%;
+  display: block;
+}
+
+#banner .arrow i{
+  position: absolute;
+  color: #a4cdae;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#banner .arrow i:first-of-type{
+  left: 30px;
+  top: 50%;
+}
+
+#banner .arrow i:last-of-type{
+  right: 30px;
+  top: 50%;
+}
+
+#banner .btn{
+  text-align: center;
+}
+
+#banner .container .text_box h3{
+  margin: 10px 0;
+}
+/* banner end */
+
+#category{
+  text-align: center;
+  padding: 30px;
+}
+
+#category .title{
+  margin-bottom: 50px;
+}
+
+#category .boxes{
+  display: flex;
+}
+
+#category .boxes .box{
+  flex: 0 1 calc(32% - 60px);
+  margin: 30px;
+}
+
+#category .boxes .box img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+#feature{
+  background-color: #e9eef5;
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+}
+
+/* input[type="email"]::placeholder {
+/* placeholder 관련 속성 지정 */
+} */
