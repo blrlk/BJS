@@ -76,6 +76,36 @@ hr{
   margin: 0px 10px;
 }
 
+#header ul li:nth-child(2){
+  position:relative;
+}
+
+#header ul li .sub_menu{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 150px;
+  display: none;
+  border: 2px solid black;
+  z-index: 1;
+  color: gray;
+  background-color: white;
+}
+
+#header ul li .sub_menu li {
+  padding: 10px;
+  cursor: pointer;
+  margin: 0;
+}
+
+#header ul li .sub_menu li:first-child{
+  border-bottom: 1px solid gray;
+}
+
+#header ul li:nth-child(2):hover .sub_menu{
+  display: block;
+}
+
 /* 아이콘 세부 크기 정렬 */
 .fa-cart-shopping{
   margin: 0px 10px;

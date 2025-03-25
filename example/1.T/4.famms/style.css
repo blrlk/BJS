@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Nanum+Pen+Script&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+:root {
+  --main-color : #f7444e;
+  --text-color : #002c3e;
+  --bg-color : #d4ced0;
+  --footer-bg-color : #222222;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  /* background-color: aqua; */
+}
+
+/* header start */
+/* 로고 이미지와 네비게이션 가로 정렬 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고 이미지 너비 조정 (높이는 비율에 맞게 자동 설정됨) */
+header img {
+  width: 200px;
+}
+
+/* 정렬하고 싶은 요소들의 직계부모인 ul 태그에 가로정렬 */
+header nav > ul {
+  display: flex;
+}
+
+/* 클릭 가능한 a태그의 영역을 확장시키고자 padding */
+header nav > ul  a {
+  display: block;
+  padding: 15px;
+}
+/* header end */
+
+/* main section start */
+/* text_box의 position:absolute; 기준점 제시 */
+#main {
+  position: relative;
+}
+
+/* #main 영역의 100%만큼 차지 */
+#main img{
+  width: 100%;
+}
+
+/* #main 영역의 30% 크기, #main영역 기준으로 
+요소 띄우고 위치 조정  */
+#main .text_box {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+/* h1의 글꼴, 줄간격 및 마진 조정 */
+#main .text_box h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+/* h1의 첫번째 라인의 텍스트 메인 색상으로 변경 */
+#main .text_box h1::first-line{
+  color: var(--main-color);
+}
+
+/* p태그 상하 마진 설정 */
+#main .text_box p {
+  margin: 20px 0;
+}
+
+/* a태그 영역 설정 및 색상 설정, 상하 패딩 적용 위해
+블록/인라인레벨 특성 변경 */
+#main .text_box a {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--main-color);
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* 슬라이드를 위한 버튼 설정
+input:radio 버튼과 각각 연결된 label을 꾸민다
+크기 설정 및 테두리, 색상, 마진 설정
+*/
+#main label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+}
+
+/* 교차축(세로) 기준으로 가운데 정렬 */
+#main .slidebtn {
+  /* border: 3px solid black; */
+  display: flex;
+  align-items: center;
+}
+
+/* 라벨을 클릭하면 연결된 input:radio버튼이 checked됨
+해당 input:radio버튼이 checked됐을 때 해당 라벨의 스타일 변경
+*/
+#main input[id="slide01"]:checked ~ .text_box label[for="slide01"] {
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+}
+#main input[id="slide02"]:checked ~ .text_box label[for="slide02"] {
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+}
+#main input[id="slide03"]:checked ~ .text_box label[for="slide03"] {
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+}
+
+/* 
+위 내용 한번에 쓰기
+#main .main_text_box input[id="slide01"]:checked ~ label[for="slide01"],
+#main .main_text_box input[id="slide02"]:checked ~ label[for="slide02"],
+#main .main_text_box input[id="slide03"]:checked ~ label[for="slide03"] {
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+} */
+
+/* 배치 및 꾸미기 완료되면 시각적으로 아에 없애기 */
+#main input {
+  display: none;
+}
+
+/* main section label, input 관련 시작 */
+
+/* feature section start */
+/* 큰 레이아웃부터 큰 정렬(부모에서 자식)할게 있냐?
+  세부 정렬할까?
+  글자 정렬할게 있나? 
+*/
+#feature {
+  margin: 50px auto;
+  text-align: center;
+}
+
+#feature h1 {
+  color: #0c0c0c;
+  font-size: 56px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+
+#feature .card_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#feature .card_list .card{
+  width: 30%;
+  background-color: var(--text-color);
+  color: white;
+  padding: 30px 0;
+  border-radius: 10px;
+}
+
+#feature .card_list .card svg{
+  width: 30%;
+  fill: white;
+}
+
+#feature .card_list .card h2 {
+  margin: 10px 0;
+}
+/* feature section end */
+
+/* new section start */
+#new{ 
+  background-color: var(--bg-color);
+  margin-bottom: 50px;
+}
+
+#new .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new .img_box {
+  width: 50%;
+  /* border: 2px solid black; */
+  overflow: hidden;
+}
+
+#new .text_box{
+  width: 40%;
+  /* border: 2px solid red; */
+}
+
+#new .img_box img{
+  width: 150%;
+  display: block;
+}
+
+#new .text_box h1 {
+  font-size: calc(16px * 3);
+  color: var(--text-color);
+ }
+
+ #new .text_box p {
+  margin: 20px 0;
+  }
+
+  #new .text_box a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--main-color);
+    color: white;
+  }
+
+  /* new section end */
+
+/*  */
+#products {
+  /* background-color: lightgreen; */
+  padding: 70px 0px;
+}
+
+#products .title {
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+#products .title h1 {
+  font-size: 56px;
+  text-align: center;
+}
+
+#products .title h1 span {
+  color: var(--main-color);
+}
+
+#products .title hr {
+  width: 20%;
+  height: 5px;
+  border: none;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+/* #products h1::after {
+  content: "-";
+  display: inline-block;
+  width : 100px;
+  height: 5px;
+  background-color: #f7444e;
+  position: relative;
+  bottom: -50px;
+  right: 0px;
+} */
+
+#products .cards {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#products .card {
+  flex: 0 1 calc((100% / 3) - 20px);
+  margin: 10px;
+  padding: 40px;
+  text-align: center;
+
+  background-color: #f7f8f9;
+  box-shadow: 5px 5px 5px -5px rgba(0,0,0,.2);
+  border: solid #fff 10px
+}
+
+#products .cards img {
+  width: 50%;
+}
+
+#products .cards .text_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-top: 30px;
+}
+
+#products button {
+  padding: 20px 30px;
+  margin: 20px auto;
+  display: block;
+  border: none;
+  color: white;
+  background-color: var(--main-color);
+}
+
+#subs {
+  background-color: var(--bg-color);
+  padding: 75px 0;
+  text-align: center;
+}
+
+#subs h1 {
+  font-size: 40px;
+}
+
+#subs p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#subs input[type="email"] {
+  width: 60%;
+  padding: 20px;
+  margin: 50px 0;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+}
+
+#subs input[type="submit"] {
+  padding: 20px 70px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 30px;
+}
+
+#testimonial {
+  text-align: center;
+  padding: 50px 0;
+  /* background-color: yellow; */
+}
+
+#testimonial .slide_box {
+  width: 70%;
+  /* background-color: red; */
+  margin: 50px auto;
+  position: relative;
+}
+
+#testimonial i {
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #f7444e;
+  color: white;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  /*   
+  display: block;
+ */
+}
+
+#testimonial i.left{
+  left: 0;
+}
+
+#testimonial i.right{
+  right: 0;
+}
+
+#testimonial .slide .img_box{
+  width: 200px;
+  height: 200px;
+  /* border: 2px solid blue; */
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px auto;
+}
+
+#testimonial .slide .img_box img{
+  width: 100%;
+}
+
+#testimonial .slide h5{
+  margin: 10px 0;
+}
+
+footer .f_top{
+  background-color: #f8f8f8;
+  padding: 50px 0;
+}
+
+footer .f_top .container {
+  display: flex;
+  /* background-color: yellow; */
+  /* justify-content: space-between; */
+}
+
+footer .f_top .list {
+  flex: 0 1 calc((100% / 4) - 40px);
+  /* width: calc((100% / 4) - 40px); */
+  margin: 0px 20px;
+
+  /* border: 2px solid blue; */
+}
+
+footer .f_top img{
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+footer .f_top p{
+  margin-bottom: 20px;
+}
+
+footer .f_top h3 {
+  margin-bottom: 15px;
+}
+
+footer .f_top li {
+  margin-bottom: 10px;
+}
+
+footer .f_top form {
+  position: relative;
+}
+
+footer .f_top input:nth-child(1) {
+  width: 100%;
+  padding: 20px 10px;
+}
+
+footer .f_top input[type="submit"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 10px;
+
+  background-color: var(--main-color);
+  color: white;
+}
+
+footer .f_bottom {
+  padding: 20px;
+  line-height: 2;
+  text-align: center;
+  color: white; 
+  background-color: var(--footer-bg-color);
+}
+
+footer .f_bottom a{
+  color: var(--main-color);
+}
