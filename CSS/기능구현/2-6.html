@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>슬라이더</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .slidebox{
+        width: 100px;
+        height: 100px;
+        margin: 30px auto;
+        background-color: pink;
+        white-space: nowrap;
+      }
+      .slides{
+        font-size: 0;
+      }
+      .slide{
+        font-size: 16px;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border: 3px solid red;
+        position: relative;
+      }
+      label{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .left{
+        left: 0;
+      }
+      .right{
+        right: 0;
+      }
+      #s01:checked~.slidebox .slide{
+        transform: translateX(0%);
+      }
+      
+      #s02:checked~.slidebox .slide{
+        transform: translateX(-100%);
+      }
+      
+      #s03:checked~.slidebox .slide{
+        transform: translateX(-200%);
+      }
+      input{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="radio" name="slide" id="s01">
+    <input type="radio" name="slide" id="s02">
+    <input type="radio" name="slide" id="s03">
+
+    <div class="slidebox">
+      <div class="slides">
+        <div class="slide">
+          <label for="s03" class="left">left</label>
+          1
+          <label for="s02" class="right">right</label>
+        </div>
+        <div class="slide">
+          <label for="s01" class="left">left</label>
+          2
+          <label for="s03" class="right">right</label>
+        </div>
+        <div class="slide">
+          <label for="s02" class="left">left</label>
+          3
+          <label for="s01" class="right">right</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
