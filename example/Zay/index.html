@@ -34,37 +34,105 @@
         <a href="#">Contact</a>
       </div>
       <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-cart-plus"></i>
-        <i class="fa-solid fa-bell"></i>
+        <span class="icon fst_icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+        <span class="icon">
+          <i class="fa-solid fa-cart-plus">
+            <span class="count">7</span>
+          </i>
+        </span>
+        <span class="icon">
+          <i class="fa-solid fa-bell">
+            <span class="count">+99</span>
+          </i>
+        </span>
       </div>
     </div>
   </header>
+
   <section id="banner">
-    <div class="arrow">
-      <i class="fa-solid fa-chevron-left"></i>
-      <i class="fa-solid fa-chevron-right"></i>
+    <!-- <div class="slidebtn"> -->
+    <input type="radio" name="banner" id="slide01">
+    <input type="radio" name="banner" id="slide02">
+    <input type="radio" name="banner" id="slide03">
+    <!-- </div> -->
+
+    <div class="slidebox">
+      <div class="contents">
+        <div class="content cntnt1">
+          <label for="slide03" class="left"><i class="fa-solid fa-chevron-left left"></i></label>
+          <div class="container">
+            <div class="text_box">
+              <h1><b>Zay</b> eCommerce</h1>
+              <h3>Riny and Perfect eCommerce Template</h3>
+              <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).
+                This template is 100% free provided by
+                <a href="https://templatemo.com/" target="_blank">
+                  <underline>TemplateMo</underline>
+                </a> website. Image credits go to
+                <a href="https://stories.freepik.com/" target="_blank">
+                  <underline>Freepik Stories</underline>
+                </a>,
+                <a href="https://unsplash.com/ko" target="_blank">
+                  <underline>Unsplash</underline>
+                </a> and
+                <a href="https://icons8.com/" target="_blank">
+                  <underline>Icons 8.</underline>
+                </a>
+            </div>
+            <div class="img_box">
+              <img src="./img/banner_img_01.jpg" alt="">
+            </div>
+          </div>
+          <label for="slide02" class="right"><i class="fa-solid fa-chevron-right right"></i></label>
+        </div>
+
+        <div class="content">
+          <label for="slide01" class="left"><i class="fa-solid fa-chevron-left left"></i></label>
+          <div class="container">
+            <div class="text_box">
+              <h1>Proident occaecat</h1>
+              <h3>Aliquip ex ea commodo consequat</h3>
+              <p>You are permitted to use this Zay CSS template for your commercial websites. You are <b>not
+                  permitted</b>
+                to
+                re-distribute the template ZIP file in any kind of template collection websites.</p>
+            </div>
+            <div class="img_box">
+              <img src="./img/banner_img_02.jpg" alt="">
+            </div>
+          </div>
+          <label for="slide03" class="right"><i class="fa-solid fa-chevron-right right"></i></label>
+        </div>
+
+        <div class="content">
+          <label for="slide02" class="left"><i class="fa-solid fa-chevron-left left"></i></label>
+          <div class="container">
+            <div class="text_box">
+              <h1>Repr in voluptate</h1>
+              <h3>Ullamco laboris nisi ut</h3>
+              <p>
+                We bring you 100% free CSS templates for your websites. If you wish to support TemplateMo, please make
+                a small contribution via PayPal or tell your friends about our website. Thank you.
+              </p>
+            </div>
+            <div class="img_box">
+              <img src="./img/banner_img_03.jpg" alt="">
+            </div>
+          </div>
+          <label for="slide01" class="right"><i class="fa-solid fa-chevron-right right"></i></label>
+        </div>
+      </div>
     </div>
-    <div class="container">
-      <div class="content">
-        <div class="text_box">
-          <h1>Proident occaecat</h1>
-          <h3>Aliquip ex ea commodo consequat</h3>
-          <p>You are permitted to use this Zay CSS template for your commercial websites. You are <b>not permitted</b>
-            to
-            re-distribute the template ZIP file in any kind of template collection websites.</p>
-        </div>
-        <div class="img_box">
-          <img src="./img/banner_img_02.jpg" alt="">
-        </div>
-      </div>
-      <div class="slidebtn">
-        <input type="radio" name="banner" id="slide01">
-        <input type="radio" name="banner" id="slide02">
-        <input type="radio" name="banner" id="slide03">
-      </div>
+
+    <div class="slidebtn">
+      <label for="slide01" class="btn1"></label>
+      <label for="slide02" class="btn2"></label>
+      <label for="slide03" class="btn3"></label>
     </div>
   </section>
+
   <section id="category" class="container">
     <div class="title">
       <h1>Categories of The Month</h1>
@@ -171,8 +239,12 @@
               <h3>Zay Shop</h3>
               <hr>
               <p><i class="fa-solid fa-location-dot"></i> 123 Consectetur at ligula 10660</p>
-              <p><i class="fa-solid fa-phone fa-rotate-270"></i> <green>010-020-0340</green></p>
-              <p><i class="fa-solid fa-envelope"></i> <green>info@company.com</green></p>
+              <p><i class="fa-solid fa-phone fa-rotate-270"></i>
+                <green>010-020-0340</green>
+              </p>
+              <p><i class="fa-solid fa-envelope"></i>
+                <green>info@company.com</green>
+              </p>
             </div>
             <div class="products">
               <h3>Products</h3>
@@ -216,7 +288,8 @@
       </div>
       <div id="f_bottom">
         <div class="container">
-          <p>Copyright © 2021 Company Name | Designed by <green>TemplateMo</green></p>
+          <p>Copyright © 2021 Company Name | Designed by <green>TemplateMo</green>
+          </p>
         </div>
       </div>
     </div>

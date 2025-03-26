@@ -24,7 +24,7 @@ h1{
 button{
   /* 배경색 및 글자 크기, 두께 지정 */
   border: none;
-  background-color: red;
+  background-color: #f7444e;
   color: white;
   font-size: 20px;
 
@@ -41,14 +41,14 @@ button{
 /* 구분선 길이, 두께, 색상 변경 */
 hr{
   width: 8%;
-  border: 2px solid red;
+  border: 2px solid #f7444e;
   /* 세부 크기 조정, 가운데 정렬 */
   margin: 25px auto;
 }
 
 /* class명이 red인 태그에 대해 글자색 red로 변경, 세부 위치 조절*/
 .red{
-  color: red;
+  color: #f7444e;
   margin-bottom: -15px;
 }
 
@@ -112,64 +112,102 @@ hr{
 }
 /* header */
 
+
 /* section banner */
 #banner{
-
-  /* banner 내의 banner_text_box의 absolute 기준점 제시 */
+  /* banner 내의 slide의 absolute 기준점 제시 */
   position: relative;
+  overflow: hidden;
+}
+
+#banner .slidebtn{
+  position: absolute;
+  top: 72%;
+  padding: 0 950px 0 250px;
+}
+
+#banner .slidebtn label{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#banner #slide01:checked ~ .slidebtn label[for="slide01"]{
+  background-color: #f7444e;
+  transform: scale(1.3);
+}
+
+#banner #slide02:checked ~ .slidebtn label[for="slide02"]{
+  background-color: #f7444e;
+  transform: scale(1.3);
+}
+
+#banner #slide03:checked ~ .slidebtn label[for="slide03"]{
+  background-color: #f7444e;
+  transform: scale(1.3);
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+#banner #slide01:checked ~ .slidebox .slide{
+  transform: translateX(0%);
+}
+
+#banner #slide02:checked ~ .slidebox .slide{
+  transform: translateX(-100%);
+}
+
+#banner #slide03:checked ~ .slidebox .slide{
+  transform: translateX(-200%);
+}
+
+#banner .img_box{
+  width: 100%;
+  height: 860px;
 }
 
 /* 이미지 크기를 너비에 딱 맞게 조정 */
 #banner .banner_img{
   width: 100%;
+  height: 100%;
 }
 
-#banner .banner_text_box{
-  /* text_box에 대한 세부 위치 조정 -> 요소 위에 요소 띄우기 */
+#banner .slidebox{
+  display: flex;
+  width: 300%;
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
-  /* 세부 크기 조절 */
-  width: 45%;
-  padding-left: 15%;
+}
+
+#banner .slides {
+  width: 300%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner .slide{
+  width: 100%;
+  position: relative;
+  padding: 0 950px 0 250px;
+
+  transition: all 1s;
 }
 
 /* text_box의 직계 자식 p의 스타일 지정 및 세부 크기 조절 */
-#banner .banner_text_box > p{
+#banner .slide > p{
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* ... 나타내기 위한 태그 */
-#banner .banner_text_box .dot{
-  /* 가로로 정렬 */
-  display: flex;
-}
-
-/* ... 디자인 속성 지정 */
-#banner .banner_text_box .dot > p{
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  margin: 5px;
-  border-radius: 50%;
-}
-
-/* 해당 . 위에 마우스 올려뒀을 때 색상 및 크기(1.5배) 변경 */
-#banner .banner_text_box .dot > p:hover{
-  background-color: red;
-  transform: scale(1.5);
-}
-
-/* #banner label{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: white;
-  margin-left: 10px;
-} */
 /* section banner */
 
 /* section s_top */
@@ -346,7 +384,7 @@ hr{
 
 /* div 내부 아이콘의 둥근 배경 지정 */
 #customer .container > div i{
-  background-color: red;
+  background-color: #f7444e;
   color: white;
   border-radius: 50%;
   padding: 10px;
