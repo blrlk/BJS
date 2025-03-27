@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tab</title>
+    <style>
+      /* 기본 탭 css 크기 지정 */
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #tab_box{
+        width: 60%;
+        margin: 30px auto;
+        border: 1px solid black;
+      }
+
+      #tab_button{
+        font-size: 0px;
+      }
+
+      #tab_button label{
+        width: 20%;
+        display: inline-block;
+        font-size: 16px;
+        color: white;
+        background-color: rgb(89, 89, 245);
+        padding: 20px 0;
+        border: 1px solid black;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      /* 기본 탭 css 콘텐츠 숨기고 나타내기 */
+      .all{
+        display: none;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      #a:checked ~ #tab_box #tab_content .a{
+        display: block;
+      }
+
+      #b:checked ~ #tab_box #tab_content .b{
+        display: block;
+      }
+
+      #c:checked ~ #tab_box #tab_content .c{
+        display: block;
+      }
+      
+      #d:checked ~ #tab_box #tab_content .d{
+        display: block;
+      }
+
+      #all:checked ~ #tab_box #tab_content .all{
+        display: block;
+      }
+
+      /* 기본 탭 css 특정 label 배경색 바꾸기 */
+      #a:checked ~ #tab_box #tab_button .a{
+        background-color: pink;
+      }
+
+      #b:checked ~ #tab_box #tab_button .b{
+        background-color: pink;
+      }
+
+      #c:checked ~ #tab_box #tab_button .c{
+        background-color: pink;
+      }
+
+      #d:checked ~ #tab_box #tab_button .d{
+        background-color: pink;
+      }
+
+      #all:checked ~ #tab_box #tab_button .all{
+        background-color: pink;
+      }
+
+      #a, #b, #c, #d, #all, #close{
+        display: none;
+      }
+
+      /* 추가 - close */
+      div.close{
+        text-align: center;
+      }
+
+      .close label{
+        background-color: aliceblue;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      #close:checked ~ #tab_content .all{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="radio" name="tab_radio" id="a">
+    <input type="radio" name="tab_radio" id="b">
+    <input type="radio" name="tab_radio" id="c">
+    <input type="radio" name="tab_radio" id="d">
+    <input type="radio" name="tab_radio" id="all">
+    <input type="radio" name="tab_radio" id="close">
+
+    <div id="tab_box">
+      <div id="tab_button">
+        <label for="a" class="a">aaa</label>
+        <label for="b" class="b">bbb</label>
+        <label for="c" class="c">ccc</label>
+        <label for="d" class="d">ddd</label>
+        <label for="all" class="all">All</label>
+      </div>
+      <div id="tab_content">
+        <div class="all a">첫 번째 상자</div>
+        <div class="all b">두 번째 상자</div>
+        <div class="all c">셋 번째 상자</div>
+        <div class="all d">네 번째 상자</div>
+      </div>
+    </div>
+    <div class="close">
+      <label for="close">CLOSE</label>
+    </div> 
+  </body>
+</html>
