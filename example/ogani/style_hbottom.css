@@ -1,0 +1,80 @@
+#h_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+#h_bottom .menu ul{
+  display: flex;
+}
+
+#h_bottom > div{
+  flex: 0, 1, calc(33% - 20px);
+  margin: 10px;
+}
+
+#h_bottom .menu ul li{
+  margin: 0 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#h_bottom .menu ul li:hover{
+  color: var(--main_color);
+}
+
+#h_bottom .menu > ul > li:first-of-type{
+  color: var(--main_color);
+}
+
+#h_bottom .menu ul .pages{
+  position: relative;
+  cursor: pointer;
+}
+
+#h_bottom .menu ul.menu_dropdown{
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 170px;
+  padding: 10px 5px;
+}
+
+#h_bottom .menu ul .pages:hover ul.menu_dropdown{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.836);
+  color: white;
+}
+
+#h_bottom .h_bottom_right, #h_bottom .h_bottom_right .icon{
+  display: flex;
+  justify-content: space-between;
+}
+
+#h_bottom .h_bottom_right .icon i{
+  font-size: 20px;
+}
+
+#h_bottom .h_bottom_right .icon span{
+  background-color: var(--main_color);
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  padding: 0px 7px;
+  position: relative;
+  top: -10px;
+  right: 10px;
+}
+
+#h_bottom .h_bottom_right > span{
+  font-size: 14px;
+  color: gray;
+}
+
+#h_bottom .h_bottom_right .total{
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}

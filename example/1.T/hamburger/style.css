@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Nanum+Pen+Script&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* header start */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  /* background-color: black; */
+  /* padding: 20px; */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+
+header .logo {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+}
+
+header nav > ul {
+  display: flex;
+}
+
+header nav > ul a {
+  display: inline-block;
+  padding: 20px;
+}
+
+header nav ul li:nth-child(1) {
+  color: #ffbe33;
+}
+
+header .icon_box a {
+  margin-left: 10px;
+}
+
+header .icon_box a:nth-child(4) {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffbe33;
+  border-radius: 20px;
+}
+
+/* main section start */
+#main {
+  position: relative;
+  color: white;
+}
+
+#main input[type="radio"] {
+  display: none;
+}
+
+#main > img {
+  width: 100%;
+}
+
+/* 보여질 화면 */
+#main .slidebox {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+
+  /* border: 2px solid blue; */
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+#main .slidebox .slides {
+  /* display: flex;
+  width: 300%; */
+}
+
+#main .slidebox .slides .slide{
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 15%;
+
+  transition: all 1s;
+}
+
+#main .slide h1{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+#main .slide p{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#main .slide a {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #ffbe33;
+  border-radius: 20px;
+}
+
+#main .slidebtn label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 7px;
+}
+
+#main .slidebtn {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+#main #s01:checked ~ .slidebox .slide{
+  transform: translateX(0);
+}
+#main #s02:checked ~ .slidebox .slide{
+  transform: translateX(-100%);
+}
+#main #s03:checked ~ .slidebox .slide{
+  transform: translateX(-200%);
+}
+
+#main #s01:checked ~ .slidebtn label:nth-child(1),
+#main #s02:checked ~ .slidebtn label:nth-child(2),
+#main #s03:checked ~ .slidebtn label:nth-child(3) {
+  background-color: #ffbe33;
+}
+
+/* tab section start */
+#tab h1 {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+#tab input[type="radio"]{
+  display: none;
+}
+
+.tab_box {
+  /* background-color: aqua; */
+}
+
+#tab .tab_box .label_box {
+  font-size: 0;
+}
+
+#tab .tab_box .label_box label{
+  width: 20%;
+  padding: 10px;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+  /* border: 2px solid red; */
+  text-align: center;
+  cursor: pointer;
+}
+
+#tab .tab_box .content_box{
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  /* background-color: blue; */
+}
+
+#tab .card{
+  flex: 0 1 calc((100% / 3 ) - 20px);
+  margin: 10px;
+  height: 430px;
+
+  /* border: 2px solid blue; */
+  border-radius: 15px;
+  background-color: #222831;
+  
+  overflow: hidden;
+}
+
+#tab .card .img_box {
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  background-color: #f1f2f3;
+
+  border-bottom-left-radius: 50px;
+}
+
+#tab .card .img_box img {
+  width: 40%;
+}
+
+#tab .card .text_box{
+  height: 50%;
+  padding: 20px 30px;
+}
+
+#tab .card .text_box h2,
+#tab .card .text_box p {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+#tab .card .text_box > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tab .all{
+  display: none;
+}
+
+#t01:checked ~ .tab_box .all,
+#t02:checked ~ .tab_box .burger,
+#t03:checked ~ .tab_box .pizza,
+#t04:checked ~ .tab_box .pasta,
+#t05:checked ~ .tab_box .fries
+{
+  display: block;
+}
+
+#t01:checked ~ .tab_box label[for="t01"],
+#t02:checked ~ .tab_box label[for="t02"],
+#t03:checked ~ .tab_box label[for="t03"],
+#t04:checked ~ .tab_box label[for="t04"],
+#t05:checked ~ .tab_box label[for="t05"]{
+  background-color: black;
+  color: white;
+}
+
+#tab button {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  background-color: #ffbe33;
+  border-radius: 20px;
+  border: none;
+}
