@@ -1,3 +1,4 @@
+/* mini_banner */
 input[type="checkbox"], ul.goods_dropdown{
   display: none;
 }
@@ -10,31 +11,31 @@ input[type="checkbox"], ul.goods_dropdown{
 
 #banner .mini_banner{
   display: flex;
-  /* border: 2px solid red; */
+  /* margin: 20px 0; */
 }
 
 label.dropdown{
   background-color: var(--main_color);
   color: white;
-  padding: 5px 20px;
+  padding: 8px 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-#banner .department{
+#banner .mini_banner .department{
   width: 20%;
   margin: 10px 20px;
-  /* border: 2px solid blue; */
   position: relative;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
-#banner .b_right{
+#banner .mini_banner .b_right{
   width: 80%;
-  margin: 10px 20px;
-  /* border: 2px solid yellowgreen; */
+  margin: 5px 20px;
 }
 
 #banner .mini_banner .department .dropdown, #banner .mini_banner .department .goods_dropdown{
@@ -42,12 +43,12 @@ label.dropdown{
   width: 100%;
 }
 
-#banner .navi .department > ul > li i{
+#banner .mini_banner .navi .department > ul > li i{
   margin: 0 10px;
 }
 
 ul.goods_dropdown{
-  margin-top: 5px;
+  /* margin-top: 5px; */
   border: 1px solid gray;
   top: 45px;
   padding: 10px 30px;
@@ -62,13 +63,13 @@ ul.goods_dropdown li{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 #banner .mini_banner .b_right .search .b_rr{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 #banner .mini_banner .b_right .search .b_rr > i{
@@ -88,15 +89,15 @@ ul.goods_dropdown li{
   font-size: 14px;
 }
 
-#banner .b_right .hero{
+#banner .mini_banner .b_right .hero{
   position: relative;
 }
 
-#banner .b_right .hero img{
+#banner .mini_banner .b_right .hero img{
   width: 100%;
 }
 
-#banner .b_right .hero .content{
+#banner .mini_banner .b_right .hero .content{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -104,24 +105,24 @@ ul.goods_dropdown li{
   width: 270px;
 }
 
-#banner .b_right .hero .content h5{
+#banner .mini_banner .b_right .hero .content h5{
   font-size: 14px;
   color: var(--main_color);
   letter-spacing: 5px;
 }
 
-#banner .b_right .hero .content h1{
+#banner .mini_banner .b_right .hero .content h1{
   font-size: 40px;
   font-weight: bold;
   margin: 10px 0;
   line-height: 50px;
 }
 
-#banner .b_right .hero .content p{
+#banner .mini_banner .b_right .hero .content p{
   margin-bottom: 35px;
 }
 
-#banner .b_right .hero .content button{
+#banner .mini_banner .b_right .hero .content button{
   background-color: var(--main_color);
   border: none;
   color: white;
@@ -136,16 +137,20 @@ ul.goods_dropdown li{
 #banner .mini_banner .b_right .search button{
   background-color: var(--main_color);
   color: white;
-  padding: 13px 30px;
+  width: 130px;
   border: none;
   font-weight: bold;
+  cursor: pointer;
+  height: 100%;
+  font-size: 16px;
 }
 
 #banner .mini_banner .b_right .search input{
-  padding: 13px;
+  padding: 0 13px;
   width: 300px;
   border: none;
   outline: none;
+  font-size: 16px;
 }
 
 #banner .mini_banner .b_right form{
@@ -153,13 +158,97 @@ ul.goods_dropdown li{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
 }
 
 #banner .mini_banner .b_right form > div{
-  padding: 0 10px;
-  width: 150px;
+  padding: 0 20px;
+  width: 170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  border-right: 1px solid gray;
 }
+
+
+/* mini_banner */
+
+/* slidebox */
+input[type="radio"]{
+  display: none;
+}
+
+#banner .slidebox{
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+#banner .slides{
+  font-size: 0;
+}
+
+#banner .slide{
+  display: inline-block;
+  width: 100%;
+  font-size: 18px;
+  transition: all 1s;
+  position: relative;
+}
+
+#banner .slide .item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner .slide .btn_box{
+  position: absolute;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 5px 20px;
+  width: 200px;
+  bottom: 10%;
+  cursor: pointer;
+}
+
+#banner .slide .left, #banner .slide .right{
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#banner .slide .right{
+  right: 60px;
+}
+
+#banner .slide .left{
+  left: 60px;
+}
+
+#banner #slide01:checked ~ .slidebox .slides .slide{
+  transform: translateX(0%);
+}
+
+#banner #slide02:checked ~ .slidebox .slides .slide{
+  transform: translateX(-100%);
+}
+
+#banner #slide03:checked ~ .slidebox .slides .slide{
+  transform: translateX(-200%);
+}
+
+#banner #slide04:checked ~ .slidebox .slides .slide{
+  transform: translateX(-300%);
+}
+
+#banner #slide05:checked ~ .slidebox .slides .slide{
+  transform: translateX(-400%);
+}
+/* slidebox */

@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./style_htop.css">
   <link rel="stylesheet" href="./style_hbottom.css">
   <link rel="stylesheet" href="./style_banner.css">
+  <link rel="stylesheet" href="./style_prod.css">
+  <link rel="stylesheet" href="./style_footer.css">
   <script src="https://kit.fontawesome.com/fc2e77f065.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,8 +20,8 @@
       <div class="container">
         <div class="h_top_left">
           <ul>
-            <li class="bar"><i class="fa-solid fa-envelope"></i> hello@colorlib.com</li>
-            <li>Free Shipping for all Order of $99</li>
+            <li class="bar"><i class="fa-solid fa-envelope"></i> hello@colorlib.com&nbsp;&nbsp;</li>
+            <li>&nbsp;&nbsp;Free Shipping for all Order of $99</li>
           </ul>
         </div>
         <div class="h_top_right">
@@ -31,13 +33,14 @@
               <i class="fa-brands fa-pinterest-p"></i>
             </li>
             <li class="language bar">
-              <img src="./img/language.png" alt=""> English <i class="fa-solid fa-chevron-down"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/language.png" alt=""> English <i class="fa-solid fa-chevron-down"></i>&nbsp;&nbsp;
               <ul class="lan_dropdown">
                 <li>Spanish</li>
                 <li>English</li>
               </ul>
             </li>
             <li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="fa-solid fa-user"></i> Login
             </li>
           </ul>
@@ -77,60 +80,353 @@
         <span>item: <span class="total">$150.00</span></span>
       </div>
     </div>
+  </header>
 
-    <section id="banner" class="container">
-      <input type="checkbox" name="dropdown" id="dropdown" checked>
-      <div class="mini_banner">
-        <nav class="department">
-          <ul>
-            <li>
-              <label for="dropdown" class="dropdown"><i class="fa-solid fa-bars"></i> All departments <i
-                  class="fa-solid fa-chevron-down"></i></label>
-              <ul class="goods_dropdown">
-                <li>Fresh Meat</li>
-                <li>Vegetables</li>
-                <li>Fruit & Nut Gifts</li>
-                <li>Fresh Berries</li>
-                <li>Ocean Foods</li>
-                <li>Butter & Eggs</li>
-                <li>Fastfood</li>
-                <li>Fresh Onion</li>
-                <li>Papayaya & Crisps</li>
-                <li>Oatmeal</li>
-                <li>Fresh Bananas</li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div class="b_right">
-          <div class="search">
-            <form action="">
-              <div>All Categories <i class="fa-solid fa-chevron-down"></i></div>
-              <input type="text" placeholder="What do you need?">
-              <button>SEARCH</button>
-            </form>
-            <div class="b_rr">
-              <i class="fa-solid fa-phone"></i>
-              <div>
-                <p class="tel">+65 11.188.888</p>
-                <p>support 24/7 time</p>
-              </div>
+  <section id="banner" class="container">
+    <input type="checkbox" name="dropdown" id="dropdown" checked>
+
+    <div class="mini_banner">
+      <nav class="department">
+        <ul>
+          <li>
+            <label for="dropdown" class="dropdown"><i class="fa-solid fa-bars"></i> All departments <i
+                class="fa-solid fa-chevron-down"></i></label>
+            <ul class="goods_dropdown">
+              <li>Fresh Meat</li>
+              <li>Vegetables</li>
+              <li>Fruit & Nut Gifts</li>
+              <li>Fresh Berries</li>
+              <li>Ocean Foods</li>
+              <li>Butter & Eggs</li>
+              <li>Fastfood</li>
+              <li>Fresh Onion</li>
+              <li>Papayaya & Crisps</li>
+              <li>Oatmeal</li>
+              <li>Fresh Bananas</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="b_right">
+        <div class="search">
+          <form action="">
+            <div>All Categories <i class="fa-solid fa-chevron-down"></i></div>
+            <input type="text" placeholder="What do you need?">
+            <button>SEARCH</button>
+          </form>
+          <div class="b_rr">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <p class="tel">+65 11.188.888</p>
+              <p>support 24/7 time</p>
             </div>
           </div>
-          <div class="hero">
-            <img src="./img/hero/banner.jpg" alt="">
-            <div class="content">
-              <h5>FRUIT FRESH</h5>
-              <h1>Vegetable 100% Organic</h1>
-              <p>Free Pickup and Delivery Available</p>
-              <button>SHOP NOW</button>
+        </div>
+        <div class="hero">
+          <img src="./img/hero/banner.jpg" alt="">
+          <div class="content">
+            <h5>FRUIT FRESH</h5>
+            <h1>Vegetable 100% Organic</h1>
+            <p>Free Pickup and Delivery Available</p>
+            <button>SHOP NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="radio" name="slidebtn" id="slide01">
+    <input type="radio" name="slidebtn" id="slide02">
+    <input type="radio" name="slidebtn" id="slide03">
+    <input type="radio" name="slidebtn" id="slide04">
+    <input type="radio" name="slidebtn" id="slide05">
+
+    <div class="slidebox">
+      <ul class="slides">
+        <li class="slide">
+          <div class="item">
+            <label for="slide05" class="left"><i class="fa-solid fa-chevron-left"></i></label>
+            <div class="img_box">
+              <img src="./img/categories/cat-1.jpg" alt="">
+            </div>
+            <div class="btn_box">
+              <a href="#">FRESH FRUIT</a>
+            </div>
+            <label for="slide02" class="right"><i class="fa-solid fa-chevron-right"></i></label>
+          </div>
+        </li>
+
+        <li class="slide">
+          <div class="item">
+            <label for="slide01" class="left"><i class="fa-solid fa-chevron-left"></i></label>
+            <div class="img_box">
+              <img src="./img/categories/cat-2.jpg" alt="">
+            </div>
+            <div class="btn_box">
+              <a href="#">DRIED FRUIT</a>
+            </div>
+            <label for="slide03" class="right"><i class="fa-solid fa-chevron-right"></i></label>
+          </div>
+        </li>
+
+        <li class="slide">
+          <div class="item">
+            <label for="slide02" class="left"><i class="fa-solid fa-chevron-left"></i></label>
+            <div class="img_box">
+              <img src="./img/categories/cat-3.jpg" alt="">
+            </div>
+            <div class="btn_box">
+              <a href="#">VEGETABLES</a>
+            </div>
+            <label for="slide04" class="right"><i class="fa-solid fa-chevron-right"></i></label>
+          </div>
+        </li>
+
+        <li class="slide">
+          <div class="item">
+            <label for="slide03" class="left"><i class="fa-solid fa-chevron-left"></i></label>
+            <div class="img_box">
+              <img src="./img/categories/cat-4.jpg" alt="">
+            </div>
+            <div class="btn_box">
+              <a href="#">DRINK FRUITS</a>
+            </div>
+            <label for="slide05" class="right"><i class="fa-solid fa-chevron-right"></i></label>
+          </div>
+        </li>
+
+        <li class="slide">
+          <div class="item">
+            <label for="slide04" class="left"><i class="fa-solid fa-chevron-left"></i></label>
+            <div class="img_box">
+              <img src="./img/categories/cat-5.jpg" alt="">
+            </div>
+            <div class="btn_box">
+              <a href="#">DRINK FRUITS</a>
+            </div>
+            <label for="slide01" class="right"><i class="fa-solid fa-chevron-right"></i></label>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section id="prod" class="container">
+    <div class="title">
+      <h1>Featured Product</h1>
+      <h2></h2>
+    </div>
+
+    <input type="radio" name="tabbutton" id="all" checked>
+    <input type="radio" name="tabbutton" id="oranges">
+    <input type="radio" name="tabbutton" id="fresh">
+    <input type="radio" name="tabbutton" id="vegetables">
+    <input type="radio" name="tabbutton" id="fastfood">
+
+    <div class="tab_btn">
+      <ul class="menu">
+        <label for="all" class="all">
+          <li>All</li>
+        </label>
+        <label for="oranges" class="oranges">
+          <li>Oranges</li>
+        </label>
+        <label for="fresh" class="fresh">
+          <li>Fresh Meat</li>
+        </label>
+        <label for="vegetables" class="vegetables">
+          <li>Vegetables</li>
+        </label>
+        <label for="fastfood" class="fastfood">
+          <li>Fastfood</li>
+        </label>
+      </ul>
+    </div>
+
+    <div class="tab_content">
+      <div class="all oranges fresh">
+        <div class="img_box">
+          <img src="./img/featured/feature-1.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all vegetables fastfood">
+        <div class="img_box">
+          <img src="./img/featured/feature-2.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all fresh vegetables">
+        <div class="img_box">
+          <img src="./img/featured/feature-3.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all oranges fastfood">
+        <div class="img_box">
+          <img src="./img/featured/feature-4.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all fresh vegetables">
+        <div class="img_box">
+          <img src="./img/featured/feature-5.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all oranges fastfood">
+        <div class="img_box">
+          <img src="./img/featured/feature-6.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all fresh vegetables">
+        <div class="img_box">
+          <img src="./img/featured/feature-7.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+
+      <div class="all vegetables fastfood">
+        <div class="img_box">
+          <img src="./img/featured/feature-8.jpg" alt="">
+          <ul class="img_dropdown">
+            <li><i class="fa-solid fa-heart"></i></li>
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+        </div>
+        <div class="text_box">
+          <p class="product">Crab Pool Security</p>
+          <p class="price"><b>$30.00</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div id="f_top">
+        <div class="info">
+          <img src="./img/logo.png" alt="">
+          <div class="content">
+            <p>Address: 60-49 Road 11378 New York</p>
+            <p>Phone: +65 11.188.888</p>
+            <p>Email: hello@colorlib.com</p>
+          </div>
+        </div>
+
+        <div class="useful">
+          <div class="title">Useful Link</div>
+          <div class="content">
+            <ul class="r_content">
+              <li><a href="#">About US</a></li>
+              <li><a href="#">About Our Shop</a></li>
+              <li><a href="#">Secure Shopping</a></li>
+              <li><a href="#">Delivery information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Our Sitemap</a></li>
+            </ul>
+            <ul class="l_content">
+              <li><a href="#">Who We Are</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Projets</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Innovation</a></li>
+              <li><a href="#">Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="join">
+          <div class="title">Join Our Newsletter Now</div>
+          <div class="content">
+            <p>Get E-mail updates about our latest shop and special offers.</p>
+            <div class="submit">
+              <input type="email" placeholder="Enter your mail">
+              <button>SUBSCRIBE</button>
+            </div>
+            <div class="sns">
+              <span><i class="fa-brands fa-facebook-f"></i></span>
+              <span><i class="fa-brands fa-instagram"></i></span>
+              <span><i class="fa-brands fa-twitter"></i></span>
+              <span><i class="fa-brands fa-pinterest"></i></span>
             </div>
           </div>
         </div>
       </div>
-      
-    </section>
-  </header>
+      <hr>
+      <div id="f_bottom">
+        <p>Copyright <sup>ⓒ</sup>2025 All rights resserved | This template is made with <i class="fa-solid fa-heart"></i> by <blue>Colorlib</blue></p>
+        <img src="./img/payment-item.png" alt="">
+      </div>
+    </div>
+
+  </footer>
 </body>
 
 </html>

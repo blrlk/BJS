@@ -1,0 +1,113 @@
+#prod{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#prod .title{
+    margin: 40px 0;
+}
+
+#prod .title h1{
+    font-size: 36px;
+}
+
+#prod .title h2{
+    width: 100px;
+    height: 5px;
+    background-color: var(--main_color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#prod .tab_btn .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#prod .tab_btn .menu li{
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+#prod #all:checked ~ .tab_btn .menu .all li,
+#prod #oranges:checked ~ .tab_btn .menu .oranges li, 
+#prod #fresh:checked ~ .tab_btn .menu .fresh li, 
+#prod #vegetables:checked ~ .tab_btn .menu .vegetables li, 
+#prod #fastfood:checked ~ .tab_btn .menu .fastfood li{
+    border-bottom: 2px solid var(--main_color);
+}
+
+#prod .tab_content .all{
+    display: none;
+}
+
+#prod .tab_content .img_box img{
+    width: 270px;
+    height: 270px;
+}
+
+#prod .tab_content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#prod .tab_content > div{
+    flex: 0 1 calc(25% - 20px);
+    margin: 10px;
+}
+
+#prod .tab_content .text_box .product{
+    font-size: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+#prod #all:checked ~ .tab_content .all,
+#prod #oranges:checked ~ .tab_content .oranges, 
+#prod #fresh:checked ~ .tab_content .fresh, 
+#prod #vegetables:checked ~ .tab_content .vegetables, 
+#prod #fastfood:checked ~ .tab_content .fastfood{
+    display: block;
+}
+
+#prod .tab_content .img_box{
+    position: relative;
+}
+
+#prod .tab_content .img_dropdown{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#prod .tab_content .img_dropdown li{
+    margin: 0 8px;
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#prod .tab_content .img_dropdown li:hover{
+    color: white;
+    background-color: var(--main_color);
+    transform: rotate(360deg);
+}
+
+#prod .tab_content .img_box img:hover ~ .img_dropdown li,
+#prod .tab_content .img_box .img_dropdown:hover li
+{
+    display: flex;
+}
+
