@@ -184,18 +184,22 @@ input[type="radio"]{
   white-space: nowrap;
   overflow: hidden;
   padding: 30px 0;
+  /* position: relative; */
 }
 
 #banner .slides{
   font-size: 0;
+  display: flex;
+  justify-content: center;
 }
 
 #banner .slide{
-  display: inline-block;
+  flex: 0 1 calc(25% - 20px);
   width: 100%;
   font-size: 18px;
   transition: all 1s;
   position: relative;
+  margin: 10px;
 }
 
 #banner .slide .item{
