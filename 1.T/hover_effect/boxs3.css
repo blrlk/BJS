@@ -1,0 +1,119 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+#box_row{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* 공통 영역 */
+#first, #second, #third{
+  position: relative;
+  background-color: white;
+  box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, .2);
+  overflow: hidden;
+
+  text-align: center;
+}
+
+#box_row img{
+  width: 50%;
+}
+
+#box_row .text {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* sub_box */
+#box_row .sub_box1,
+#box_row .sub_box2,
+#box_row .sub_box3 {
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(126, 123, 119, 0.2);
+}
+
+button{
+  display: inline-block;
+  margin: 3px 0px;
+  color: white;
+  width: 40%;
+  height: 20%;
+  padding: 10px;
+  background-color: red;
+  border: none;
+  border-radius: 25px;
+}
+
+/* 첫번째 상자 */
+/* sub_box1이 밑에서 위로 올라옴 */
+.sub_box1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  transform: translateY(120%);
+
+  transition: all 1s;
+}
+
+#first:hover .sub_box1{
+  transform: translateY(0%);
+}
+
+/* 두번째 상자 */
+/* sub_box2가 살짝 위로 올라오면서 투명도 1로 돌아옴 */
+.sub_box2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(10%);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#second:hover .sub_box2{
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* 세번째 상자 */
+/* sub_box3이 투명도 1로 돌아오면서 제품 이미지 1.2배 커짐 */
+#third{
+  overflow: visible;
+}
+
+#box_row img{
+  transition: all 2s;
+}
+
+.sub_box3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 1s;
+}
+
+#third:hover .sub_box3{
+  opacity: 1;
+}
+
+#third:hover img{
+  transform: scale(1.2);
+}
