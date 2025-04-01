@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hide HTML</title>
+    <style>
+      button{
+        border: none;
+        background-color:aliceblue;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 3px;
+      }
+    </style>
+  </head>
+  <body style="text-align: center;">
+    <h2>What Can JavaScript Do?</h2>
+    <button type="button" onclick="document.querySelector('#demo').style.display='none'">Hide</button>
+    <button type="button" onclick="document.querySelector('#demo').style.display='block'">Reveal</button>
+    
+    <p id="demo">JavaScript can hide and reveal HTML elements.</p>
+  </body>
+</html>
