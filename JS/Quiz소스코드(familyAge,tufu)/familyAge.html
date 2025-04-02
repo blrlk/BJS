@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <script>
+    /*
+    1. 변수 뭐 필요할까?
+    - 아빠나이, 엄마나이, 내나이
+    - 가족인원
+    2. 어떤 동작을 해야할까?    
+    - (아빠나이 + 엄마나이 + 내나이) / 3
+    */
+
+    var count = 0;
+    var fatehr, mother, brother, me;
+    var ageFamily = 0;
+
+    father = prompt("숫자를 입력하세요","아버지의 나이를 입력하세요.");
+    count = count + 1; //count++;
+    
+    mother = prompt("숫자를 입력하세요","어머니의 나이를 입력하세요.");
+    count = count + 1; //count++;
+
+    brother = prompt("숫자를 입력하세요","형의 나이를 입력하세요.");
+    count = count + 1; //count++;
+
+    me = prompt("숫자를 입력하세요","나의 나이를 입력하세요.");
+    count = count + 1; //count++;
+
+    ageFamily = Number(father) + Number(mother) + Number(brother) + Number(me); //prompt()에 입력한 값의 데이터타입은 문자열이므로 숫자로 변환
+    console.log(ageFamily); //개발자 도구 눌러서 console 탭에서 확인
+    document.write(parseInt(ageFamily / count)); //가족 나이의 합 / 인원수 : 평균
+  </script>
+</body>
+</html>

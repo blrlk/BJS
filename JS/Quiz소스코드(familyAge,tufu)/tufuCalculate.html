@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    문제1)
+    나는 500원의 돈이 있어서 
+    300원짜리 두부를 사서 
+    엄마한테 "오는 길에 두부 사왔어요!"라고 얘기했어
+    이때 필요한 변수는 무엇일까? 
+    (내 수중의 돈, 두부의 원가는 바뀔 수 있음)   
+    */
+
+    /*
+    문제1 정답)
+    var myMoney = 500;
+    var tufuPrice = 300;
+
+    document.write("오는 길에 두부 사왔어요!");
+    */
+
+    /*
+    문제2)
+    나는 1000원의 돈이 있어서 
+    300원짜리 두부를 사서 
+    엄마한테 "오는 길에 두부 사왔는데 700원 받았다"라고 얘기했어
+    이때 필요한 변수는 무엇일까? 
+    (내 수중의 돈, 두부의 원가는 바뀔 수 있음)   
+    */
+
+    /*
+    문제2 정답)
+    var myMoney = 500;
+    var tufuPrice = 300;
+
+    document.write(`오는 길에 두부 사왔는데 ${myMoney - tufuPrice}원 받았다`);
+    */
+
+    /*
+    문제3)
+    나는 500원의 돈이 있어서 
+    300원짜리 두부 n개를 사려고한다.  
+    (두부 개수 n는 prompt()로 입력받을 것)
+    내 수중의 돈이 구매하려는 값보다 많으면 
+    "두부를 n개 샀고, 잔돈 얼마 남았다"라고 엄마한테 얘기하고
+    내 수중의 돈이 구매하려는 값보다 적으면 
+    "돈이 부족해서 두부를 못 샀다" 라고 엄마한테 얘기할거야
+    이때 필요한 변수는 무엇일까? 
+    (내 수중의 돈, 두부의 원가, 두부 개수는 바뀔 수 있음)    
+    */
+
+    /*
+    문제3 정답)
+    var myMoney = 1000;
+    var tufuPrice = 300;
+    var tufuCount = Number(prompt("두부 개수 입력하세요"));
+
+    if (myMoney >= tufuPrice * tufuCount) {
+      document.write(`두부를 ${tufuCount}개를 샀고 잔돈 ${myMoney - tufuPrice * tufuCount}원 받았다`);
+    } else {
+      document.write(`돈이 부족해서 두부를 못 샀다`);
+    }
+    */
+    
+  </script>
+</body>
+
+</html>
