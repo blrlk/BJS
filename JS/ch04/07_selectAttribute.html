@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>요소 선택</title>
+    <script>
+      function inputFun(){
+        var x = document.querySelector("#input_id").value;
+        document.querySelector("#output_id").value = x;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="input_id" size="10"> ->
+    <input type="text" id="output_id" size="10">
+    <button type="button" onclick="inputFun()">click</button>
+  </body>
+</html>

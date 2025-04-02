@@ -1,0 +1,27 @@
+<!-- 가족들의 나이를 입력 받아 평균 값 출력 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>count family average age</title>
+    <script>
+      var sum=0;
+      var age=[0, 0, 0, 0];
+      var family=["dad", "mom", "me", "brother"];
+
+      for(var i=0;i<4;i++){
+        age[i] = parseInt(prompt(`${family[i]}'s age? `));
+        sum += age[i];
+      }
+
+      for(var i=0;i<4;i++){
+        document.write(`${family[i]}: ${age[i]} <br>`);
+      }
+
+      // document.write(`<br>`);
+      document.write(`<br>avg: ${sum/4}`);
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

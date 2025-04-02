@@ -1,0 +1,24 @@
+<!-- 현재 나에게 2500원의 돈이 있고 300원짜리 두부를 사려고 한다. 사용자에게 두부 개수를 입력 받고 돈이 되면 잔액과 구매한 두부의 개수를, 아니면 잔돈 부족 출력 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>두부</title>
+    <script>
+      var myMoney = 2500, price = 300;
+       
+      var count = parseInt(prompt("두부 몇 개 살까요?"));
+      
+      var change = myMoney - (price * count);
+
+      if(change>=0){
+        document.write(`두부 심부름 완료<br>개수: ${count}, 잔액: ${change}`);
+      } else{
+        document.write("잔돈 부족");
+      }
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
