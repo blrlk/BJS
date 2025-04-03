@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let itemNames = ["사과", "바나나", "우유"];
+    let itemPrices = [1200, 800, 2500];
+    let itemQuantities = [3, 5, 2];
+
+    let totalPrice = 0;
+    let deliveryFee = 5000;
+
+    //장바구니 목록(itemNames) 출력하기
+    // for문, while문, dowhile문, for_in구문, for_of구문 중 1개로
+    for(let i = 0; i < itemNames.length; i++){
+      document.write(itemNames[i] + "<br>");
+    }
+
+    //계산해야할 totalPrice 계산하기 : 각자의 가격 * 각자의 수량
+    for(let i = 0; i < itemPrices.length; i++){
+      totalPrice += itemPrices[i] * itemQuantities[i];
+    }
+    
+    document.write(`totalPrice : ${totalPrice} <br>`);
+
+    //제품 50000원 이상 구매하면, 배송비 무료. 관련한 안내문구 출력하기.
+    //배송비 포함 최종 가격 출력
+    if(totalPrice < 50000) {
+      totalPrice += deliveryFee;
+      document.write(`배송비 ${deliveryFee}원이 붙었습니다.<br>`);
+    }else{
+      document.write(`배송비가 무료입니다.<br>`);
+    }
+
+    document.write(`최종 결제해야할 금액은 ${totalPrice}원입니다.`);
+
+  </script>
+</body>
+
+</html>
