@@ -1,0 +1,30 @@
+<!-- 미로에 들어섰습니다. 당신은 오른쪽, 왼쪽을 선택할 수 있습니다. 오른족 길로 갈 건지 안내를 하고 yes 혹은 no 값을 받습니다. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>maze</title>
+    <script>
+      var direction = confirm("오른쪽 길로 가시겠습니까?");
+      var n = Math.random();
+      if(direction){
+        document.write("오른쪽 길로 갑시다<br>");
+        if(n < 0.5){
+          document.write("랜덤 값: " + n +"<br>");
+          document.write("고블린 만남. 전투 시작");
+        } else{
+          document.write("랜덤 값: " + n +"<br>");
+          document.write("폭포 발견. 체력 회복 중");
+        }
+      } else{
+        document.write("왼쪽 길로 갑시다.<br>");
+        if(n < 0.5){
+          document.write("랜덤 값: " + n +"<br>");
+          document.write("신비로운 마법사 만남. 아이템 획득");
+        } else{
+          document.write("랜덤 값: " + n +"<br>");
+          document.write("어둠 속 괴물 발견. 도망치세요");
+        }
+      }
+    </script>
+  </head>
+</html>

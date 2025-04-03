@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>기본 for문 초기값</title>
+    <script>
+      var fruits=["apple", "mango", "orange", "lemon", "pear"];
+      for(var i=0, len=fruits.length;i<len;i++){
+        document.write(`${fruits[i]}<br>`);
+      }
+
+      document.writeln("<br>+=2<br>");
+      for(var i=0;i<fruits.length;i+=2){
+        document.write(`fruits[${i}] = ${fruits[i]}<br>`);
+      }
+    </script>
+  </head>
+</html>

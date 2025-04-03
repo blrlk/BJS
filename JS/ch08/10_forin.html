@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>for in 구문</title>
+    <script>
+      var first=['010', '011', '016', '017', '018', '019'];
+      var output = "<select>";
+      
+      for(var i in first){
+        output += `<option> ${first[i]} </option>`;
+      }
+
+      output += "</select>";
+      document.write(output);
+    </script>
+  </head>
+</html>

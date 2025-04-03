@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>break문</title>
+    <script>
+      var remain=0;
+      var array=[1, 31, 57, 23, 81, 4, 5];
+      for(var i=0;i<array.length;i++){
+        remain = array[i] % 2;
+        if(remain == 0){
+          break;
+        }
+        document.write(array[i] + "<br>");
+      }
+    </script>
+  </head>
+</html>

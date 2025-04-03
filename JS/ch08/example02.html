@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example02</title>
+    <script>
+      let itemNames=["사과", "바나나", "우유"];
+      let itemPrices=[1200, 800, 2500];
+      let itemQuantities=[3, 5, 2];
+
+      let totalPrice=0, deliveryFee=5000;
+
+      for(let i of itemNames){
+        document.write(`${i}<br>`);
+      }
+
+      for(let i=0;i<itemPrices.length;i++){
+        totalPrice += itemPrices[i] * itemQuantities[i];
+      }
+
+      document.write(`총 ${totalPrice}원 입니다.<br>`);
+      document.write(`배송비까지 합하면? ${totalPrice}+${deliveryFee} 해서<br>${totalPrice+deliveryFee}원이지롱`);
+    </script>
+  </head>
+  <body>
+    <h1>hello</h1>
+  </body>
+</html>
