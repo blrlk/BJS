@@ -1,0 +1,27 @@
+<!-- 동생에게 심부름을 시킬거다. 두부 개수 n개를 알려주면 동생은 두부를 구매하고 잔액과 개수를 알려줄 거다. 만약 돈이 부족하면 못 샀다고 알리고 잔액 돌려줄겨 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>두부</title>
+    <script>
+      let price = 300, change;
+
+      function buy(n, money){
+        if(price*n <= money){
+          change = money - (price*n);
+          document.write(`두부 ${n}개 구매 완료, 잔액 ${change}원`);
+          return change;
+        } else{
+          document.write(`잔액 부족으로 두부 구매 실패`);
+          return money;
+        }
+      }
+      
+      let n = prompt("두부 개수 입력");
+      let money=500;
+      let result = buy(n, money);
+      document.write(result);
+
+    </script>
+  </head>
+</html>

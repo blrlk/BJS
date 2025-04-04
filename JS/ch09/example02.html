@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>주급 계산</title>
+    <script>
+      let workTime = [8, 9, 7, 10, 6];
+      let hourlyRate = 12000;  //시급
+      // let salary=0;
+
+      function daily_salary(time, money){
+        let salary = 0;
+        for(let i=0;i<time.length;i++){
+          if(time[i] <= 8){
+            salary += time[i] * money;
+          } else{
+            let adder = (time[i]-8) * (money*1.5);
+            salary += adder + (8*money);
+          }
+        }
+        return salary;
+      }
+
+      let result = daily_salary(workTime, hourlyRate);
+      document.write(`주간 급여액은 ${result}원 입니다.`);
+    </script>
+  </head>
+</html>

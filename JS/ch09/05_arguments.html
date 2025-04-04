@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>가변 인자</title>
+    <script>
+      function add(){
+        let len=arguments.length;
+        if(len<2){
+          document.write("인자 2개 이상 필요 ");
+        } else{
+          let sum =0;
+          for(let i of arguments){
+            sum += i;
+          }
+          return sum;
+        }
+      }
+
+      document.write(`add()의 결과: ${add()}<br>`);
+      document.write(`add(100)의 결과: ${add(100)}<br>`);
+      document.write(`add(100,200)의 결과: ${add(100,200)}<br>`);
+      document.write(`add(100,200,300,400,500)의 결과: ${add(100,200,300,400,500)}<br>`);
+    </script>
+  </head>
+</html>
