@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array_shift(), Array_unshift()</title>
+  <script>
+    let arr1=["apple", "pear", "orange"];
+    document.write(arr1.length + ", " + arr1 + "<br>");
+    
+    let loseArray = arr1.shift();
+    document.write(loseArray + "<br>"); //삭제된 배열
+    document.write(arr1.length + ", " + arr1 + "<br>");
+
+    let plusArray = arr1.unshift("mango", "strawberry");
+    document.write(plusArray + "<br>");
+    document.write(arr1.length + ", " + arr1 + "<br>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

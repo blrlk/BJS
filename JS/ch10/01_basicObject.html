@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>객체 맛보기</title>
+    <script>
+      let objectExam ={
+        //속성
+        name:"홍길동",
+        age:23,
+
+        sayHello: function(blogName){
+          alert(this.name +"의 "+ blogName);
+        }
+      };
+
+      objectExam.sayHello('정보보기');
+      document.write(`이름: ${objectExam.name}, 나이: ${objectExam.age}`);
+    </script>
+  </head>
+</html>

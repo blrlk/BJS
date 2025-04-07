@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>객체 멤버 추가하기</title>
+    <script>
+      // function Car(model, speed, color){
+      //   this.model = model;
+      //   this.speed = speed;
+      //   this.color = color;
+      //   this.break = function(){
+      //     this.speed -=10;
+      //   };
+      //   this.accel = function(){
+      //     this.speed += 10;
+      //   };
+      // }
+
+      class Car{
+        constructor(model, speed, color){
+          this.model = model;
+          this.speed = speed;
+          this.color = color;
+        }
+
+        break(){
+          this.speed -= 10;
+        }
+        accel(){
+          this.speed += 10;
+        }
+      }
+
+
+
+      let mycar = new Car("BMW", 100, "black");
+      let yourcar = new Car("Benz", 150, "gray");
+      mycar.blackBox = true;
+      mycar.battery = 1200;
+      mycar.display = function(){
+        alert("mycar의 배터리 양: " + this.battery);
+      };
+      mycar.display();
+      document.write(`내 차의 블랙박스: ${mycar.blackBox}, 배터리: ${mycar.battery}`);
+
+
+
+    </script>
+  </head>
+</html>

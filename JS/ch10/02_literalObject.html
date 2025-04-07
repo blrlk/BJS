@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>리터럴 정의 객체</title>
+    <script>
+      let star={
+        color: 'red',
+        max_diameter: 30,
+        min_diameter:10,
+        max_radius: function(){
+          let max_x = this.max_diameter/2;
+          return max_x;
+        },
+        min_radius: function(){
+          let min_x = this.min_diameter/2;
+          return min_x;
+        }
+
+      };
+
+      star.color = "blue";
+      document.write(`별의 색상: ${star.color}<br>`);
+      document.write(`별의 바깥 둘레: ${star.max_diameter}<br>`);
+      document.write(`별의 바깥 둘레 반지름: ${star.max_radius()}<br>`);
+      document.write(`별의 안쪽 둘레: ${star.min_diameter}<br>`);
+      document.write(`별의 안족 둘레 반지름: ${star.min_radius()}<br>`);
+      
+    </script>
+  </head>
+</html>

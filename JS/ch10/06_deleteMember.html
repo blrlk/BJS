@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>객체 멤버 삭제하기</title>
+    <script>
+      function Car(model, speed, color){
+        this.model = model;
+        this.speed = speed;
+        this.color = color;
+        this.break = function(){
+          this.speed -=10;
+        };
+        this.accel = function(){
+          this.speed += 10;
+        };
+      }
+
+      let myCar = new Car("BMW", 150, "black");
+      myCar.speed = undefined;  //저장된 값 삭제
+      delete myCar.color;   //속성 자체 삭제
+      document.write("내 차 색: ", myCar.color);
+    </script>
+  </head>
+</html>

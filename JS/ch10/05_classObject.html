@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class 객체</title>
+    <script>
+      class Character{
+        constructor(name, hp){
+          this.name = name;
+          this.hp = hp;
+        }
+
+        attack(){
+          console.log(`'${this.name}'님이 공격합니다.`);
+        }
+      }
+      
+      let hero = new Character("용사", 100);
+      hero.attack();
+    </script>
+  </head>
+</html>

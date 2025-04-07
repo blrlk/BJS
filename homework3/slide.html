@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>slide 구현</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    input{
+      display: none;
+    }
+
+    .slidebox {
+      background-color: aliceblue;
+      white-space: nowrap;
+      overflow: hidden;
+      height: 100px;
+    }
+
+    .slides {
+      font-size: 0;
+      height: 100%;
+    }
+
+    .slide {
+      font-size: 16px;
+      display: inline-block;
+      position: relative;
+      /* border: 3px solid red; */
+      transition: all 1s;
+      width: 100%;
+      height: 100%;
+    }
+
+    .content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    label {
+      cursor: pointer;
+      font-size: 50px;
+    }
+
+    #slide01:checked~.slidebox .slides .slide {
+      transform: translateX(0%);
+    }
+
+    #slide02:checked~.slidebox .slides .slide {
+      transform: translateX(-100%);
+    }
+
+    #slide03:checked~.slidebox .slides .slide {
+      transform: translateX(-200%);
+    }
+  </style>
+</head>
+
+<body>
+  <input type="radio" name="slide" id="slide01">
+  <input type="radio" name="slide" id="slide02">
+  <input type="radio" name="slide" id="slide03">
+
+  <div class="slidebox">
+    <div class="slides">
+      <div class="slide">
+        <div class="content">
+          <label for="slide03" class="slide03">&lt;</label>
+          1
+          <label for="slide02" class="slide02">&gt;</label>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <label for="slide01" class="slide01">&lt;</label>
+          2
+          <label for="slide03" class="slide03">&gt;</label>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <label for="slide02" class="slide02">&lt;</label>
+          3
+          <label for="slide01" class="slide01">&gt;</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

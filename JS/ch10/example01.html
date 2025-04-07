@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>출석 프로그램</title>
+  <script>
+    //1. 학생의 이름 출석부에 저장
+    let attendance = ["김철수", "박말자", "안영수", "홍길동"];
+    // let attendance = ["김철수", "박말자", "이영지", "안영수", "홍길동"];
+
+    document.write("[1] " + attendance + "<br>");
+
+    //2. 전학생 이름 출석부에 추가
+    // attendance.unshift("나전학");
+    attendance.push("나전학");
+
+    document.write("[2] " + attendance + "<br>");
+
+    //3. '이영지' 학생 찾기
+    if(attendance.indexOf("이영지") == -1){
+      document.write("[3] 이영지 학생 출석부에 없습니다.<br>");
+    } else{
+      document.write(`[3] 이영지 학생 출석부 ${attendance.indexOf("이영지")}번 인덱스에 있습니다.<br>`);
+    }
+
+    //4. '박말자'의 전학
+    let index = attendance.indexOf("박말자");
+    if(index != -1){
+      attendance.splice(index, 1);
+      document.write("[4] " + attendance + "<br>");
+    } else{
+      document.write("[4] 해당 학생 없음<br>");
+    }
+
+    //5. 이름 순으로 정렬
+    attendance.sort();
+    document.write("[5] " + attendance + "<br>");
+
+    //6. 문제3 함수로 구현
+    function findStudent(arr, name){
+      let index = arr.indexOf(name);
+      if(index == -1){
+        document.write(`[6] ${name} 학생은 출석부에 없습니다.<br>`);
+      } else{
+        document.write(`[6] ${name} 학생은 출석부의 ${index} 위치에 있습니다.<br>`);
+      }
+      return index;
+    }
+
+    findStudent(attendance, "홍길동");
+
+    //7. 김철수의 성이 김이 아니라 박이었어. 수정 ㄱ
+    let index2 = attendance.indexOf("김철수");
+    if(index2 != -1){
+      attendance.splice(index2, 1, "박철수");
+      // attendance[index] = "박철수";
+      document.write("[7] " + attendance + "<br>");
+    } else{
+      document.write("[7] 그런 사람 없습니다.<br>");
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

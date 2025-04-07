@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tab 기능</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    input{
+      display: none;
+    }
+
+    .tabButton {
+      display: flex;
+      width: 600px;
+      border: 2px solid black;
+    }
+
+    .tabButton label {
+      flex: 0 1 calc(20%);
+      background-color: aliceblue;
+      height: 50px;
+      border: 1px solid black;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tabContent{
+      width: 600px;
+      background-color: beige;
+    }
+
+    .tabContent div{
+      border: 1px solid black;
+      height: 60px;
+      padding: 10px;
+    }
+    
+    div.all{
+      display: none;
+    }
+
+    #tab1:checked ~ #tab .tabContent .cnt1,
+    #tab2:checked ~ #tab .tabContent .cnt2,
+    #tab3:checked ~ #tab .tabContent .cnt3,
+    #tab4:checked ~ #tab .tabContent .cnt4,
+    #all:checked ~ #tab .tabContent .all{
+      display: block;
+    }
+
+    #close:checked ~ #tab .tabContent .close{
+      display: none;
+    }
+
+    #tab1:checked ~ #tab .tabButton .tab1, 
+    #tab2:checked ~ #tab .tabButton .tab2, 
+    #tab3:checked ~ #tab .tabButton .tab3, 
+    #tab4:checked ~ #tab .tabButton .tab4, 
+    #all:checked ~ #tab .tabButton .all, 
+    #close:checked ~ #tab .tabButton .close{
+      background-color: red;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <input type="radio" name="tab" id="tab1">
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="all">
+  <input type="radio" name="tab" id="close">
+
+  <div id="tab">
+    <div class="tabButton">
+      <label for="tab1" class="tab1">1</label>
+      <label for="tab2" class="tab2">2</label>
+      <label for="tab3" class="tab3">3</label>
+      <label for="tab4" class="tab4">4</label>
+      <label for="all" class="all">전부 열기</label>
+      <label for="close" class="close">모두 닫기</label>
+    </div>
+
+    <div class="tabContent">
+      <div class="cnt1 all">컨텐츠 영역1</div>
+      <div class="cnt2 all">컨텐츠 영역2</div>
+      <div class="cnt3 all">컨텐츠 영역3</div>
+      <div class="cnt4 all">컨텐츠 영역4</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

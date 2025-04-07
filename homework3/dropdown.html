@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dropdown 메뉴</title>
+    <style>
+      *{
+        margin:0px;
+        padding: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        color: inherit;
+      }
+
+      .dropdown{
+        display: flex;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .dropdown > li{
+        background-color: aliceblue;
+        width: 100px;
+        height: 50px;
+        border: 1px solid black;
+      }
+
+      .dropdownMenu{
+        position: absolute;
+        top: 50px;
+        display: none;
+      }
+
+      .dropdownMenu > li{
+        background-color:beige;
+        width: 100px;
+        height: 50px;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      .drop:hover .dropdownMenu{
+        display: block;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="dropdown">
+      <li></li>
+      <li class="drop">
+        <ul class="dropdownMenu">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+      <li></li>
+      <li></li>
+    </ul>
+    
+  </body>
+</html>

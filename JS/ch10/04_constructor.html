@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>생성자 객체</title>
+    <script>
+      function car(model, speed, color){
+        this.model = model;
+        this.speed = speed;
+        this.color = color;
+        this.break = function(){
+          this.speed -= 10;
+        };
+        this.accel = function(){
+            this.spped += 10;
+        };
+      }
+
+      let mycar = new car("BMW", 100, "black");
+      let yourcar = new car("Benz", 150, "gray");
+      document.write(`[mycar]<br>model: ${mycar.model}, 속도: ${mycar.speed}, 색상: ${mycar.color}<br><br>`);
+
+      yourcar.accel();
+      document.write(`[yourcar]<br>model: ${yourcar.model}, 속도: ${yourcar.speed}, 색상: ${yourcar.color}<br>`);
+      
+    </script>
+  </head>
+</html>

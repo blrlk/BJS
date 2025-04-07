@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>for_in 구문</title>
+    <script>
+      function Car(model, speed, color){
+        this.model = model;
+        this.speed = speed;
+        this.color = color;
+        this.break = function(){
+          this.speed -=10;
+        };
+        this.accel = function(){
+          this.speed += 10;
+        };
+      }
+
+      let myCar = new Car("BMW", 100, "black");
+      for(let i in myCar){
+        document.write(`${i}: ${myCar[i]}<br>`);
+      }
+    </script>
+  </head>
+</html>
