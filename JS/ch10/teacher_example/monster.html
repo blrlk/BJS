@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    문제1)
+    영웅 캐릭터를 만들거야
+    내 이름은 홍길동이야 내 체력은 100이야, 
+    스스로에 대해 소개할 수 있어
+    */
+
+    /*
+    문제2)
+    영웅이 소개만 하면 되겠어?!
+    공격 기능도 있어야지 1-20의 랜덤값으로 때릴거야
+    공격수치만 일단 반환해줘
+    */
+    let hero = {
+      name: "홍길동",
+      health: 100,
+      introduce: function () {
+        document.write(`내 이름은 ${this.name}이고, 체력은 ${this.health}이야.`);
+      },
+      attack: function () {
+        return Math.floor(Math.random() * 20) + 1; // 1~20의 랜덤 공격력
+      }
+    };
+
+    /*
+    문제3)
+    공격하는 기능은 있는데 공격대상이 없네..
+    일단 몬스터 3마리를 만들자
+    이름은 고블린, 오우거, 드래곤, 각각 체력은 30, 50, 100 이야.
+    몬스터도 1~15의 랜덤값으로 공격할거야
+    몬스터의 공격수치를 반환해줘.
+    */
+
+    // 버전1
+    class Monster {
+      constructor(name, health) {
+        this.name = name;
+        this.health = health;
+      }
+      attack() {
+        return Math.floor(Math.random() * 15) + 1; // 1~15의 랜덤 공격력
+      }
+    }
+
+    let monsters = [new Monster("고블린", 30), new Monster("오우거", 50), new Monster("드래곤", 100)];
+
+
+    /*
+    버전 2)
+    let monsters = [
+      {
+        name: "고블린",
+        health: 30,
+        attack: function () {
+          return Math.floor(Math.random() * 15) + 1; // 1~15의 랜덤 공격력
+        }
+      },
+      {
+        name: "오우거",
+        health: 50,
+        attack: function () {
+          return Math.floor(Math.random() * 15) + 1; // 1~15의 랜덤 공격력
+        }
+      },
+      {
+        name: "드래곤",
+        health: 100,
+        attack: function () {
+          return Math.floor(Math.random() * 15) + 1; // 1~15의 랜덤 공격력
+        }
+      }
+    ];
+    */
+
+    /*
+    문제4)
+    영웅으로 1번째 몬스터를 1대 때리고 해당 상황을 설명하자.
+    누가 얼만큼 공격해서 누가 체력이 얼마 남았는지 등    
+    */
+
+    /*
+    문제4 정답)
+    let heroDamage = hero.attack(); //1-20의 랜덤 숫자(공격)
+    let goblin = monsters[0];
+    goblin.health -= heroDamage;
+    console.log(`${hero.name}의 공격! ${goblin.name}에게 ${heroDamage}의 피해를 입혔습니다. 
+    ${goblin.health} 남음)`);
+    */
+
+    /*
+    문제5)
+    만약 몬스터 체력이 남아있다면 몬스터가 영웅을 공격하자.
+    */
+
+    /*
+    문제5 정답)
+    if(goblin.health > 0){
+      let monsterDamage = goblin.attack();
+      hero.hp -= monsterDamage;
+    }
+    */
+
+    /*
+    문제6) 
+    이 과정을 둘 중 하나의 체력이 떨어질 때까지 반복하자
+    이후 전투 결과를 알려줘, 영웅 체력이 남으면 처치했다, 남은 체력이 얼마다.
+    패배했으면 패배했다 등
+    */
+
+    /*
+    문제6 정답)
+    let goblin = monsters[0];
+    while(hero.hp > 0 && goblin.health > 0){
+      let heroDamage = hero.attack(); //1-20의 랜덤 숫자(공격)
+      goblin.health -= heroDamage;
+      console.log(`${hero.name}의 공격! ${goblin.name}에게 ${heroDamage}의 피해를 입혔습니다. 
+      ${goblin.health} 남음)`);
+
+      if(goblin.health > 0){
+        let monsterDamage = goblin.attack();
+        hero.hp -= monsterDamage;
+      }
+    }
+
+    // 전투 결과 확인
+    if (hero.health <= 0) {
+      console.log(`${hero.name}이 패배했습니다. 퀘스트를 실패했습니다.`);
+    } else {
+      console.log(`${goblin.name}를 처치했습니다!`);
+      console.log(`남은 체력: ${hero.health}`);
+    }
+    */
+
+    /*
+    문제7)
+    근데 몬스터가 총 3마리야. 3번의 전투를 반복해줘
+    */
+
+    //몬스터별 전투 시작    
+    for (let i = 0; i < monsters.length; i++) {
+      let monster = monsters[i];
+      //전투 1번의 턴을 반복
+      while (hero.health > 0 && monster.health > 0) {
+        let heroDamage = hero.attack(); //1-20의 랜덤 숫자(공격)
+        monster.health -= heroDamage;
+        console.log(`${hero.name}의 공격! ${monster.name}에게 ${heroDamage}의 피해를 입혔습니다. 
+		    ${monster.health} 남음)`);
+
+        if (monster.health > 0) {
+          let monsterDamage = monster.attack();
+          hero.health -= monsterDamage;
+        }
+      }
+
+      // 전투 결과 확인
+      if (hero.health <= 0) {
+        console.log(`${hero.name}이 패배했습니다. 퀘스트를 실패했습니다.`);
+        break;
+      } else {
+        console.log(`${monster.name}를 처치했습니다!`);
+        console.log(`남은 체력: ${hero.health}`);
+      }
+    }
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    문제1)
+    내 이름은 홍길동이야, 내 직업은 모험가고 
+    사람들이 나를 영웅이라고 불러
+    나에겐 보물을 담을 가방이 있어.
+
+    이때 필요한 변수들은 무엇일까요?
+    * 영웅 : 객체, 가방 : 배열
+    */
+    let hero1 = {
+      name: "홍길동",
+      job: "모험가",
+      treasures: []
+    };
+
+    /*
+    문제2)
+    영웅은 우연히 미지의 보물 상자들을 발견했다!
+    금화, 보석, 마법의 물약, 낡은 책, 미지의 물건 총 5개의 보물이 들어있다
+    5개의 물건은 아직 아무도 열어보지 못했다. (누군가가 열어본 상자라면 다시 열 수 없다)
+
+    * 보물 : 객체, 보물 상자 : 배열로 짜시오.
+    */
+    let treasureBoxes = [
+      { content: "금화", isOpened: false },
+      { content: "보석", isOpened: true },
+      { content: "마법의 물약", isOpened: false },
+      { content: "낡은 책", isOpened: false },
+      { content: "미지의 물건", isOpened: false }
+    ];
+
+    /*
+    문제3)
+    영웅은 이제 보물 상자를 열어본다. 
+    첫번째 상자 1개를 열어볼건데
+    누가 열어본게 아니라면 해당  보물을 영웅의 가방에 담을거야.
+    그리고 해당 상황을 설명해줘.
+    */
+
+    /*
+    문제4)
+    1개론 안되겠어 5개 다 열어보자!
+    */
+
+    for (let i = 0; i < 3; i++) {
+        let random = Math.floor(Math.random() * treasureBoxes.length);
+        let box = treasureBoxes[random];
+
+        if (box.isOpened == false) {
+          document.write(`${hero1.name}이 ${box.content}를 획득했다.<br>`);
+          hero1.treasures.push(box.content);
+          box.isOpened = true;
+        } else {
+          document.write(`해당 보물상자는 이미 누가 열어봤습니다.<br>`);
+        }
+    }
+  </script>
+</body>
+
+</html>
