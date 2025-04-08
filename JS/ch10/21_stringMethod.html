@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string 메서드</title>
+  <script>
+    let str1="This is JavaScript";
+
+    document.write(`1. 인덱스가 1인 문자: ${str1.charAt(1)}<br>`);
+    document.write(`2. 결합된 문자열: ${str1.concat(" world.. ")}<br>`);
+    document.write(`3. 검색된 'Ja' 인덱스: ${str1.indexOf('Ja')}<br>`);
+    document.write(`4. 9번부터 검색된 'Ja' 인덱스: ${str1.indexOf('Ja', 9)}<br>`);
+    document.write(`5. 'Ja' 문자열이 있으면 결과 출력: ${str1.match('Ja')}<br>`);
+    document.write(`6. this를 My partner로 바꾸어 출력: ${str1.replace('This', 'My partner')}<br>`);
+    document.write(`7. Script가 최초로 발견된 인덱스: ${str1.search("Script")}<br>`);
+    document.write(`8. 인덱스가 2번~6번째까지 잘라 변환: ${str1.slice(2, 7)}<br>`);
+    document.write(`9. 'a'를 콤마 대체하여 출력: ${str1.split('a')}<br>`);
+    document.write(`10. 인덱스가 2번 ~ 6번까지 잘라 반환: ${str1.substring(2, 7)}<br>`);
+    document.write(`11. 객체의 값을 문자열로 출력: ${str1.toString()}<br>`);
+    document.write(`12. 대문자로 출력: ${str1.toUpperCase()}<br>`);
+    document.write(`13. 소문자로 출력: ${str1.toLowerCase()}<br>`);
+    document.write(`14. 객체의 값 그대로 출력: ${str1.valueOf()}<br>`);
+    
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

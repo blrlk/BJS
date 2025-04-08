@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>adventure</title>
+  <script>
+    //1. 내 이름은 홍길동, 모험가지. 보물 상자를 가지고 있어. 다들 나를 영웅이라 불러.
+    let hero = {
+      name: "홍길동",
+      job: "모험가",
+      treasure: []
+    };
+
+    //2. 5개의 보물 상자를 주웠다.
+    let treasureBoxes = [
+      { content: "금화", isOpened: false },
+      { content: "보석", isOpened: false },
+      { content: "마법의 물약", isOpened: false },
+      { content: "낡은 책", isOpened: true },
+      { content: "미지의 물건", isOpened: false }
+    ];
+
+    //3. 첫 번째 상자를 열어본 건데, 누가 열어본 게 아니라면 해당 보물을 영웅의 가방에 담는다.
+    if (!treasureBoxes[0].isOpened) {
+      hero.treasure.push(treasureBoxes[0].content);
+      // treasureBoxes[0].isOpened = true;
+      document.write(`${hero.name}이 ${treasureBoxes[0].content}를 획득했다.<br>`);
+    } else {
+      document.write("이미 오픈된 상자입니다.<br>");
+    }
+
+    //4. 5개 다 열어보자 !
+    let len = treasureBoxes.length;
+    document.write(`<br>[${len}개 전부 오픈]<br>`);
+    for (let i = 0; i < len; i++) {
+      if (!treasureBoxes[i].isOpened) {
+        hero.treasure.push(treasureBoxes[i].content);
+        document.write(`${hero.name}이 '${treasureBoxes[i].content}'를 획득했다.<br>`);
+      } else {
+        document.write(`'${treasureBoxes[i].content}'는 이미 오픈된 상자입니다.<br>`);
+      }
+    }
+
+    //5. 가챠성 부여 - 랜덤 3개까지 뽑을 거고, 중복 허용
+    document.write("<br>랜덤 박스 오픈<br>");
+    for (let i = 0; i < 3; i++) {
+      let index = Math.floor(Math.random() * len);
+      if (!treasureBoxes[index].isOpened) {
+        hero.treasure.push(treasureBoxes[index].content);
+        document.write(`${hero.name}이 '${treasureBoxes[index].content}'를 획득했다.<br>`);
+      } else {
+        document.write(`'${treasureBoxes[index].content}'는 이미 오픈된 상자입니다.<br>`);
+      }
+    }
+
+    // //5. 가챠성 부여 - 랜덤 3개까지 뽑을 거고, 중복 비허용
+    // document.write("<br>랜덤 박스 오픈 - 중복 X<br>");
+    // let usedIndex = [];
+    // while (usedIndex.length < 3) {
+    //   let index = Math.floor(Math.random() * 5);
+      
+    //   for (let i = 0; i < usedIndex.length; i++) {
+    //     if (usedIndex[i] == index) {
+    //       break;
+    //     }
+    //   }
+
+    //   if (!treasureBoxes[index].isOpened) {
+    //     hero.treasure.push(treasureBoxes[index].content);
+    //     document.write(`${hero.name}이 '${treasureBoxes[index].content}'를 획득했다.<br>`);
+    //   } else {
+    //     document.write(`'${treasureBoxes[index].content}'는 이미 오픈된 상자입니다.<br>`);
+    //   }
+
+    //   usedIndex.push(index);
+    // }
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
