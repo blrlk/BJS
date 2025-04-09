@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window 객체_moveTo()</title>
+</head>
+<body>
+  <p>move the new window</p>
+  <button onclick="openWin()">open</button>
+  <button onclick="moveWin()">move</button>
+  <script>
+    let myWindow;
+    function openWin(){
+      myWindow = window.open("", "myWindow", "width=200, height=300");
+      myWindow.document.write("<p>This is my Window</p>");
+    }
+
+    function moveWin(){
+      myWindow.moveTo(500, 100);
+      // myWindow.moveBy(500, 100);
+      myWindow.focus();
+    }
+  </script>
+</body>
+</html>

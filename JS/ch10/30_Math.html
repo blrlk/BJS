@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math 객체 메서드</title>
+  <script>
+    let a = Math.round(4.7);
+    let b = Math.round(4.4);
+    let c = Math.pow(8, 2);
+    let d = Math.sqrt(65);
+    let e = Math.abs(-4.7);
+    let f = Math.ceil(4.7);
+    let g = Math.floor(4.7);
+    let h = Math.sin(90 * Math.PI/180);
+    let i = Math.cos(0 * Math.PI/180);
+
+    let arr = [3, 124, 32, -8, 99, -17];
+
+    let j = Math.max(...arr);
+    let k = Math.min(...arr);
+    let l = Math.random();
+
+    document.write(`Math.round(4.7): ${a}<br>`);
+    document.write(`Math.round(4.4): ${b}<br>`);
+    document.write(`Math.pow(8, 2): ${c}<br>`);
+    document.write(`Math.sqrt(65): ${d}<br>`);
+    document.write(`Math.abs(-4.7): ${e}<br>`);
+    document.write(`Math.ceil(4.7): ${f}<br>`);
+    document.write(`Math.floor(4.7): ${g}<br>`);
+    document.write(`Math.sin(90 * Math.PI/180): ${h}<br>`);
+    document.write(`Math.cos(0 * Math.PI/180): ${i}<br>`);
+    document.write(`Math.max(3, 124, 32, -8, 99, -17): ${j}<br>`);
+    document.write(`Math.min(3, 124, 32, -8, 99, -17): ${k}<br>`);
+    document.write(`Math.random(): ${l}<br>`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

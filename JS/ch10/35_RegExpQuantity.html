@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp 객체 메서드_표현식_수량한정자</title>
+  <script>
+    let str1="ab";
+    let str2="abc";
+    let str3="abcccc";
+    let ptn1=/abc+/ig;
+    let ptn2=/abc*/ig;
+    let ptn3=/abc?/ig;
+
+    //+
+    document.write(`1. ab: ${str1.match(ptn1)}<br>`);
+    document.write(`2. abc: ${str2.match(ptn1)}<br>`);
+    document.write(`3. abcccc: ${str3.match(ptn1)}<br>`);
+
+    // *
+    document.write(`1. ab: ${str1.match(ptn2)}<br>`);
+    document.write(`2. abc: ${str2.match(ptn2)}<br>`);
+    document.write(`3. abcccc: ${str3.match(ptn2)}<br>`);
+
+    // ?
+    document.write(`1. ab: ${str1.match(ptn3)}<br>`);
+    document.write(`2. abc: ${str2.match(ptn3)}<br>`);
+    document.write(`3. abcccc: ${str3.match(ptn3)}<br>`);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

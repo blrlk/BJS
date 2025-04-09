@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String 메서드_split()</title>
+</head>
+<body>
+  <p>A string can be converted to an array</p>
+  <button onclick="myfunc()">try it</button>
+  <p id="demo01"></p>
+
+  <script>
+    function myfunc(){
+      let str = "javascript,c++,java,html6,python,jQuery";
+      let arr = str.split(",");
+      document.querySelector("#demo01").innerHTML = arr[0];
+    }
+  </script>
+</body>
+</html>

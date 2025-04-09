@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string 메서드_repeat()</title>
+  <script>
+    let str = "abc";
+    document.write(str.repeat() + "<br>");  //0으로 인식 -> abc *0
+    document.write(str.repeat(1) + "<br>"); //abc*1
+    document.write(str.repeat(2) + "<br>"); //abc*2
+    document.write(str.repeat(2.5) + "<br>"); //소수점 버림 -> abc*2
+    document.write(str.repeat(-1) + "<br>");  //에러 발생
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

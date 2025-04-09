@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date 객체_set 메서드</title>
+  <script>
+    let thisDay = new Date();
+
+    thisDay.setFullYear(2024,8,6);
+    document.write(`setFullYear(): ${thisDay}<br>`);  //이케 미리 계산 해줘야 됨
+
+    document.write(`setDate(): ${thisDay.setDate(20)}<br>`);
+    document.write(`setDate(): ${thisDay.setDate(thisDay.getDate()+50)}<br>`);
+    document.write(`setHours(): ${thisDay.setHours(15)}<br>`);
+    document.write(`setMilliseconds(): ${thisDay.setMilliseconds(2345)}<br>`);
+    document.write(`setMinutes(): ${thisDay.setMinutes(34)}<br>`);
+    document.write(`setMonth(): ${thisDay.setMonth(7)}<br>`);
+    document.write(`setTime(): ${thisDay.setTime(840023400)}<br>`);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window 객체_clearTimeout()</title>
+</head>
+<body>
+  <button onclick="myFunction()">Try it</button>
+  <button onclick="myStopFuntion()">Stop</button>
+
+  <script>
+    let myVar;
+    function myFunction(){
+      myVar = setTimeout(function(){alert("hello");}, 3000);
+    }
+
+    function myStopFuntion(){
+      clearTimeout(myVar);
+    }
+  </script>
+</body>
+</html>

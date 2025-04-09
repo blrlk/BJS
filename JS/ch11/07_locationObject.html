@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>location 객체</title>
+</head>
+<body>
+  <button onclick="newDoc()">assign</button>
+
+  <script>
+    document.write(`page location: ${location.href}<br>`);
+    document.write(`page hostname: ${location.hostname}<br>`);
+    document.write(`page path: ${location.pathname}<br>`);
+    document.write(`page protocol: ${location.protocol}<br>`);
+
+    function newDoc(){
+      location.assign("http://www.naver.com");
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window 객체_resizeTo()</title>
+</head>
+<body>
+  <p>resize window</p>
+  <button onclick="openWin()">open</button>
+  <button onclick="resizeWinTo()">Resize to 800*600px</button>
+  <button onclick="resizeWinBy()">Resize smaller</button>
+  <button onclick="closeWin()">close</button>
+
+  <script>
+    let myWindow;
+    function openWin(){
+      myWindow = window.open("", "", "width=250, height=250");
+    }
+
+    function closeWin(){
+      myWindow.close();
+    }
+
+    function resizeWinTo(){
+      myWindow.resizeTo(800, 600);
+      myWindow.focus();
+    }
+
+    function resizeWinBy(){
+      myWindow.resizeBy(-100, -50);
+      myWindow.focus();
+    }
+    </script>
+</body>
+</html>
