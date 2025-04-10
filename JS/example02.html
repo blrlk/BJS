@@ -43,22 +43,22 @@
   <script>
     let lottoNum = [];
     let index = 0;
-    let result;
+    let dpct; //중복 여부
 
     while(index < 6){
-      result=true;
+      dpct=false;
       let tempNum = Math.floor(Math.random() * 45) + 1;
       // document.write(tempNum + "<br>");
       
       for(let i=0;i<lottoNum.length;i++){
         // document.write(`${index} ${lottoNum[i]} | ${tempNum}<br>`);
         if(lottoNum[i] == tempNum){
-          result=false;
+          dpct=true;
           break;
         }
       }
 
-      if(result){
+      if(!dpct){
         lottoNum[index] = tempNum;
         index++;
       }
