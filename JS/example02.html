@@ -47,19 +47,19 @@
 
     while(index < 6){
       result=true;
-      let temNum = Math.floor(Math.random() * 45) + 1;
-      // document.write(temNum + "<br>");
+      let tempNum = Math.floor(Math.random() * 45) + 1;
+      // document.write(tempNum + "<br>");
       
       for(let i=0;i<lottoNum.length;i++){
-        // document.write(`${index} ${lottoNum[i]} | ${temNum}<br>`);
-        if(lottoNum[i] == temNum){
+        // document.write(`${index} ${lottoNum[i]} | ${tempNum}<br>`);
+        if(lottoNum[i] == tempNum){
           result=false;
           break;
         }
       }
 
       if(result){
-        lottoNum[index] = temNum;
+        lottoNum[index] = tempNum;
         index++;
       }
     }
