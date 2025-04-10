@@ -41,7 +41,7 @@
   </div>
 
   <script>
-    let lottoNum = [0, 0, 0, 0, 0, 0];
+    let lottoNum = [];
     let index = 0;
     let result;
 
@@ -52,7 +52,6 @@
       
       for(let i=0;i<lottoNum.length;i++){
         // document.write(`${index} ${lottoNum[i]} | ${temNum}<br>`);
-
         if(lottoNum[i] == temNum){
           result=false;
           break;
@@ -63,7 +62,6 @@
         lottoNum[index] = temNum;
         index++;
       }
-
     }
 
     for(let i=0;i<lottoNum.length;i++){
