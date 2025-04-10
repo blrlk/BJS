@@ -1,0 +1,111 @@
+<!-- 숫자 맞추기 게임 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+  <style>
+    body{
+      text-align: center;
+    }
+
+    input{
+      width: 150px;
+      height: 30px;
+      margin-right: 20px;
+      text-align: center;
+    }
+
+    button{
+      text-align: center;
+      background-color:brown;
+      border: none;
+      width: 100px;
+      height: 35px;
+      color: white;
+      font-weight: bolder;
+      font-size: 17px;
+      cursor: pointer;
+      letter-spacing: 5px;
+    }
+
+    p#result{
+      border: 1px solid black;
+      width: 400px;
+      height: 100px;
+      margin-top: 50px;
+    }
+
+    div, p#result{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <script>
+    /*
+      1. 프로그램은 랜덤한 값을 보유하고 있다.
+      2. 숫자를 1~100 입력받는다.
+        1) 1~100의 숫자가 아니면 1과 100사이의 숫자를 입력해달라고 문구가 뜬다.
+        2) 1~100 입력했는데 랜덤값보다 큰 경우
+          : 입력한값 x보다 낮은 숫자입니다. 다시 시도해보세요 출력(alert())
+        3) 1~100 입력했는데 랜덤값보다 작은 경우
+          : 입력한값 x보다 높은 숫자입니다. 다시 시도해보세요 출력(alert())
+        4) 입력한값이 랜덤값과 동일한 경우
+          : 정답입니다! n번만에 맞췄습니다.
+          : 랜덤한 값을 새로 가진다. (alert())
+    */
+  </script>
+</head>
+<body>
+  <h2>숫자 맞추기</h2>
+  <p>( 1~100 범위의 숫자를 입력하세요 )</p>
+  <input type="number" name="number" id="number">
+  <button id="submit" onclick="check()">제출</button>
+  <div><p id="result"></p></div>
+  <div><p id="history"></p></div>
+  <!-- <button id="retry" onclick="start()">다시 시도</button> -->
+
+  <script>
+    let result = document.querySelector("#result"); //결과 창 경로
+    let history = document.querySelector("#history");
+    let num, cnt;  //사용자가 적은 답, 도전한 횟수
+
+    start();
+    document.querySelector("#submit").addEventListener("click", clear);
+
+
+    function start(){
+      cnt = 0;
+      answer = Math.floor(Math.random() * 100) +1;  //정답
+      history.innerHTML="";
+      console.log(answer);
+    }
+
+    function clear(){
+      number.value = "";
+    }
+
+    function check(){
+      cnt++;
+      num = number.value;
+
+      if(num < 1 || num > 100){
+        result.innerHTML = `1과 100 사이의 숫자 입력하세요.`;
+      } else if(num > answer){
+        result.innerHTML = `입력한 값 ${num}보다 작은 숫자입니다. 다시 도전하세요`;
+        history.insertAdjacentHTML("beforeend", `answer < ${num}<br>`);
+      } else if(num < answer){
+        result.innerHTML = `입력한 값 ${num}보다 큰 숫자입니다. 다시 도전하세요`; //덮어쓰기
+        history.insertAdjacentHTML("beforeend", `answer > ${num}<br>`); //기존 것은 안 건드리고 그 뒤에 추가
+      } else if(num == answer){
+        result.innerHTML = `정답입니다. ${cnt}번 만에 맞췄습니다.<br>! 새로운 게임 !`;
+        start();
+      }
+    }
+
+
+  </script>
+</body>
+</html>

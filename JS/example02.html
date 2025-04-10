@@ -1,0 +1,81 @@
+<!-- 로또 프로그램 구현 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotto</title>
+  <script>
+    /*
+      : 프로그램 실행할 때마다 중복되지 않은 1~45 중 6개 값 출력되도록
+      : 요구사항부터 자세하게 분석 후 코딩하기
+    */
+  </script>
+  <style>
+    h1{text-align: center;}
+    div, p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: beige;
+      margin: 10px;
+      font: 40px bold;
+    }
+  </style>
+ </head>
+ <body>
+  <h1 >로또 번호 추첨</h1>
+  <div>
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+    <p id="n4"></p>
+    <p id="n5"></p>
+    <p id="n6"></p>
+  </div>
+
+  <script>
+    let lottoNum = [0, 0, 0, 0, 0, 0];
+    let index = 0;
+    let result;
+
+    while(index < 6){
+      result=true;
+      let temNum = Math.floor(Math.random() * 45) + 1;
+      // document.write(temNum + "<br>");
+      
+      for(let i=0;i<lottoNum.length;i++){
+        // document.write(`${index} ${lottoNum[i]} | ${temNum}<br>`);
+
+        if(lottoNum[i] == temNum){
+          result=false;
+          break;
+        }
+      }
+
+      if(result){
+        lottoNum[index] = temNum;
+        index++;
+      }
+
+    }
+
+    for(let i=0;i<lottoNum.length;i++){
+      console.log(lottoNum[i]);
+    }
+
+    document.querySelector("#n1").innerHTML = lottoNum[0];
+    document.querySelector("#n2").innerHTML = lottoNum[1];
+    document.querySelector("#n3").innerHTML = lottoNum[2];
+    document.querySelector("#n4").innerHTML = lottoNum[3];
+    document.querySelector("#n5").innerHTML = lottoNum[4];
+    document.querySelector("#n6").innerHTML = lottoNum[5];
+  </script>
+ </body>
+ </html>
