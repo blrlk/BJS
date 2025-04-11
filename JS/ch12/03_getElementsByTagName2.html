@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Hello world</p>
+  <div id="main">
+    <p>The DOM is very useful</p>
+    <p>This example demonstrates the <b>getElementByTagName</b> method</p>
+  </div>
+
+  <p id="demo"></p>
+
+  <script>
+    // EventTarget - Node - Document, Element, Text, comment, ...
+    // 안 : 상속
+    // 빵 공장 - 베이스 반죽 - 소금빵 반죽, 피자빵 반죽, 롤케이크빵 반죽, ...
+
+    var x = document.getElementById("main");
+    var y = x.getElementsByTagName("p");
+    document.getElementById("demo").innerHTML = y[0].innerHTML;
+  </script>
+</body>
+</html>

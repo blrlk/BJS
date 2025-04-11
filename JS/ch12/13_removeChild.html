@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <p>Remove the first item from the list</p>
+  <button onclick="myfunc()">click</button>
+
+  <script>
+    function myfunc(){
+      var list = document.querySelector("#myList");
+      // 텍스트 노드 포함, 공백, 줄바꿈도 텍스트 노드로 인식
+      // var x = list.removeChild(list.childNodes[0]);
+
+      var x = list.removeChild(list.children[0]);
+       
+      // var item = document.querySelector("myTea");
+      // item.parentNode.removeChild(item);
+    }
+  </script>
+</body>
+</html>

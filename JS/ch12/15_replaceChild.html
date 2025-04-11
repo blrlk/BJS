@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <p>Replace an item</p>
+  <button onclick="replaceFunc()">click</button>
+
+  <script>
+    function replaceFunc(){
+      let textNode = document.createTextNode("Water");
+      let item = document.querySelector("#myList").childNodes[1];
+      // let item = document.querySelector("#myList").children[0];
+      item.replaceChild(textNode, item.childNodes[0]);
+    }
+  </script>
+</body>
+</html>

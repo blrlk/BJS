@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="" name="html">HTML</a>
+  <a href="" name="css">CSS</a>
+  <a href="" name="js">JS</a>
+  <button onclick="myfunc()">click</button>
+  <p id="demo01"></p>
+  <p id="demo02"></p>
+
+  <script>
+    function myfunc(){
+      let x = document.anchors.length;
+      document.querySelector("#demo01").innerHTML = "anchors.length:" + x;
+      let y = document.anchors[0].innerHTML;
+      document.querySelector("#demo02").innerHTML = "anchors[0].innerHTML:" + y;
+    }
+  </script>
+</body>
+</html>

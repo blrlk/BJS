@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>addEventListener</p>
+  <button id="mybtn">click</button>
+  <p id="demo"></p>
+
+  <script>
+    let x = document.querySelector("#mybtn");
+    x.addEventListener("mouseover", firstFunc);
+    x.addEventListener("click", secondFunc);
+    x.addEventListener("click", thirdFunc);
+    x.addEventListener("mouseout", forthFunc);
+
+    function firstFunc(){
+      document.querySelector("#demo").innerHTML = "moused over<br>";
+    }
+
+    function secondFunc(){
+      alert("This function was also executed");
+    }
+
+    function thirdFunc(){
+      alert("Hello World");
+    }
+
+    function forthFunc(){
+      document.querySelector("#demo").innerHTML += "moused out<br>";
+    }
+  </script>
+</body>
+</html>

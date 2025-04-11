@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  enter your name: <input type="text" id="fname" onchange="myfunc()">
+  <p>transform</p>
+
+  <script>
+    function myfunc(){
+      let x = document.querySelector("#fname");
+      x.value = x.value.toUpperCase();
+    }
+  </script>
+</body>
+</html>

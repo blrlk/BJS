@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="id01">my first page3</h1>
+  <p id="id02"></p>
+
+  <script>
+    document.querySelector("#id02").innerHTML = document.querySelector("#id01").childNodes[0].nodeValue;
+  </script>
+</body>
+</html>

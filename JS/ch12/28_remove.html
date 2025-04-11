@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>click button</p>
+  <button onclick="removeHandler()" id="mybtn">remove</button>
+  <button id="mydiv">try mousemove</button>
+  <p id="demo"></p>
+
+  <script>
+    document.querySelector("#mydiv").addEventListener("mouseover", myfunc);
+
+    function myfunc(){
+      document.querySelector("#demo").innerHTML = Math.random();
+    }
+
+    function removeHandler(){
+      document.querySelector("#mydiv").removeEventListener("mouseover", myfunc);
+    }
+  </script>
+</body>
+</html>
