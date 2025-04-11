@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    문제2) 로또 프로그램 구현하기
+    : 프로그램 실행할 때마다 중복되지 않은 1~45 중 6개 값 출력되도록
+    1. 로또 번호 6개를 담을 변수 : 배열 필요
+    2. 랜덤한 값이 있다.
+    3. 랜덤한 값을 배열에 있는 값이랑 똑같은게 있는지 확인
+    4. 있으면 다시 뽑고
+    5. 없으면 로또 번호 배열에 추가
+    6. 로또 번호 배열이 6개까지 될 때까지 반복
+    */
+    let lotto = [];
+    let lastNumber = 0;
+    while (lotto.length < 7) { 
+      let num = Math.floor(Math.random() * 45) + 1;
+
+      if (lotto.indexOf(num) == -1) {
+        lotto.push(num); //lotto.length = 6;
+      }
+    }
+
+    lastNumber = lotto.pop();
+
+    function compare(a, b) {
+      return a - b; //오름차순
+    }
+
+    lotto.sort(compare);
+
+    document.write("로또 번호 : " + lotto.toString());
+    document.write("<br> 보너스 번호 : " + lastNumber);
+  </script>
+</body>
+
+</html>
