@@ -8,22 +8,15 @@
 </head>
 
 <body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
   <script>
-    
-    let arr1 = new Array(4);
-    for(let i=0;i<arr1.length;i++){
-      arr1[i] = i+1;
-    }
-
-    for(let i=0;i<arr1.length;i++){
-      console.log(arr1[i]);
-    }
-
-
-    let arr2 = new Array(2, 4, 5, 6, 2);
-    for(let i=0;i<arr2.length;i++){
-      console.log(arr2[i]);
-    }
+    let slct = document.querySelector("ul");
+    slct.removeChild(slct.children[1]);
   </script>
 </body>
 
