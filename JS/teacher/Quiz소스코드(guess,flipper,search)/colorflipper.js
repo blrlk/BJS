@@ -18,10 +18,12 @@ function changeColor(){
     /*
     최종 목적
     색깔 배열에 랜덤하게 접근해서
-    1. body의 배경색깔을 바꾼다
-    2. 색깔값 내용 업데이트
-    3. 색깔값에 대한 글자색 업데이트    
+    1. body의 배경색깔을 바꾼다(style)
+    2. 색깔값 내용 업데이트(text)
+    3. 색깔값에 대한 글자색 업데이트(style)
     */
+
+    // 랜던 수 0, 1, 2, 3
     //랜덤 함수를 통하여 랜덤한 값을 가져옴
     // let randomresult = getRandomNumber();
     let randomresult = Math.floor(Math.random() * colors.length); //0,1,2,3
