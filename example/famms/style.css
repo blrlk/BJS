@@ -66,8 +66,12 @@ hr{
   height: 80px;
 }
 
+.display_none{
+  display: none;
+}
+
 /* header의 직계 자삭인 div와 후손 태그 ul에 대해 큰 정렬 */
-#header > div, #header ul{
+#header > div, #header .main_menu{
   display: flex;
 }
 
@@ -76,16 +80,16 @@ hr{
   margin: 0px 10px;
 }
 
-#header ul li:nth-child(2){
+#header ul .dropdown{
   position:relative;
 }
 
 #header ul li .sub_menu{
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 0;
   width: 150px;
-  display: none;
+  /* display: none; */
   border: 2px solid black;
   z-index: 1;
   color: gray;
@@ -102,8 +106,8 @@ hr{
   border-bottom: 1px solid gray;
 }
 
-#header ul li:nth-child(2):hover .sub_menu{
-  display: block;
+#header ul .dropdown:hover .sub_menu{
+  /* display: block; */
 }
 
 /* 아이콘 세부 크기 정렬 */
