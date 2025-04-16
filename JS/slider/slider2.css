@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+#slidebox{
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid red;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+#slidebox ul{
+  width: 100%;
+  font-size: 0;
+}
+
+#slidebox ul li{
+  width: 100%;
+  display: inline-block;
+
+  transition: all 1s;
+}
+
+#slidebox ul li img{
+  width: 100%;
+}
+
+#slidebox #buttons{
+  /* border: 1px solid blue; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#slidebox #buttons img{
+  width: 15%;
+  cursor: pointer;
+}

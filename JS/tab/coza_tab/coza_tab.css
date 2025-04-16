@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search button{
+  border: none;
+  background-color: transparent;
+  color: #888888;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tab_btns button{
+  margin-right: 25px;
+
+  transition: all .5s;
+}
+
+.tab_btns button:hover{
+  color: #333333;
+  text-decoration: underline;
+}
+
+.search_btns button{
+  margin-left: 25px;
+  padding: 10px 15px;
+  border: 1px solid #999999;
+  transition: all .5s;
+}
+
+.search_btns button:hover{
+  background-color: #717fe0;
+  color: white;
+}
+
+.contents{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contents .imgbox{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.contents .imgbox span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 18px;
+  display: none;
+  /* z-index: 1; */
+  pointer-events: none;
+
+}
+
+.contents .imgbox span:hover{
+  background-color: #333333;
+  color: white;
+}
+
+.contents img{
+  width: 100%;
+  transition: all 1s;
+}
+
+.contents img:hover{
+  transform: scale(1.2);
+}
+
+.contents img:hover ~ span{
+  display: block;
+}
+
+.contents .all{
+  flex: 0 1 calc(25% - 20px);
+  margin: 10px;
+  width: 300px;
+  display: none;
+}
+
+.contents .all > div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contents .all span{
+  color: #999999;
+  font-size: 14px;
+  font-family: poppins;
+  cursor: pointer;
+}
+
+.contents .all .price{
+  color: #666666;
+}
+
+.contents .all .txtbox span:hover{
+  color: #717fe0;
+}
+
+.tab_btns .btnCSS{
+  color: #333333;
+  text-decoration: underline;
+}
+
+.contents .showContent{
+  display: block;
+}
+
+.more{
+  text-align: center;
+}
+
+.more button {
+  cursor: pointer;
+  color: #666666;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 40px;
+  padding: 20px 40px;
+  margin: 30px 0;
+  font-size: 18px;
+}
+
+.more button:hover{
+  color: white;
+  background-color: #333333;
+}

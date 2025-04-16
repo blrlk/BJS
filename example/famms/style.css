@@ -106,9 +106,9 @@ hr{
   border-bottom: 1px solid gray;
 }
 
-#header ul .dropdown:hover .sub_menu{
-  /* display: block; */
-}
+/* #header ul .dropdown:hover .sub_menu{
+  display: block;
+} */
 
 /* 아이콘 세부 크기 정렬 */
 .fa-cart-shopping{
@@ -467,6 +467,7 @@ input[type="radio"]{
   height: 35px;
   border: 1px solid gray;
   padding: 10px;
+  outline: none;
 }
 
 /* f_top 영역의 submit 부분의 큰 정렬 */
