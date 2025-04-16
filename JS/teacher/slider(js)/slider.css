@@ -1,0 +1,43 @@
+/* CSS 초기화 작업 */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+/* slidebox 작업 */
+#slidebox{
+    border: 1px solid red; 
+    width: 60%; /* 부모 사이즈의 60%, 슬라이드를 보여주기위해서 설정*/
+    margin: 0 auto; /*부모보다 작을 경우 가로 마진이 생성, 이때 auto를 통해서 좌우 n빵 */
+    overflow: hidden;
+    position: relative; /*좌우버튼 absolute의 기준을 설정*/
+    white-space: nowrap; /*자식의 인라인 속성을 가지면 부모를 넘어가는 것을 허락함*/
+}
+#slidebox ul {
+    width: 100%;
+    font-size: 0; /*자식 li간의 미세한 띄움을 없앰*/
+}
+#slidebox ul li{
+    width: 100%;
+    display: inline-block;/*li의 요소를 가로로배치하기위해 inline-block으로 변경*/
+
+    transition: all 3s; /*자바스크립트로 움직일때 부드럽게 움직이게한다*/
+}
+#slidebox ul li img{
+    width: 100%;
+}
+
+/*좌우버튼 설정*/
+#buttons {
+    width: 100%;
+    position: absolute;
+    top: 50%;  /*부모로 부터 50% 내려옴 중앙 아님*/
+    transform: translateY(-50%); /*자신의 사이즈 만큼 50% 위로 올라감 , 중앙정렬됨*/
+    display: flex; /*플렉스를 통하여 이미지 두개를 가로로 배치*/
+    justify-content: space-between; /*가로로 배치된 이미지를 양끝정렬 시킴*/
+}
+#buttons img{
+    width: 10%; /*이미지의 사이즈를 조절*/
+}
