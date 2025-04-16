@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.tab.active {
+  background-color: #ccc;
+}
+
+.tab-content.active {
+  display: block;
+}
