@@ -1,0 +1,149 @@
+#banner .bg_banner {
+  height: 500px;
+  position: relative;
+  border: 2px solid blue;
+}
+
+#banner .bg_banner img {
+  width: 100%;
+  /* height: 50vh; */
+  height: 100%;
+}
+
+#banner .bg_banner .content {
+  display: flex;
+}
+
+#banner .bg_banner .content .txtbox,
+#banner .bg_banner .content .slidebox{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#banner .bg_banner .content .txtbox {
+  width: 30%;
+  left: 25%;
+  transform: translateX(-25%);
+  border: 1px solid red;
+}
+
+#banner .bg_banner .content .slidebox {
+  width: 30%;
+  right: 25%;
+  transform: translateX(25%);
+}
+
+#banner .bg_banner .content .txtbox p{
+  font-size: 24px; 
+  margin-bottom: 16px;
+  color: var(--point_color2);
+  font-weight: 600;
+}
+
+#banner .bg_banner .content .txtbox h1{
+  font-size: 64px;
+  margin-bottom: 48px;
+  color: var(--point_color1);
+}
+
+#banner .bg_banner .txtbox input{
+  padding: 16px 24px;
+  border-radius: 40px;
+  border: 2px solid var(--point_color2);
+  font-size: 16px;
+}
+
+#banner .bg_banner .txtbox input[type="text"]{
+  width: 500px;
+  position: relative;
+}
+
+#banner .bg_banner .txtbox input[type="submit"]{
+  position: absolute;
+  width: 150px;
+  right: 60px;
+  background-color: var(--point_color1);
+  color: white;
+}
+
+#banner .bg_banner .slidebox{
+  border: 1px solid red;
+  white-space: nowrap;
+  /* overflow: hidden; */
+
+  background-color: var(--point_color2);
+  border-radius: 10px;
+  /* width: 50%;
+  height: 300px; */
+}
+
+#banner .bg_banner .slidebox ul{
+  width: 100%;
+  font-size: 0;
+}
+
+#banner .bg_banner .slidebox ul li{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+#banner .bg_banner .slidebox ul li img{
+  width: 100%;
+}
+
+#banner .bg_banner .slidebox ul li span{
+  font-size: 25px;
+  color: white;
+  background-color: rgba(255,181,36, 0.5);
+
+  padding: 8px 24px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+#banner .bg_banner .button{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#banner .bg_banner .button .btn_left,
+#banner .bg_banner .button .btn_right{
+  font-size: 30px;
+  font-weight: 200;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: var(--point_color1);
+  opacity: 0.5;
+  cursor: pointer;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#banner .bg_banner .button .btn_left{
+  position: absolute;
+  left: 30px;
+}
+
+#banner .bg_banner .button .btn_right{
+  position: absolute;
+  right: 30px;
+}

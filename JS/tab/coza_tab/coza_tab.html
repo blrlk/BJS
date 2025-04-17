@@ -14,11 +14,15 @@
 </head>
 
 <body>
-  <section id="tab" class="container">
-    <h1>PRODUCT OVERVIEW</h1>
+  <div class="h_top">
+    <div class="container">
+      <h1>PRODUCT OVERVIEW</h1>
+    </div>
+  </div>
 
+  <section id="tab">
     <!-- tab -->
-    <div class="search">
+    <div class="search container">
       <div class="tab_btns">
         <button class="tab_btn" id="all">All Products</button>
         <button class="tab_btn" id="women">Women</button>
@@ -34,10 +38,10 @@
     </div>
 
     <!-- content -->
-    <div class="contents">
+    <div class="contents container">
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-01.jpg" alt="product01">
+          <img src="./img/product-01.jpg" id="p01">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -48,7 +52,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-02.jpg" alt="product02">
+          <img src="./img/product-02.jpg" id="p02">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -59,7 +63,7 @@
       </div>
       <div class="all men">
         <div class="imgbox">
-          <img src="./img/product-03.jpg" alt="product03">
+          <img src="./img/product-03.jpg" id="p03">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -70,7 +74,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-04.jpg" alt="product04">
+          <img src="./img/product-04.jpg" id="p04">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -81,7 +85,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-05.jpg" alt="product05">
+          <img src="./img/product-05.jpg" id="p05">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -92,7 +96,7 @@
       </div>
       <div class="all watches">
         <div class="imgbox">
-          <img src="./img/product-06.jpg" alt="product06">
+          <img src="./img/product-06.jpg" id="p06">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -103,7 +107,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-07.jpg" alt="product07">
+          <img src="./img/product-07.jpg" id="p07">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -114,7 +118,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-08.jpg" alt="product08">
+          <img src="./img/product-08.jpg" id="p08">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -125,7 +129,7 @@
       </div>
       <div class="all shoes">
         <div class="imgbox">
-          <img src="./img/product-09.jpg" alt="product09">
+          <img src="./img/product-09.jpg" id="p09">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -136,7 +140,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-10.jpg" alt="product10">
+          <img src="./img/product-10.jpg" id="p10">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -147,7 +151,7 @@
       </div>
       <div class="all men">
         <div class="imgbox">
-          <img src="./img/product-11.jpg" alt="product11">
+          <img src="./img/product-11.jpg" id="p11">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -158,7 +162,7 @@
       </div>
       <div class="all men">
         <div class="imgbox">
-          <img src="./img/product-12.jpg" alt="product12">
+          <img src="./img/product-12.jpg" id="p12">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -169,7 +173,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-13.jpg" alt="product13">
+          <img src="./img/product-13.jpg" id="p13">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -180,7 +184,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-14.jpg" alt="product14">
+          <img src="./img/product-14.jpg" id="p14">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -191,7 +195,7 @@
       </div>
       <div class="all watches">
         <div class="imgbox">
-          <img src="./img/product-15.jpg" alt="product15">
+          <img src="./img/product-15.jpg" id="p15">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -202,7 +206,7 @@
       </div>
       <div class="all women">
         <div class="imgbox">
-          <img src="./img/product-16.jpg" alt="product16">
+          <img src="./img/product-16.jpg" id="p16">
           <span>Quick View</span>
         </div>
         <div class="txtbox">
@@ -212,8 +216,75 @@
         <span class="price">$29.64</span>
       </div>
     </div>
-    <div class="more">
+    <div class="more container">
       <button>LODE MORE</button>
+    </div>
+
+    <div class="modal">
+      <div class="p01_modal modal_img">
+        <img src="./img/product-01.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p02_modal modal_img">
+        <img src="./img/product-02.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p03_modal modal_img">
+        <img src="./img/product-03.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p04_modal modal_img">
+        <img src="./img/product-04.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p05_modal modal_img">
+        <img src="./img/product-05.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p06_modal modal_img">
+        <img src="./img/product-06.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p07_modal modal_img">
+        <img src="./img/product-07.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p08_modal modal_img">
+        <img src="./img/product-08.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p09_modal modal_img">
+        <img src="./img/product-09.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p10_modal modal_img">
+        <img src="./img/product-10.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p11_modal modal_img">
+        <img src="./img/product-11.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p12_modal modal_img">
+        <img src="./img/product-12.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p13_modal modal_img">
+        <img src="./img/product-13.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p14_modal modal_img">
+        <img src="./img/product-14.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p15_modal modal_img">
+        <img src="./img/product-15.jpg" alt="">
+        <span class="close">X</span>
+      </div>
+      <div class="p16_modal modal_img">
+        <img src="./img/product-16.jpg" alt="">
+        <span class="close">X</span>
+      </div>
     </div>
   </section>
 </body>
