@@ -13,6 +13,9 @@
 }
 
 /* header start */
+header {
+  position: relative;
+}
 header .h_top {
   background-color: black;
   color: white;
@@ -36,14 +39,28 @@ header .h_top ul li {
 }
 
 header .h_bottom {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 22;
+}
+
+header .h_bottom .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+header .h_bottom.scrolled{
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
 header .h_bottom_left {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 header .h_bottom_left nav {
@@ -79,6 +96,7 @@ header .h_bottom_right a{
   color: #222;
   font-size: 30px;
   cursor: pointer;
+  z-index: 99;
 }
 
 #main i.left{
@@ -87,6 +105,25 @@ header .h_bottom_right a{
 
 #main i.right {
   right: 100px;
+}
+
+#main .slidebox {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#main .slidebox .slides{
+font-size: 0;
+}
+
+#main .slidebox .slides .slide{
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+
+  position: relative;
+  transition: all 1s;
 }
 
 #main .text_box{
@@ -100,7 +137,7 @@ header .h_bottom_right a{
   width: 100%;
 }
 
-#main h1{
+#main h2{
   margin: 30px 0;
 }
 
@@ -195,6 +232,7 @@ header .h_bottom_right a{
 #tab .contents {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 
 #tab .contents .card {
@@ -203,13 +241,43 @@ header .h_bottom_right a{
   margin: 10px; /* 카드 간의 여백 */
 }
 
-#tab .contents .card div {
-  display: flex;
-  justify-content: space-between;
+#tab .contents .card .imgbox{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 #tab .contents img{
   width: 100%;
+  cursor: pointer;
+}
+
+#tab .contents .imgbox a {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all .5s;
+
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
+#tab .contents .imgbox a.show{
+  bottom: 30px;
+}
+
+#tab .contents .card .imgbox a:hover{
+  background-color: black;
+  color: white;
+}
+
+#tab .contents .card div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
 }
 
 #tab > button {
@@ -222,6 +290,43 @@ header .h_bottom_right a{
   cursor: pointer;  
 }
 /* tab section end */
+
+/* modal section start */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+  display: none;
+}
+
+.modal_content{
+  width: 600px;
+  height: 750px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_content img{
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content .close{
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* modal section end */
 
 /* footer start */
 footer{

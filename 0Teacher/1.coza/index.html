@@ -7,6 +7,11 @@
   <title>Document</title>
   <script src="https://kit.fontawesome.com/d9f3d9c91a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
+  <script src="./js/fixed.js" defer></script>
+  <script src="./js/slide.js" defer></script>
+  <script src="./js/tab.js" defer></script>
+  <script src="./js/hover.js" defer></script>
+  <script src="./js/modal.js" defer></script>
 </head>
 
 <body>
@@ -24,36 +29,64 @@
         </nav>
       </div>
     </div>
-    <div class="h_bottom container">
-      <div class="h_bottom_left">
-        <a href="#"><img src="./img/icons/logo-01.png" alt="logo"></a>
-        <nav class="menu">
-          <ul class="menu_home">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="h_bottom_right">
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a href="#"><i class="fa-regular fa-heart"></i></a>
+    <div class="h_bottom">
+      <div class="container">
+        <div class="h_bottom_left">
+          <a href="#"><img src="./img/icons/logo-01.png" alt="logo"></a>
+          <nav class="menu">
+            <ul class="menu_home">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="h_bottom_right">
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
       </div>
     </div>
   </header>
 
   <section id="main">
     <i class="fa-solid fa-arrow-left left"></i>
-    <div class="text_box">
-      <h1>Women Collection 2018</h1>
-      <h2>NEW SEASON</h2>
-      <a href="#">SHOP NOW</a>
+    <!-- 보여지는 화면 -->
+    <div class="slidebox">
+      <!-- 슬라이드 묶음 -->
+      <div class="slides">
+        <!-- 슬라이드 콘텐츠 -->
+        <div class="slide">
+          <div class="text_box">
+            <h1>Women Collection 2018</h1>
+            <h2>NEW SEASON</h2>
+            <a href="#">SHOP NOW</a>
+          </div>
+          <img src="./img/slide-01.jpg" alt="slide01">
+        </div>
+        <div class="slide">
+          <div class="text_box">
+            <h1>Women Collection 2018</h1>
+            <h2>NEW SEASON</h2>
+            <a href="#">SHOP NOW</a>
+          </div>
+          <img src="./img/slide-02.jpg" alt="slide01">
+        </div>
+        <div class="slide">
+          <div class="text_box">
+            <h1>Women Collection 2018</h1>
+            <h2>NEW SEASON</h2>
+            <a href="#">SHOP NOW</a>
+          </div>
+          <img src="./img/slide-03.jpg" alt="slide01">
+        </div>
+      </div>
     </div>
-    <img src="./img/slide-01.jpg" alt="slide01">
+
     <i class="fa-solid fa-arrow-right right"></i>
   </section>
 
@@ -108,15 +141,22 @@
     </div>
     <div class="contents">
       <div class="card all women">
-        <img src="./img/product-01.jpg" alt="product01">
+        <div class="imgbox">
+          <img src="./img/product-01.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
         </div>
         <span>$16.64</span>
+
       </div>
       <div class="card all women">
-        <img src="./img/product-02.jpg" alt="product02">
+        <div class="imgbox">
+          <img src="./img/product-02.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -124,7 +164,10 @@
         <span>$16.64</span>
       </div>
       <div class="card all men">
-        <img src="./img/product-03.jpg" alt="product03">
+        <div class="imgbox">
+          <img src="./img/product-03.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -132,7 +175,10 @@
         <span>$16.64</span>
       </div>
       <div class="card all women">
-        <img src="./img/product-04.jpg" alt="product04">
+        <div class="imgbox">
+          <img src="./img/product-04.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -140,7 +186,10 @@
         <span>$16.64</span>
       </div>
       <div class="card all women">
-        <img src="./img/product-05.jpg" alt="product05">
+        <div class="imgbox">
+          <img src="./img/product-05.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -148,7 +197,10 @@
         <span>$16.64</span>
       </div>
       <div class="card all watches">
-        <img src="./img/product-06.jpg" alt="product06">
+        <div class="imgbox">
+          <img src="./img/product-06.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -156,7 +208,10 @@
         <span>$16.64</span>
       </div>
       <div class="card all shoes">
-        <img src="./img/product-09.jpg" alt="product09">
+        <div class="imgbox">
+          <img src="./img/product-09.jpg" alt="product01">
+          <a href="#">Quick View</a>
+        </div>
         <div>
           <span>Esprit Rufflo Shirt</span>
           <i class="fa-regular fa-heart"></i>
@@ -165,7 +220,19 @@
       </div>
     </div>
     <button>Load More</button>
+
+
   </section>
+  <!-- 검은배경 -->
+  <div id="modal" class="modal">
+    <!-- 실제 컨텐츠 -->
+    <div class="modal_content">
+      <span class="close">
+        &times;
+      </span>
+      <img src="" alt="미리보기" id="modalImg">
+    </div>
+  </div>
 
   <footer>
     <div class="f_top container">
