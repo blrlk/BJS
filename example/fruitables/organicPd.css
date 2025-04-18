@@ -78,7 +78,7 @@
 
 .contents .txtbox{
   text-align: center;
-  padding: 15px 30px;
+  padding: 15px 25px;
 }
 
 .contents .txtbox h3{
@@ -99,7 +99,7 @@
   align-items: center;
 }
 
-.contents .txtbox div span{
+.contents .txtbox div > span{
   font-size: 20px;
   font-weight: 600;
   color: var(--deepGray);
@@ -113,4 +113,16 @@
   border: 1px solid var(--pointColor2);
   border-radius: 20px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all .5s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contents .txtbox div button:hover span{
+  color: white;
+}
+
+.contents .txtbox div button:hover{
+  background-color: var(--pointColor2);
 }

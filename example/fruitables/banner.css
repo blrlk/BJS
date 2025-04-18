@@ -12,7 +12,7 @@
 
   /* background-image: url("./img/hero-img.jpg");
   background-position: center; */
-  
+
   transform: translateY(-20%);
 }
 
@@ -79,6 +79,10 @@
   width: 500px;
   position: relative;
   outline: none;
+}
+
+#banner .bg_banner .txtbox input[type="text"]:focus{
+  outline: 5px solid #82c40850;
 }
 
 #banner .bg_banner .txtbox input[type="submit"]{
