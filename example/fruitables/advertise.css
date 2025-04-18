@@ -1,0 +1,52 @@
+#advertise{
+  margin: 100px auto;
+  display: flex;
+}
+
+#advertise > div{
+  flex: 0 1 calc(33% -20px);
+  margin: 20px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#advertise .imgbox{
+  width: 100%;
+  height: 350px;
+}
+
+#advertise .imgbox img{
+  width: 100%;
+  height: 100%;
+}
+
+#advertise .color{
+  width: 100%;
+  height: 130px;
+}
+
+#advertise .txtbox{
+  position: absolute;
+  left: 50%;
+  top: 290px;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 130px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#advertise .txtbox p{
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#advertise .txtbox h3{
+  font-size: 28px;
+  margin-top: 20px;
+  color: var(--deepGray);
+  font-weight: 600;
+}

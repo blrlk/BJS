@@ -1,0 +1,48 @@
+/* 혜택 */
+#boons{
+  display: flex;
+  margin: 100px auto;
+}
+
+#boons > div{
+  background-color: var(--lightGray);
+  flex: 0 1 calc(25%-20px);
+  margin: 10px;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.icon{
+  position: relative;
+  margin: 20px;
+}
+
+.icon i:first-of-type{
+  font-size: 130px;
+  color: var(--pointColor2);
+}
+
+.icon i:last-of-type{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  color: white;
+  font-size: 50px;
+}
+
+.boon > div:last-of-type p:first-of-type{
+  color: var(--deepGray);
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.boon > div:last-of-type p:last-child{
+  color: var(--Gray);
+  font-weight: 450;
+  margin-bottom: 10px;
+}

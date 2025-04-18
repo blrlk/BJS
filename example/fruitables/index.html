@@ -10,12 +10,17 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./header.css">
   <link rel="stylesheet" href="./banner.css">
+  <link rel="stylesheet" href="./organicPd.css">
+  <link rel="stylesheet" href="./boon.css">
+  <link rel="stylesheet" href="./advertise.css">
   <script src="./javascript.js" defer></script>
 </head>
 
 <body>
-  <header class="container">
-    <div id="h_top">
+  <a href="./index.html"><span class="scrollbtn"><i class="fa-solid fa-arrow-up"></i></span></a>
+
+  <header>
+    <div id="h_top" class="container">
       <div class="left">
         <p>
           <i class="fa-solid fa-location-dot"></i>
@@ -33,21 +38,42 @@
       </div>
     </div>
     <div id="h_bottom">
-      <p class="logo">Frutables</p>
-      <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Shop Detail</a>
-        <a href="#">Pages <i class="fa-solid fa-angle-down"></i></a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="userInfo">
-        <i class="fa-solid fa-magnifying-glass search"></i>
-        <i class="fa-solid fa-bag-shopping shoppingBag"><span>3</span></i>
-        <i class="fa-solid fa-user"></i>
+      <div class="container">
+        <p class="logo"><a href="./index.html">Frutables</a></p>
+        <div class="menu">
+          <a href="./index.html">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">Shop Detail</a>
+          <a class="menuTab">Pages <i class="fa-solid fa-angle-down"></i>
+            <ul class="submenu">
+              <li>Cart</li>
+              <li>Checkout</li>
+              <li>Testimonial</li>
+              <li>404 page</li>
+
+            </ul>
+          </a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="userInfo">
+          <i class="fa-solid fa-magnifying-glass search"></i>
+          <i class="fa-solid fa-bag-shopping shoppingBag"><span>3</span></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
       </div>
     </div>
   </header>
+
+  <div id="modal">
+    <div>
+      <span>Search by keyword</span>
+      <span class="close">X</span>
+    </div>
+    <form action="">
+      <input type="text" placeholder="keywords" class="inputKeyword">
+      <button><i class="fa-solid fa-magnifying-glass search"></i></button>
+    </form>
+  </div>
 
   <section id="banner">
     <div class="bg_banner">
@@ -79,7 +105,213 @@
         </div>
       </div>
     </div>
+  </section>
 
+  <section id="boons" class="container">
+    <div class="boon">
+      <div class="icon">
+        <i class="fa-solid fa-comment"></i>
+        <i class="fa-solid fa-car-side"></i>
+      </div>
+      <div>
+        <p>Free Shipping</p>
+        <p>Free on order over $300</p>
+      </div>
+    </div>
+    <div class="boon">
+      <div class="icon">
+        <i class="fa-solid fa-comment"></i>
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <div>
+        <p>Security Payment</p>
+        <p>100% security payment</p>
+      </div>
+    </div>
+    <div class="boon">
+      <div class="icon">
+        <i class="fa-solid fa-comment"></i>
+        <i class="fa-solid fa-right-left"></i>
+      </div>
+      <div>
+        <p>30 Day Return</p>
+        <p>30 day money guarantee</p>
+      </div>
+    </div>
+    <div class="boon">
+      <div class="icon">
+        <i class="fa-solid fa-comment"></i>
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div>
+        <p>24/7 Support</p>
+        <p>Support every time fast</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="organicPd" class="container">
+    <div class="bar">
+      <div class="title">
+        <h1>Our Organic Products</h1>
+      </div>
+      <div class="tabbtns">
+        <button id="all" class="tabbtn">All Product</button>
+        <button id="vegetables" class="tabbtn">Vegetables</button>
+        <button id="fruits" class="tabbtn">Fruits</button>
+        <button id="bread" class="tabbtn">Bread</button>
+        <button id="meat" class="tabbtn">Meat</button>
+      </div>
+    </div>
+
+    <div class="contents">
+      <div class="all fruits">
+        <div class="imgbox">
+          <img src="./img/fruite-item-5.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Grapes</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all vegetables">
+        <div class="imgbox">
+          <img src="./img/fruite-item-5.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Grapes</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all vegetables">
+        <div class="imgbox">
+          <img src="./img/fruite-item-2.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Raspberries</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all bread">
+        <div class="imgbox">
+          <img src="./img/fruite-item-4.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Apricots</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all meat">
+        <div class="imgbox">
+          <img src="./img/fruite-item-3.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Banana</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all fruits meat">
+        <div class="imgbox">
+          <img src="./img/fruite-item-1.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Oranges</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all meat">
+        <div class="imgbox">
+          <img src="./img/fruite-item-2.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Raspberries</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="all">
+        <div class="imgbox">
+          <img src="./img/fruite-item-5.jpg" alt="">
+          <span>Fruits</span>
+        </div>
+        <div class="txtbox">
+          <h3>Grapes</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do diusmod te incididunt</p>
+          <div>
+            <span>$4.99 / kg</span>
+            <button><i class="fa-solid fa-bag-shopping shoppingBag"></i> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="advertise" class="container">
+    <div class="box">
+      <div class="imgbox">
+        <img src="./img/featur-1.jpg" alt="">
+      </div>
+      <div class="color"></div>
+      <div class="txtbox">
+        <p>Fresh Apples</p>
+        <h3>20% OFF</h3>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgbox">
+        <img src="./img/featur-2.jpg" alt="">
+      </div>
+      <div class="color"></div>
+      <div class="txtbox">
+        <p>Tasty Fruits</p>
+        <h3>Free delivery</h3>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgbox">
+        <img src="./img/featur-3.jpg" alt="">
+      </div>
+      <div class="color"></div>
+      <div class="txtbox">
+        <p>Exotic Vegitable</p>
+        <h3>Discount 30%</h3>
+      </div>
+    </div>
   </section>
 </body>
 
