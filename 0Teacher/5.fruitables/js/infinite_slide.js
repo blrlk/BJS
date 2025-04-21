@@ -36,7 +36,8 @@ function leftsliding() {
  3번째 --효과O--> 2번째
  4번째 --효과O--> 3번째
  index번째 --효과0--> index-1번째
-*/
+  */
+
   index--;
   if (index <= 0) {
     sliding(true);
@@ -58,6 +59,7 @@ function rightsliding() {
  index번째 --효과0--> index+1번째 장면
  4번째 --효과0--> 5번째 -- 효과X --> 1번째
 */
+
   index++;
   if (index >= slides.length - 1) {
     sliding(true);
@@ -88,6 +90,7 @@ function sliding(state) {
       slide.style.transition = `none`;
     });
   }
+
   slides.forEach(function (slide) {
     slide.style.transform = `translateX(${index * -100}%)`;
   });
