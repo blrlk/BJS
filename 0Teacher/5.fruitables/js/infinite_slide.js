@@ -14,6 +14,8 @@ slideUl.appendChild(firstContent);
 slideUl.insertBefore(lastContent, slides[0]);
 slides = document.querySelectorAll(".slide"); //4개 데이터
 
+setInterval(rightsliding, 3000);
+
 /*
 초기 장면은 1번 채널이고, 실제로도 1번 채널 위치로 이동
 */
