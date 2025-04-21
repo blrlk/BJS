@@ -75,9 +75,14 @@
   font-size: 16px;
 }
 
-#banner .bg_banner .txtbox input[type="text"]{
-  width: 500px;
+#banner .searchbox{
   position: relative;
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+#banner .bg_banner .txtbox input[type="text"]{
+  width: 100%;
   outline: none;
 }
 
@@ -88,7 +93,8 @@
 #banner .bg_banner .txtbox input[type="submit"]{
   position: absolute;
   width: 150px;
-  left: 350px;
+  right: 0;
+  bottom: 0;
   background-color: var(--pointColor1);
   color: white;
   cursor: pointer;

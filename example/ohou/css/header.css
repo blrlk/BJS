@@ -1,0 +1,288 @@
+#h_top{
+  padding: 20px 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid gainsboro;
+}
+
+#h_top.scrolled{
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+#h_top .container, #h_top .leftTop, #h_top .rightTop, #h_top .leftTop .menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#h_top .leftTop .logo{
+  margin-right: 40px;
+}
+
+#h_top .leftTop .menu li{
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#h_top .rightTop > *{
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+#h_top .rightTop .search{
+  border: 1px solid gainsboro;
+  width: 300px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: transparent;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#h_top .rightTop .search input[type="text"]{
+  height: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+#h_top .rightTop .search i{
+  color: gray;
+}
+
+
+#h_top .rightTop > i{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#h_top .rightTop .user span{
+  margin: 0px 3px;
+  color: gainsboro;
+}
+
+#h_top .rightTop .wrtbtn{
+  background-color: var(--pointColor);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+#h_top .rightTop .wrtbtn i{
+  color: white;
+}
+
+#h_top .rightTop .write{
+  position: relative;
+}
+
+#h_top .rightTop .write .wrtdropdown{
+  background-color: white;
+  padding: 20px;
+  width: 360px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  position: absolute;
+  top: 50px;
+  left: -130px;
+
+  display: none;
+  z-index: 100;
+}
+
+#h_top .rightTop .write .wrtdropdown.show{
+  display: block;
+}
+
+#h_top .rightTop .write .wrtdropdown li{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#h_top .rightTop .write .wrtdropdown li > div{
+  margin-left: 10px;
+}
+
+#h_top .rightTop .write .wrtdropdown li img{
+  width: 50px;
+  height: 50px;
+}
+
+#h_top .rightTop .write .wrtdropdown li p:first-child{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#h_top .rightTop .write .wrtdropdown li p:last-child{
+  font-size: 12px;
+  color: gray;
+}
+
+/* h_bottom */
+#h_bottom{
+  border-bottom: 1px solid gainsboro;
+  display: flex;
+  height: 50px;
+}
+
+#h_bottom .container, #h_bottom .ranks{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#h_bottom .menuTab{
+  width: 77%;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* border: 2px solid blue; */
+  /* height: 100%; */
+}
+
+#h_bottom .menuTab a{
+  margin-right: 14px;
+  font-weight: bold;
+  /* height: 100%; */
+  /* border: 1px solid red; */
+}
+
+#h_bottom .container{
+  position: relative;
+}
+
+#h_bottom .mntbbtn{
+  cursor: pointer;
+}
+
+#h_bottom .mntbdropdown{
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background-color: white;
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  width: 300px;
+  display: none;
+
+  z-index: 100;
+}
+
+#h_bottom .mntbdropdown.show{
+  display: block;
+}
+
+#h_bottom .mntbdropdown li{
+  cursor: pointer;
+  margin: 15px;
+}
+
+#h_bottom .ranks{
+  position: relative;
+  height: 30px;
+}
+
+#h_bottom .ranks .rank{
+  padding: 0 15px;
+  height: 30px;
+  overflow: hidden;
+}
+
+#h_bottom .ranks .rnkslide{
+  height: 100%;
+}
+
+
+#h_bottom .ranks .rank .rnkslide, #h_bottom .rnkdropdown .ranking{
+  display: flex;
+}
+
+#h_bottom .ranks .rank .rnkslide div:nth-child(1),
+#h_bottom .rnkdropdown .ranking div:nth-child(1){
+  font-weight: bold;
+  text-align: center;
+  width: 20px;
+}
+
+#h_bottom .ranks .rank .rnkslide div:nth-child(2),
+#h_bottom .ranks .rank .rnkslide div i,
+#h_bottom .rnkdropdown .ranking div:nth-child(2),
+#h_bottom .rnkdropdown .ranking div i{
+  color: rgb(247, 97, 122);
+  font-size: 11px;
+  width: 30px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#h_bottom .ranks .rank .rnkslide div:nth-child(3){
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+#h_bottom .rnkdropdown{
+  display: none;
+  position: fixed;
+  right: 350px;
+  top: 70px;
+  background-color: white;
+  z-index: 100;
+  border: 1px solid gainsboro;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+#h_bottom .rnkdropdown .drpdwnTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#h_bottom .rnkdropdown .drpdwnTop h2{
+  font-size: 18px;
+}
+
+#h_bottom .rnkdropdown .drpdwnTop span,
+#h_bottom .ranks i{
+  cursor: pointer;
+}
+
+#h_bottom .rnkdropdown .ranking{
+  margin: 20px 0;
+}
+
+#h_bottom .rnkdropdown.show{
+  display: block;
+}
+
+#h_top .leftTop .menu a:hover,
+#h_bottom .menuTab a:hover,
+#h_top .rightTop > i:hover,
+#h_bottom .mntbdropdown li:hover,
+.changeCSS{
+  color: var(--pointColor);
+}
+
+#h_bottom .menuTab a:hover{
+  border-bottom: 1px solid var(--pointColor);
+}

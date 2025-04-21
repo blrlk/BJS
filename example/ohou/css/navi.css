@@ -1,0 +1,17 @@
+#navi{
+  display: flex;
+  padding: 20px 0;
+}
+
+#navi > div{
+  flex: 0 1 calc(10%-30px);
+  margin: 15px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+
+#navi > div img{
+  width: 65px;
+  height: 65px;
+}
