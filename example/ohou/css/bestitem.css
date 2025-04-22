@@ -1,0 +1,96 @@
+#bestitem .bestTop{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bestTop span:first-child,
+.bestTop span:last-child{
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.bestTop span:last-child{
+  color: var(--pointColor);
+}
+
+#bestitem .bestTab{
+  margin: 10px 0;
+}
+
+#bestitem .bestTab button{
+  background-color: rgb(233, 233, 233);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+#bestitem .bestgoods{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#bestitem .bestgoods > div{
+  flex: 0 1 calc(33%-20px);
+  margin: 10px;
+  
+  width: 350px;
+  display: none;
+}
+
+#bestitem .bestgoods .imgbox{
+  width: 100%;
+}
+
+#bestitem .bestgoods .imgbox img{
+  width: 100%;
+}
+
+.company{
+  font-size: 10px;
+  color: gray;
+}
+
+.prdName{
+  font-size: 13px;
+}
+
+.price{
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.price span:first-child, .review i{
+  color: var(--pointColor);
+}
+
+.review{
+  font-size: 11px;
+  margin: 4px 0;
+}
+
+.review span:last-child{
+  color: gray;
+}
+
+.more span{
+  background-color: #ff7777;
+  color: white;
+  font-size: 11px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.more span.free{
+  background-color: lightgray;
+  color: gray;
+  font-size: 11px;
+  padding: 3px;
+}
+
+#bestitem{
+  padding: 30px 0;
+  margin-bottom: 20px;
+}

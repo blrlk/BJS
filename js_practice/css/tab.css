@@ -1,0 +1,39 @@
+#tab{
+  border-bottom: 2px solid black;
+  padding: 40px 0;
+}
+
+#tab .tabbtn{
+  margin-bottom: 30px;
+}
+
+#tab .tabbtn button{
+  background-color: yellowgreen;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tabContent{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabContent .content{
+  flex: 0 1 calc(33% - 20px);
+  margin: 10px;
+  font-size: 100px;
+  width: 100px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#tab .tabContent .content.show{
+  display: block;
+}

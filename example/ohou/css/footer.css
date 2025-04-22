@@ -1,0 +1,129 @@
+footer{
+  padding: 40px 0;
+  background-color: #f7f9fa;
+}
+
+footer .container{
+  display: flex;
+}
+
+footer .container .left{
+  width: 25%;
+  border-right: 1px solid gainsboro;
+}
+
+footer .container .left h3{
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+footer .container .left h3 line{
+  cursor: pointer;
+}
+
+footer .container .left .contact{
+  margin: 10px 0;
+  font-size: 14px
+}
+
+footer .container .left .contact b{
+  font-size: 16px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+footer .container .left .counsel{
+  font-size: 12px;
+  padding-left: 15px;
+}
+
+footer .left > div{
+  margin: 20px 0;
+}
+
+footer .left > div button{
+  background-color: transparent;
+  border: 1px solid gainsboro;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+footer .left > div button:last-child:hover,
+footer .container .left h3 line:hover,
+footer .container .left .contact b:hover,
+footer .container .center li:hover,
+footer .container .right .intro b:hover, 
+footer .right .security b:hover{
+  text-decoration: underline;
+}
+
+footer .container .center{
+  width: 27%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 12px;
+  border-right: 1px solid gainsboro;
+}
+
+footer .container .center li{
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+footer .container .right{
+  width: 48%;
+  padding: 0 20px;
+  font-size: 10px;
+}
+
+footer .container .right .intro{
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+footer .container .right .intro p{
+  margin-bottom: 5px;
+}
+
+footer .container .right .intro b{
+  cursor: pointer;
+  color: #828c94;
+}
+
+footer .right .security{
+  margin-bottom: 10px;
+}
+
+footer .right .security b{
+  color: #828c94;
+  cursor: pointer;
+}
+
+footer .right img{
+  margin-bottom: 10px;
+}
+
+footer .right .responsibility{
+  margin-bottom: 20px;
+}
+
+footer .right .sns{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+footer .right .sns i{
+  margin-right: 10px;
+  background-color: #828c94;
+  border-radius: 50%;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+footer .right p{
+  color: #828c94;
+}

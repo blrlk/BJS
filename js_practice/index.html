@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/d9f3d9c91a.js" crossorigin="anonymous"></script>
+
+  <!-- style -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      color: inherit;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="./css/fixed.css">
+  <link rel="stylesheet" href="./css/dropdown.css">
+  <link rel="stylesheet" href="./css//tab.css">
+  <link rel="stylesheet" href="./css/slide.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/slide_vertical.css">
+
+  <!-- javascript -->
+  <script src="./js/fixed.js" defer></script>
+  <script src="./js/dropdown.js" defer></script>
+  <script src="./js/tab.js" defer></script>
+  <script src="./js/slide.js" defer></script>
+  <script src="./js/modal.js" defer></script>
+  <script src="./js/slide_vertical.js" defer></script>
+</head>
+
+<body>
+  <section id="fixed">
+    <h1>헤더 고정</h1>
+  </section>
+
+  <section id="dropdown">
+    <div class="main">
+      <div id="animals">1
+        <ul class="animals sub">
+          <li>고양이</li>
+          <li>강아지</li>
+          <li>토끼</li>
+          <li>돼지</li>
+          <li>곰</li>
+        </ul>
+      </div>
+      <div id="birds">2
+        <ul class="birds sub">
+          <li>까치</li>
+          <li>참새</li>
+          <li>갈매기</li>
+          <li>비둘기</li>
+        </ul>
+      </div>
+      <div id="insects">3
+        <ul class="insects sub">
+          <li>사마귀</li>
+          <li>무당벌레</li>
+          <li>모기</li>
+          <li>벌</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="tab">
+    <div class="tabbtn">
+      <button id="content">tab1</button>
+      <button id="a">tab2</button>
+      <button id="b">tab3</button>
+      <button id="c">tab4</button>
+    </div>
+    <div class="tabContent">
+      <div class="content a">1</div>
+      <div class="content b">2</div>
+      <div class="content a b">3</div>
+      <div class="content a">4</div>
+      <div class="content c">5</div>
+      <div class="content c">6</div>
+    </div>
+  </section>
+
+  <section id="slides">
+    <div class="slidebox">
+      <div class="slide">slide01</div>
+      <div class="slide">slide02</div>
+      <div class="slide">slide03</div>
+      <div class="slide">slide04</div>
+    </div>
+    <div class="slidebtn">
+      <i class="fa-solid fa-angle-left left"></i>
+      <i class="fa-solid fa-angle-right right"></i>
+    </div>
+  </section>
+
+  <section id="slides_v">
+    <div class="slidebox_v">
+      <div class="slide_v">1</div>
+      <div class="slide_v">2</div>
+      <div class="slide_v">3</div>
+      <div class="slide_v">4</div>
+      <div class="slide_v">5</div>
+    </div>
+    <div class="btn_v">
+      <i class="fa-solid fa-chevron-up up"></i><br>
+      <i class="fa-solid fa-chevron-down down"></i>
+    </div>
+  </section>
+
+  <section id="modal">
+    <button class="open">open</button>
+    <div class="modalView">
+      <div class="modalcontent">content<br>
+        <p>자식</p>
+      </div>
+      <button class="close">X</button>
+    </div>
+  </section>
+</body>
+
+</html>

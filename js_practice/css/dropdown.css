@@ -1,0 +1,44 @@
+#dropdown{
+  font-size: 20px;
+  padding: 40px 0 290px 0;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+}
+
+#dropdown .main{
+  display: flex;
+  justify-content: center;
+}
+
+#dropdown .main div{
+  margin-right: 20px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  position: relative;
+  border: 1px solid red;
+}
+
+#dropdown .sub{
+  display: none;
+  background-color:antiquewhite;
+  width: 150px;
+  padding: 20px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+}
+
+
+#dropdown .animals li,
+#dropdown .birds li,
+#dropdown .insects li{
+  margin: 10px 0;
+}
+
+#dropdown .main .sub.show{
+  display: block;
+}
+/* CSS 우선순위 ! */

@@ -1,0 +1,43 @@
+#slides_v{
+  padding: 40px 0;
+  border-bottom: 2px solid black;
+  position: relative;
+}
+
+.slidebox_v{
+  border: 2px solid red;
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.slide_v{
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#slides_v .btn_v{
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  
+  height: 55%;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+}
+
+#slides_v .btn_v i{
+  cursor: pointer;
+}

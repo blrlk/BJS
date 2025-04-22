@@ -1,0 +1,53 @@
+#modal{
+  padding: 60px 0;
+  position: relative;
+}
+
+#modal button{
+  font-size: 50px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#modal .modalView{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(220, 220, 220, 0.726);
+
+  display: none;
+}
+
+#modal .close{
+  position: absolute;
+  top: 35%;
+  right: 37%;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+}
+
+#modal .modalView .modalcontent{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid black;
+  width: 500px;
+  height: 300px;
+  font-size: 50px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+#modal .modalView .modalcontent > p{
+  font-size: 30px;
+  margin-top: 20px;
+}

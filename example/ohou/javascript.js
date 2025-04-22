@@ -181,3 +181,43 @@ function changeBottomMenu(){
   console.log(this);
   this.classList.add("changeCSS");
 }
+
+// bestitem tab
+let tabbtn = document.querySelectorAll(".bestTab button");
+let contents = document.querySelectorAll(".bestgoods > div");
+
+tabbtn.forEach(function(btn){
+  btn.addEventListener("click", showbestitem);
+});
+
+showContent("all");
+chgtabCSS("all");
+
+function showbestitem(){
+  let crntID = this.id;
+
+  chgtabCSS(crntID);
+  showContent(crntID);
+}
+
+function showContent(crntID){
+  let show = document.querySelectorAll("." + crntID);
+
+  for(let i=0;i<contents.length;i++){
+    contents[i].style.display = "none";
+  }
+  for(let i=0;i<show.length;i++){
+    show[i].style.display = "block";
+  }
+}
+
+function chgtabCSS(crntID){
+  let chgtab = document.querySelector('#' + crntID);
+
+  for(let i=0;i<tabbtn.length;i++){
+    tabbtn[i].style.backgroundColor = "#e9e9e9";
+    tabbtn[i].style.color = "var(--black)";
+  }
+  chgtab.style.backgroundColor = "var(--pointColor)";
+  chgtab.style.color = "white";
+}
