@@ -312,10 +312,6 @@ button.shopnow i{
   transition: all .3s;
 }
 
-#petfood .tabContent .all .imgbox:hover img{
-  transform: scale(1.2);
-}
-
 #petfood .tabContent .all .txtbox{
   padding: 15px 0;
 }
