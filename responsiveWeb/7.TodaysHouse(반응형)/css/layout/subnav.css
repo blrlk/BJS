@@ -1,0 +1,31 @@
+#subnav {
+  margin: 30px auto;
+}
+
+#subnav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+}
+
+#subnav ul li {
+  /* display: inline-block; */
+  width: 10%;
+}
+
+#subnav ul li img{
+  width: 100%;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  #subnav ul {
+    flex-wrap: wrap;
+  }
+
+  #subnav ul li {
+    width: 20%;
+  }
+}

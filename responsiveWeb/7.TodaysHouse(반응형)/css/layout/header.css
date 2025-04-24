@@ -1,0 +1,253 @@
+.h_top {
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.h_top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h_top .left {
+  display: flex;
+
+  font-size: 18px;
+}
+
+.h_top .left .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h_top .left nav {
+  margin-left: 40px;
+}
+
+.h_top .left .menu {
+  display: flex;
+}
+
+.h_top .left .menu a {
+  padding: 20px 5px;
+  display: inline-block;
+}
+
+.h_top .left .menu a:hover {
+  color: var(--main-color);
+}
+
+.h_top .right {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+.h_top .right form {
+  border: 1px solid var(--border-color);
+  /* outline: 1px solid var(--main-color); */
+  padding: 0 14px;
+  width: 300px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  margin-right: 10px;
+}
+
+.h_top .right form input {
+  border: none;
+  outline: none;
+  height: 100%;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.h_top .right i {
+  font-size: 24px;
+}
+
+.h_top .right>ul {
+  display: flex;
+  margin: 0px 10px;
+}
+
+.h_top .right>ul a {
+  display: inline-block;
+  padding: 3px 10px;
+  border-right: 2px solid var(--border-color);
+}
+
+.h_top .right>ul li:last-child a {
+  border-right: none;
+}
+
+.h_top .right .dropdown {
+  position: relative;
+  padding: 10px;
+
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.h_top .right .dropdown ul {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0%;
+  z-index: 99;
+
+  display: none;
+  width: auto;
+  color: var(--text-color);
+  background-color: white;
+  border: 1px solid rgb(218, 221, 224);
+}
+
+.h_top .right .dropdown ul.show {
+  display: block;
+}
+
+.h_top .right .dropdown ul li {
+  padding: 15px;
+}
+
+.h_bottom {
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+
+.h_bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.h_bottom .submenu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+}
+
+.h_bottom .submenu ul.show {
+  display: flex;
+}
+
+.h_bottom .submenu ul a {
+  display: inline-block;
+  padding: 10px;
+}
+
+.h_bottom .rank {
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 200px;
+  height: 40px;
+  /* 처음엔 li 1개 높이만 */
+
+  padding: 10px;
+
+  transition: height 0.3s ease;
+
+  position: relative;
+  /* border: 1px solid blue; */
+}
+
+.h_bottom .rank ul {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* border: 1px solid red; */
+  background-color: white;
+
+  z-index: 99;
+}
+
+.h_bottom .rank li {
+  padding: 0 10px;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.h_bottom .rank i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.h_bottom .rank.expand {
+  /* height: 220px;  */
+  overflow: visible;
+}
+
+.h_top .hamburger {
+  display: none;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .h_top .hamburger {
+    display: block;
+  }
+
+  .h_top nav {
+    display: none;
+  }
+
+  .h_top .right form {
+    width: auto;
+    border: none;
+    padding: 0;
+  }
+
+  .h_bottom .rank {
+    opacity: 0;
+    /* display: none; */
+  }
+}
+
+
+/* 태블릿 가로 */
+@media (max-width: 1200px) {
+  .h_top .right ul li:last-child {
+    display: none;
+  }
+
+  .h_top .right ul li:nth-child(2){
+    border-right: none;
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .h_top .right form input {
+    display: none;
+  }
+  .h_top .right form {
+    width: auto;
+    border: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 955px) {
+  .h_top .right ul,
+  .h_top .right .dropdown {
+    display: none;
+  }
+}

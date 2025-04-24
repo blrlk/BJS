@@ -1,0 +1,38 @@
+#best .btns {
+  margin: 10px 0;
+}
+
+#best .btns button {
+  padding: 10px;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#best .btns button.active{
+  background-color: var(--main-color);
+  color: white;
+}
+
+#best .contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#best .contents .all {
+  flex: 0 1 calc(100% / 3 - 20px);
+  margin: 10px;
+  transform: translateX(-10px);
+  display: none;
+}
+
+#best .contents .all.active{
+  display: block;
+}
+
+#best .contents .all img{
+  width: 100%;
+}

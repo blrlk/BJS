@@ -1,0 +1,102 @@
+#main{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+}
+
+#main .contents{
+  flex: 0 1 calc(75% - 20px);
+  margin-right: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  position: relative;
+}
+
+#main .contents img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main .contents .txtbox{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+/* 1400 -> 2vw : 28px */
+/* 768 -> 2vw : 15.36px  */
+#main .contents .txtbox h1{
+  font-size: 2vw;
+}
+
+#main .contents .txtbox p {
+  font-size: 1.2vw;
+}
+
+#main .slidebox{
+  flex: 0 1 25%;
+  white-space: nowrap;
+  border-radius: 5px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+#main .slidebox .slides{
+  font-size: 0;
+  height: 100%;
+}
+
+#main .slidebox .slides .slide{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+
+  transition: all .5s;
+}
+
+#main .slidebox .slides .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main .slidebox i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 20px;
+}
+
+#main .slidebox i.left{
+  left: 10px;
+}
+
+#main .slidebox i.right{
+  right: 10px;
+}
+
+#main .slidebox .slidenum {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(33, 38, 41, 0.5);
+  color: white;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  #main .contents {
+    display: none;
+  }
+
+  #main .slidebox {
+    flex: 0 1 100vw;
+  }
+}
