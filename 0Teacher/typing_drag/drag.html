@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드래그 앤 드롭 예제</title>
+  <link rel="stylesheet" href="./drag.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="draggable" draggable="true">드래그할 아이템 1</div>
+    <div class="draggable" draggable="true">드래그할 아이템 2</div>
+    <div class="draggable" draggable="true">드래그할 아이템 3</div>
+  </div>
+  <div class="dropzone">여기에 드롭하세요!</div>
+
+
+  <script>
+    // 최종 기능 : 드래그 할 아이템들 중 하나를 선택하여 드롭할 위치에 끌어다 둔다.
+    //필요한 변수 : 드래그 할 아이템들 선택한 변수, 드롭존 선택한 변수
+    //Step1. 셀렉트하기
+    var draggables = document.querySelectorAll('.draggable');
+    var dropzone = document.querySelector('.dropzone');
+
+    //Step2. 이벤트 할당하기 + Step3,4. 함수생성 및 구현하기
+    for (var i = 0; i < draggables.length; i++) {
+      draggables[i].addEventListener('dragstart', handleDragStart);
+      draggables[i].addEventListener('dragend', handleDragEnd);
+    }
+
+    //아이템을 드롭존으로 드래그하고 드롭했을 때 그리고 드래그 끝났을 때 hovered class를 없애겠다. 드롭한 아이템을 드롭존에 추가로 붙이겠다.
+    dropzone.addEventListener('dragover', function (event) {
+      event.preventDefault(); // 기본 동작 방지 
+      //폼 제출 방지, 링크 클릭시 페이지 이동 방지, 드롭 불가능 상태 해제
+      dropzone.classList.add('hovered');
+    });
+
+    dropzone.addEventListener('dragleave', function () {
+      dropzone.classList.remove('hovered');
+    });
+
+    //아이템을 드래그 시작했을 때 dragging 클래스가 붙는다, 고로
+    //dropzone 내부에서 querySelector('.dragging')하면 내가 드래그하고 있는 아이템이 선택이 된다.
+    dropzone.addEventListener('drop', function (e) {
+      e.preventDefault();
+      var dragging = document.querySelector('.dragging');
+      dropzone.appendChild(dragging);
+      dropzone.classList.remove('hovered');
+    });
+
+    //아이템을 드롭존에 드롭하고 난 후 해당 아이템에 대한 처리(없앴다)
+    function handleDragStart() {
+      this.classList.add('dragging');
+    }
+
+    function handleDragEnd() {
+      this.classList.remove('dragging');
+      // this.classList.add()
+    }
+
+  </script>
+</body>
+
+</html>

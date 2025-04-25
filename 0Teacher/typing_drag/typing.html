@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="text"></h1>
+
+  <script>
+    let txt = "안녕하세요!! 타이핑 중입니다. ";
+    let textDiv = document.querySelector("#text");
+    let index = 0;
+
+    window.addEventListener("load", typing);
+
+    function typing(){
+      if(index < txt.length){
+        textDiv.innerHTML += txt.charAt(index);
+        index++; //index = 3;
+        setTimeout(typing, 100);
+      }else{
+        setTimeout(remove, 1000);
+      }
+    }
+
+    function remove(){
+      if(index > 0){
+        textDiv.textContent = textDiv.textContent.slice(0, -1);
+        index--;
+        setTimeout(remove, 100);
+      }else{
+        index = 0;
+        setTimeout(typing, 1000);
+      }
+    }
+
+
+  </script>
+</body>
+</html>
