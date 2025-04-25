@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  text-align: center;
+}
+
+@import url("./fixed.css");
+@import url("./dropdown.css");
+@import url("./tab.css");
+@import url("./slide.css");
+@import url("./slide_vertical.css");
+@import url("./slide_button.css");
+@import url("./modal.css");

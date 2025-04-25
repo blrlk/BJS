@@ -1,0 +1,85 @@
+.slidebox{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 20px;
+
+  padding: 30px 0;
+  border-bottom: 2px solid gainsboro;
+}
+
+.slidebox .slides,
+.slidebox .slidesV,
+.slidebox .slidesB{
+  border: 2px solid blue;
+  width: 350px;
+  height: 200px;
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.slidebox .slides .slide,
+.slidebox .slidesV .slideV,
+.slidebox .slidesB .slideB{
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  text-align: center;
+  line-height: 180px;
+}
+
+.slidebox .slides .slide,
+.slidebox .slidesB .slideB{
+  display: inline-block;
+}
+
+.slidebox .slides .slidebtn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 50px;
+}
+
+.slidebox .slidebtn span{
+  cursor: pointer;
+}
+
+.slidebox .slidesB .slidebtnB{
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  bottom: 10px;
+}
+
+.slidebox .slidesB .slidebtnB .btn{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slidebox .slidesV .slidebtnV{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slidebox .slidesV .slidebtnV > div{
+  font-size: 16px;
+  cursor: pointer;
+}
