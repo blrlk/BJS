@@ -29,15 +29,19 @@
 }
 
 #tab .tabContent{
-  /* border: 1px solid purple; */
+  border: 2px solid purple;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 #tab .tabContent .all{
   border: 1px solid black;
-  flex: 0 1 calc(33.33% - 10px);
+  /* 제일 우측에 미세한 여백 존재 */
+  /* flex: 0 1 calc(33.33% - 10px); */
+
+  /* 5개의 컨텐츠는 gap이 4개 즉, calc( (100% - (gap * (n-1))px) / n ) 해주어야 함 (여기서 n은 한 줄에 들어갈 컨텐츠의 개수) */
+  flex: 0 1 calc((100% - 40px) / 5);
   display: none;
 }
 
