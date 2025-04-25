@@ -5,6 +5,10 @@
   font-family: Arial, sans-serif;
 }
 
+body{
+  padding: 10px;
+}
+
 .container {
   display: flex;
   margin-bottom: 20px;

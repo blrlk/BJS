@@ -9,15 +9,18 @@
   <h1 id="text"></h1>
 
   <script>
-    let txt = "안녕하세요!! 타이핑 중입니다. ";
+    let txt = "안녕하세요!! 타이핑 중입니다.";
     let textDiv = document.querySelector("#text");
     let index = 0;
+
+    console.log(txt.length);
 
     window.addEventListener("load", typing);
 
     function typing(){
       if(index < txt.length){
         textDiv.innerHTML += txt.charAt(index);
+        // console.log(txt.charAt(index));
         index++; //index = 3;
         setTimeout(typing, 100);
       }else{
@@ -28,6 +31,7 @@
     function remove(){
       if(index > 0){
         textDiv.textContent = textDiv.textContent.slice(0, -1);
+        // console.log(textDiv.textContent.slice(0, -1));
         index--;
         setTimeout(remove, 100);
       }else{
