@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d9f3d9c91a.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/dropdown.js" defer></script>
+  <script src="./js/slide.js" defer></script>
+  <script src="./js/tab.js" defer></script>
+  <script src="./js/hover.js" defer></script>
+</head>
+
+<body>
+  <!-- 1 -->
+  <header>
+    <div class="container">
+      <ul class="h_left">
+        <li class="menucss"><a href="">HOME <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li class="btnDropdown"><a>COMPANY <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subMenu">
+            <li>ABOUT US</li>
+            <li>OUR UPEOPLE</li>
+            <li>TESTIMONIALS</li>
+            <li>FAQ</li>
+            <li>PRICING</li>
+          </ul>
+        </li>
+        <li><a href="">PROJECTS <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="">SERVICES <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="">FEATURES <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="">NEWS <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="">CONTACT</a></li>
+      </ul>
+      <div class="h_right">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2 -->
+  <section id="banner">
+    <div class="slidebox">
+      <ul class="slides">
+        <li class="slide">
+          <div class="imgbox">
+            <img src="./img/slider_img/bg1.jpg" alt="">
+          </div>
+          <div class="txtbox">
+            <p>17 YEARS OF EXCELLENCE IN</p>
+            <h1>CONSTRUCTION INDUSTRY</h1>
+            <div>
+              <button>OUR SERVICES</button>
+              <button>CONTACT NOW</button>
+            </div>
+          </div>
+        </li>
+        <li class="slide">
+          <div class="imgbox">
+            <img src="./img/slider_img/bg2.jpg" alt="">
+          </div>
+          <div class="txtbox">
+            <p>17 YEARS OF EXCELLENCE IN</p>
+            <h1>CONSTRUCTION INDUSTRY</h1>
+            <div class="btn">
+              <button>OUR SERVICES</button>
+              <button>CONTACT NOW</button>
+            </div>
+          </div>
+        </li>
+        <li class="slide">
+          <div class="imgbox">
+            <img src="./img/slider_img/bg3.jpg" alt="">
+          </div>
+          <div class="txtbox">
+            <p>17 YEARS OF EXCELLENCE IN</p>
+            <h1>CONSTRUCTION INDUSTRY</h1>
+            <div class="btn">
+              <button>OUR SERVICES</button>
+              <button>CONTACT NOW</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="slidebtn">
+        <i class="fa-solid fa-chevron-left left"></i>
+        <i class="fa-solid fa-chevron-right right"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3, 4 -->
+  <section id="tab" class="container">
+    <div class="tabbtn">
+      <button id="all">SHOW ALL</button>
+      <button id="commercial">COMMERCIAL</button>
+      <button id="education">EDUCATION</button>
+      <button id="government">GOVERNMENT</button>
+      <button id="infrastructure">INFRASTRUCTURE</button>
+      <button id="resdiential">RESIDENTIAL</button>
+      <button id="healthcare">HEALTHCARE</button>
+    </div>
+
+    <div class="tabcontents">
+      <div class="all commercial education detail">
+        <img src="./img/tab_img/project1.jpg" alt="">
+        <div class="contentDetail">
+          <i class="fa-solid fa-plus"></i>
+          <div class="txtbox">
+            <p>CAPITAL TELTWAY BUILDING</p>
+            <button>COMMERCIAL INTERIORS</button>
+          </div>
+        </div>
+      </div>
+      <div class="all education">
+        <img src="./img/tab_img/project2.jpg" alt="">
+      </div>
+      <div class="all commercial government">
+        <img src="./img/tab_img/project3.jpg" alt="">
+      </div>
+      <div class="all government healthcare">
+        <img src="./img/tab_img/project4.jpg" alt="">
+      </div>
+      <div class="all education healthcare">
+        <img src="./img/tab_img/project5.jpg" alt="">
+      </div>
+      <div class="all infrastructure">
+        <img src="./img/tab_img/project6.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <footer>
+    <div class="container">
+      <div class="f_left">
+        <h3>ABOUT US</h3>
+        <img src="./img/logo.png" alt="">
+        <p>Lorem ipsum dolar sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut labore et dolore magna aliqua.</p>
+        <div class="sns">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+
+      <div class="f_center">
+        <h3>WORKING HOURS</h3>
+        <p>We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our Hotline and Contact form.</p>
+        <div class="time">
+          <div>
+            <span>Monday - Friday:</span>
+            <span>10:00 - 16:00</span>
+          </div>
+          <div>
+            <span>Saturday:</span>
+            <span>12:00 - 15:00</span>
+          </div>
+          <div>
+            <span>Sunday and holidays:</span>
+            <span>09:00 - 12:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="f_right">
+        <h3>SERVICES</h3>
+        <ul>
+          <li><i class="fa-solid fa-chevron-right"></i> Pre-Construction</li>
+          <li><i class="fa-solid fa-chevron-right"></i> General Contracting</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Construction Management</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Design and Build</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Self-Perform Construction</li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+</body>
+
+</html>

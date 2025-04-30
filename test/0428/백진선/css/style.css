@@ -1,0 +1,337 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+:root{
+  --bgColor: #25282c;
+  --pointcolor: #ecb842;
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+button{
+  cursor: pointer;
+}
+
+/* header */
+header{
+  background-color: var(--bgColor);
+  color: white;
+}
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+header .h_left{
+  display: flex;
+}
+
+header .h_left li{
+  margin-right: 20px;
+}
+
+header .h_left li.menucss{
+  color: var(--pointcolor);
+}
+
+header .h_left .btnDropdown{
+  position: relative;
+  cursor: pointer;
+}
+
+header .h_left .btnDropdown .subMenu{
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  top: 40px;
+  border: 1px solid black;
+  padding: 0 20px;
+  width: 200px;
+  z-index: 100;
+}
+
+header .h_left .btnDropdown .subMenu li{
+  border-bottom: 1px solid gainsboro;
+  padding: 10px 0;
+  margin: 0;
+}
+
+header .h_left .btnDropdown .subMenu li:last-child{
+  border: none;
+}
+
+header .h_left .btnDropdown .subMenu.showDropdown{
+  display: block;
+}
+/* header */
+
+/* banner */
+#banner .slidebox{
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+
+#banner .slidebox .slides{
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#banner .slidebox .slides .slide{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#banner .slidebox .slides .slide .imgbox{
+  width: 100%;
+  height: 100%;
+}
+
+#banner .slidebox .slides .slide .imgbox img{
+  width: 100%;
+  height: 100%;
+}
+
+#banner .slidebox .slides .slide .txtbox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  color: white;
+  text-align: center;
+}
+
+#banner .slidebox .slides .slide .txtbox p{
+  font-weight: 300;
+  font-size: 30px;
+}
+
+#banner .slidebox .slides .slide .txtbox h1{
+  font-size: 50px;
+}
+
+#banner .slidebox .slides .slide .txtbox > div button{
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#banner .slidebox .slides .slide .txtbox > div button:first-child{
+  background-color: var(--pointcolor);
+  border: none;
+  margin-right: 10px;
+}
+
+#banner .slidebox .slides .slide .txtbox > div button:last-child{
+  background-color: transparent;
+  border: 2px solid var(--pointcolor);
+}
+
+#banner .slidebox .slidebtn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#banner .slidebox .slidebtn{
+  color: white;
+  font-size: 25px;
+}
+
+#banner .slidebox .slidebtn i{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#banner .slidebox .slidebtn i:last-child{
+  background-color: var(--pointcolor);
+}
+/* banner */
+
+/* tab */
+#tab{
+  padding: 50px 0;
+}
+
+#tab .tabbtn{
+  display: flex;
+  border-bottom: 3px solid var(--pointcolor);
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+#tab .tabbtn > button{
+  border: none;
+  background-color: transparent;
+  flex: 1 1 auto;
+  font-weight: bold;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+#tab .tabcontents{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#tab .tabcontents .all{
+  font-size: 0;
+  flex: 0 1 calc(100% / 3);
+  display: none;
+}
+
+#tab .tabcontents .all img{
+  width: 100%;
+  height: 100%;
+}
+
+#tab .tabcontents .detail{
+  position: relative;
+}
+
+#tab .tabcontents .detail .contentDetail{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  background-color: #25282ca6;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: none;
+}
+
+#tab .tabcontents .detail .contentDetail > i{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--pointcolor);
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab .tabcontents .detail .contentDetail .txtbox{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#tab .tabcontents .detail .contentDetail .txtbox p{
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#tab .tabcontents .detail .contentDetail .txtbox button{
+  background-color: var(--pointcolor);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+}
+/* tab */
+
+/* footer */
+footer{
+  background-color: var(--bgColor);
+  color: gainsboro;
+  padding: 60px 0;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+footer .container > div{
+  flex: 1 1 auto;
+}
+
+footer .container h3{
+  font-size: 16px;
+  border-left: 2px solid var(--pointcolor);
+  padding: 0 15px 0 15px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+footer .container p{
+  margin-bottom: 40px;
+}
+
+footer .container .f_left{
+  width: 36%;
+  padding: 0 20px;
+}
+
+footer .container .f_center{
+  width: 36%;
+  padding: 0 20px;
+}
+
+footer .container .f_right{
+  width: 28%;
+  padding: 0 20px;
+}
+
+footer .container .f_left img{
+  margin-bottom: 20px;
+}
+
+footer .container .f_left .sns i{
+  margin-right: 15px;
+}
+
+footer .container .f_center .time > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container .f_right li{
+  padding: 15px 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+footer .container .f_right li:first-child{
+  padding-top: 0;
+}
+
+footer .container .f_right li:last-child{
+  border: none;
+}
+
+/* footer */
