@@ -7,7 +7,7 @@ public class ex26_arrayCheck {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("배열 크기 지정 ");
 		int num = sc.nextInt();
-		sc.nextLine();
+		sc.nextLine();	//숫자 입력 -> 문자 입력 시에 줄바꿈(\n)이 남을 수 있으므로 버퍼 초기화 필수
 		System.out.println();
 		
 		int[] arr = new int[num];
