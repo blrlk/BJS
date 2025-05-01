@@ -6,9 +6,14 @@ public class ex17_efelseif {
 	
 	public static void main(String[] args) {
 		int age;
-		Scanner input = new Scanner(System.in);
-		String tmp = input.nextLine();
-		age = Integer.parseInt(tmp);
+		Scanner input = new Scanner(System.in);	//System.in: 콘솔
+		
+		// 콘솔에서 문자로 입력받기
+//		String tmp = input.nextLine();
+//		age = Integer.parseInt(tmp);
+		
+		// 콘솔에서 숫자로 입력받기
+		age = input.nextInt();
 		
 		if(age>19) {
 			System.out.println("성인");
