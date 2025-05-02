@@ -1,4 +1,4 @@
-package ch04;
+package ch05;
 import java.util.*;
 
 public class ex26_arrayCheck {
@@ -11,7 +11,6 @@ public class ex26_arrayCheck {
 		System.out.println();
 		
 		int[] arr = new int[num];
-		String[] arrString = new String[num];
 		
 		//숫자
 //		for(int i=0;i<num;i++) {
@@ -26,6 +25,7 @@ public class ex26_arrayCheck {
 //			System.out.printf("%d ", arr[i]);
 //		}
 		
+		String[] arrString = new String[num];
 		// 문자열
 		for(int i=0;i<num;i++) {
 			System.out.printf("%d번째 배열 값 ", i);
