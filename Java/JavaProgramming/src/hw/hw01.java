@@ -1,29 +1,89 @@
 package hw;
+
 import java.util.*;
 
-// 변수, 연산자, 제어문, 배열, 클래스
-// 숫자 맞추기, 가위바위보, 야구게임-숫자로 해야하는데 문자로 하고 있ㅇ네 ㅋ
 public class hw01 {
 
 	public static void main(String[] args) {
+		System.out.println("== 숫자 야구 시작 ==");
 		Scanner sc = new Scanner(System.in);
-		
-		String result = sc.nextLine();
-		
-		int len = result.length();
-		char[] answer = result.toCharArray();
-		
-//		for (char s : answer) {
-//		    System.out.println(s);
-//		}
-		
-		String userInput="";
-		while(userInput.equals(result)) {
-			userInput = sc.nextLine();
-			char[] userAnswer = userInput.toCharArray();
-			for()
+
+		int[] answer = new int[3]; // 정답
+		Random rd = new Random();
+
+		// 랜덤 수 생성
+		for (int i = 0; i < answer.length; i++) {
+			int num = rd.nextInt(10);
+
+			boolean isused = false; // 중복 여부
+
+			for (int j = 0; j < i; j++) {
+				if (answer[j] == num) {
+					isused = true;
+					break;
+				}
+			}
+
+			if (isused) {
+				i--;
+			} else {
+				answer[i] = num;
+			}
 		}
-		
+
+		System.out.print("answer: ");
+		for (int i = 0; i < answer.length; i++) {
+			System.out.print(answer[i]);
+		}
+		System.out.println();
+
+		int[] userInput = new int[3]; // 사용자 입력
+
+		int strike, ball, cnt = 0;
+
+		while (true) {
+			strike = 0; ball = 0;
+			cnt++;
+
+			System.out.print("세 자리 숫자 입력 ");
+			int num = sc.nextInt();
+
+			// 각 자리수를 배열 안에 넣기
+			String str = String.valueOf(num);	//num 문자열로 변경
+
+			for (int i = 0; i < answer.length; i++) {
+				userInput[i] = str.charAt(i) - '0';
+			}
+
+			// game start
+			// 값 비교
+			for (int i = 0; i < answer.length; i++) {
+				for (int j = 0; j < answer.length; j++) {
+					if (answer[i] == userInput[j]) {
+						if (i == j) {
+							strike++;
+						} else {
+							ball++;
+						}
+					}
+				}
+			}
+
+			// 결과 print
+			if (strike == 0 && ball == 0) {
+				System.out.println("out");
+			} else {
+				if (strike == 3 && ball == 0) {
+					System.out.printf("~ 정답입니다 ~\n%d번 만에 성공", cnt);
+					break;
+				} else {
+					System.out.printf("%d strike, %d ball\n", strike, ball);
+				}
+
+			}
+
+		}
+
 	}
 
 }
