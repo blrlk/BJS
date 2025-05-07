@@ -59,7 +59,6 @@ public class hw01 {
 			// 사용자 입력 숫자 중복 여부 검사
 			boolean isused = false;
 			for(int i=0;i<userInput.length;i++) {
-				
 				for(int j=0;j<userInput.length;j++) {
 					if(userInput[i] == userInput[j]) {
 						if(i!=j) {
