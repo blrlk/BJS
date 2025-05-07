@@ -3,6 +3,10 @@ import java.util.*;
 
 // 변수, 연산자, 제어문, 배열, 클래스
 public class hw01 {
+	
+	
+	//char로 받아봅세 -> 수정
+	// char num = (char) (rd.nextInt(10) + 48);
 
 	public static void main(String[] args) {
 		System.out.println("== 숫자 야구 시작 ==\n< 중복 제외 / 0으로 시작하지 않음 >");
