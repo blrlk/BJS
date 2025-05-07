@@ -71,7 +71,7 @@ public class hw01 {
 			}
 			
 			if(isused) {
-				System.out.println("중복된 숫자는 입력 불가능");
+				System.out.println("중복은 제외하고 입력해주세요");
 				continue;
 			}
 
