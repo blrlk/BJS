@@ -12,9 +12,11 @@ public class hw01 {
 		Random rd = new Random();
 
 		// 랜덤 수 생성
-		for (int i = 0; i < answer.length; i++) {
+		answer[0] = rd.nextInt(9)+1;	//시작은 0이 될 수 x
+		
+		for (int i = 1; i < answer.length; i++) {
 			int num = rd.nextInt(10);
-
+			
 			boolean isused = false; // 중복 여부
 
 			for (int j = 0; j < i; j++) {
@@ -38,19 +40,20 @@ public class hw01 {
 		System.out.println();
 
 		int[] userInput = new int[3]; // 사용자 입력
-
 		int strike, ball, cnt = 0;
 
+		System.out.println("정답은 0으로 시작하지 않음");
 		while (true) {
 			strike = 0; ball = 0;
 			cnt++;
 
+			// 0으로 시작 못 하게 ?
 			System.out.print("세 자리 숫자 입력 ");
-			int num = sc.nextInt();			
-
+			int num = sc.nextInt();
+			
 			// 각각의 숫자 배열 안에 넣기
 			String strnum = String.valueOf(num);	//num을 문자열로 변경 -> 각 자리수 배열에 넣기 위함
-
+			
 			for (int i = 0; i < answer.length; i++) {
 				userInput[i] = strnum.charAt(i) - '0';	//문자열의 i번째 문자에서 문자 '0'을 빼면 i번째 문자가 정수가 됨
 			}
