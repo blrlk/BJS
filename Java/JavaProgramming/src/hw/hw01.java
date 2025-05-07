@@ -1,5 +1,4 @@
 package hw;
-
 import java.util.*;
 
 // 변수, 연산자, 제어문, 배열, 클래스
