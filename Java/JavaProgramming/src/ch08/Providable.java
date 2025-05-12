@@ -1,4 +1,4 @@
-package ch07;
+package ch08;
 
 interface Providable {
 	void leisureSports();

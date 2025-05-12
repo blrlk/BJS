@@ -1,6 +1,6 @@
-package ch07;
+package ch09;
 
-public class exception {
+public class ex61_exception {
 
 	public static void main(String[] args) {
 		try {

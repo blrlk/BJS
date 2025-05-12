@@ -1,4 +1,4 @@
-package ch07;
+package ch08;
 
 //각각의 클래스마다 역할 부여
 //TourGuide가 객체를 생성하도록
