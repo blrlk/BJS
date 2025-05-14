@@ -1,7 +1,7 @@
 package ch10;
 
 //StringBuffer() - 문자열을 수정할 수 있는 가변 객체
-public class stringBuffer {
+public class stringbuffer {
 
 	public static void main(String[] args) {
 		String a = "java";
