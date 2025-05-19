@@ -1,4 +1,4 @@
-package ch11;
+package ch12;
 
 class MyThread extends Thread{
 	public void run() {

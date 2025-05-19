@@ -1,4 +1,4 @@
-package ch11;
+package ch12;
 
 public class Account {
 	int money = 0;

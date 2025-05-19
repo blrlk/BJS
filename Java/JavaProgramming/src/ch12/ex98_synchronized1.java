@@ -1,4 +1,4 @@
-package ch11;
+package ch12;
 
 class MyThreadB implements Runnable{
 	Ticketing ticket = new Ticketing();
