@@ -1,0 +1,61 @@
+1.
+(1) 인스턴스
+(2) new
+
+2.
+(1) System.out.println(test2.wheel);
+(2) test2 t2 = new test2();
+     System.out.println(t2.speed);
+
+3.
+반환 타입, 매개 변수
+
+4.
+(1) 
+test4(String color, int capacity){
+	this.color = color;
+	this.capacity = capacity;
+}
+(2)
+test4 t4 = new test4("silver", 64);
+
+5.
+(1) extends test5
+(2) 
+public static void main(String[] args) {
+	test5 a = new exam5();
+	a.printer();
+}
+
+@Override
+public void printer() {
+	System.out.println("자식함수");
+}
+
+
+6.
+(1) Animal lion = new Lion();
+(2) 
+void feed(Animal animal){
+	System.out.println(animal + " 먹이 주기");
+}
+
+7.
+(1) try-catch-finally
+(2) throw
+
+8.
+(1) Random random = new Random();
+(2) random.nextInt(6)+1
+
+9.
+(1) LocalDate.now();
+(2) LocalDate.of(2025, 12, 25);
+
+10.
+(1)
+arrlist.add(mb1.name);
+arrlist.add(mb1.age);
+(2)
+int sec = (int)arrlist.get(1);
+
