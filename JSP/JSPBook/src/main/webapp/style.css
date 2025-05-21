@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	/*text-decoration-line:none;*/
+	color:inherit;
+}
+
+a{
+	text-decoration-line:none;
+}
+
+ol{
+	margin-top: 10px;
+}
+body{
+	padding:20px;
+}
