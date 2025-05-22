@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/exam2_2")
+@WebServlet("/declaration02")
 public class declaration02 extends HttpServlet {
 
 	@Override

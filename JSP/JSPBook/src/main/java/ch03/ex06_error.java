@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/exam3_6")
+@WebServlet("/errorPage")
 public class ex06_error extends HttpServlet{
 
 	@Override

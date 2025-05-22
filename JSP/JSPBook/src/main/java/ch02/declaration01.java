@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 //애노테이션이라 하고 특정 객체 자동으로 생성 NoCodeBase
 //localhost:8080/JSPBook2/exam2_1
-@WebServlet("/exam2_1")
+@WebServlet("/declaration01")
 
 public class declaration01 extends HttpServlet{
 
