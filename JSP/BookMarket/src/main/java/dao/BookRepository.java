@@ -3,9 +3,12 @@ package dao;
 import java.util.ArrayList;
 import dto.Book;
 
+//Book 클래스가 돈이면 돈을 주고받
 public class BookRepository {
+	//변수: 전역변수, 참조변수<북>					   빵안에<치즈>
 	private ArrayList<Book> listOfBooks = new ArrayList<Book>();
 	
+	//함수: 생성자(클래스 이름과 동일) :: 객체 생성 시 전역 변수 초기화 
 	public BookRepository() {
 		Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
 		book1.setAuthor("우재남");
@@ -41,7 +44,23 @@ public class BookRepository {
 		listOfBooks.add(book3);
 	}
 	
+	//함수: 참조 변수 리턴				받는 게 없음
 	public ArrayList<Book> getAllBooks(){
 		return listOfBooks;
+	}
+	
+	//함수: 참조 변수 리턴			문자열 하나 줘
+	public Book getBookById(String bookId) {
+		Book bookById =null;
+		
+		for(int i=0;i<listOfBooks.size();i++) {
+			Book book = listOfBooks.get(i);
+			if(book!=null && book.getBookId() != null && book.getBookId().equals(bookId)) {
+				bookById = book;
+				break;
+			}
+		}
+		
+		return bookById;
 	}
 }
