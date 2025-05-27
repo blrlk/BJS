@@ -2,13 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Book" %>
-<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"/>
+<%@ page import="dao.BookRepository" %>
+
+<!-- jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"/ -->
 
 <!DOCTYPE html>
 <html>
 <head>
 <link href="http://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/fc2e77f065.js" crossorigin="anonymous"></script>
+<% System.out.println("books.jsp 입장"); %>
 <meta charset="UTF-8">
 <title>도서 목록</title>
 </head>
@@ -24,7 +27,9 @@
 		</div>
 		
 		<%
-			ArrayList<Book> listOfBooks = bookDAO.getAllBooks();
+			BookRepository dao=BookRepository.getInstance();
+			ArrayList<Book> listOfBooks = dao.getAllBooks();
+			System.out.print("arrlist 개수: " + listOfBooks.size());
 		%>
 		
 		<div class="row align-items-md-stretch text-center">
@@ -38,7 +43,11 @@
 					<h5><b><%=book.getName() %></b></h5>
 					<p><%=book.getAuthor() %>
 					<br><%=book.getPublisher() %> | <%=book.getReleaseDate() %></p>
+					<% if(book.getDescription().length() >= 60){ %>
 					<p><%=book.getDescription().substring(0, 60) %></p>
+					<% } else { %>
+					<p><%=book.getDescription() %></p>
+					<% } %>
 					<p><%=book.getUnitPrice() %>원</p>
 					<p><a href="./book.jsp?id=<%=book.getBookId() %>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
 				</div>

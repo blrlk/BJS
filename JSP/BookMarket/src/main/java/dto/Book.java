@@ -102,6 +102,13 @@ public class Book {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
+
+	@Override
+	public String toString() {
+		return "Book [bookId=" + bookId + ", name=" + name + ", unitPrice=" + unitPrice + ", author=" + author
+				+ ", description=" + description + ", publisher=" + publisher + ", category=" + category
+				+ ", unitsInStock=" + unitsInStock + ", releaseDate=" + releaseDate + ", condition=" + condition + "]";
+	}
 	
 	
 	

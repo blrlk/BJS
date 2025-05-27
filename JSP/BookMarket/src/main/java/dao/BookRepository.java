@@ -8,8 +8,19 @@ public class BookRepository {
 	//변수: 전역변수, 참조변수<북>					   빵안에<치즈>
 	private ArrayList<Book> listOfBooks = new ArrayList<Book>();
 	
+	private static BookRepository instance = new BookRepository();
+	
+	public static BookRepository getInstance() {
+		return instance;
+	}
+	
+	
+	public void addBook(Book book) {
+		listOfBooks.add(book);
+	}
+	
 	//함수: 생성자(클래스 이름과 동일) :: 객체 생성 시 전역 변수 초기화 
-	public BookRepository() {
+	private BookRepository() {
 		Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
 		book1.setAuthor("우재남");
 		book1.setDescription("C#을 처음 접하는 독자를 대상으로 일대일 수업처럼 자세히 설명한 책이다. "
