@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page import="dto.Book" %>
 <%@ page import="dao.BookRepository" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
 <%@ page import="java.lang.reflect.Method" %>
+<%@ page import="java.util.*" %>
 
 <% 
 	System.out.println("Step1. processAddBook.jsp 입장");
@@ -10,16 +13,27 @@
 	//전처리: 전달된 데이터 받음, 유효성 검사, 묶음
 	request.setCharacterEncoding("UTF-8");
 	
-	String bookId = request.getParameter("bookId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice");
-	String author = request.getParameter("author");
-	String publisher = request.getParameter("publisher");
-	String releaseDate = request.getParameter("releaseDate");
-	String description = request.getParameter("description");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String condition = request.getParameter("condition");
+	String filename="";
+	String realFolder = "D:\\BJS\\JSP\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\BookMarket\\resources\\images";
+	int maxSize=5*1024*1024;
+	String encType="utf-8";
+	
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+	
+	String bookId = multi.getParameter("bookId");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice");
+	String author = multi.getParameter("author");
+	String publisher = multi.getParameter("publisher");
+	String releaseDate = multi.getParameter("releaseDate");
+	String description = multi.getParameter("description");
+	String category = multi.getParameter("category");
+	String unitsInStock = multi.getParameter("unitsInStock");
+	String condition = multi.getParameter("condition");
+	
+	Enumeration files = multi.getFileNames();
+	String fname = (String) files.nextElement();
+	String fileName = multi.getFilesystemName(fname);
 	
 	//전달 데이터 검사
 	System.out.println(bookId + ", " + name + ", " + unitPrice + ", " + author + ", " + publisher + ", " + releaseDate + ", " + description + ", " + category + ", " + unitsInStock + ", " + condition);
@@ -54,6 +68,7 @@
 	newBook.setCategory(category);
 	newBook.setUnitsInStock(stock);
 	newBook.setCondition(condition);
+	newBook.setFilename(fileName);
 	
 	//전처리 마지막 묶음 검증 :: 객체 print 하면 주소가 나오니까 해당 클래스에 toString() 함수 생성 해주어야 함 -> toString() 자동 실행
 	System.out.println(newBook);

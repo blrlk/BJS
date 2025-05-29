@@ -10,6 +10,7 @@
 <html>
 <head>
 <link href="http://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" hred="./resources/css/bootstrap.min.css" />
 <script src="https://kit.fontawesome.com/fc2e77f065.js" crossorigin="anonymous"></script>
 <% System.out.println("books.jsp 입장"); %>
 <meta charset="UTF-8">
@@ -40,6 +41,7 @@
 			
 			<div class="col-md-4">
 				<div class="h-100 p-2">
+					<img src="./resources/images/<%= book.getFilename() %>" style="width:250;height:350">
 					<h5><b><%=book.getName() %></b></h5>
 					<p><%=book.getAuthor() %>
 					<br><%=book.getPublisher() %> | <%=book.getReleaseDate() %></p>
