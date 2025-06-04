@@ -6,7 +6,9 @@
 <%@ page import="com.oreilly.servlet.multipart.*" %>
 <%@ page import="java.lang.reflect.Method" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
 
+<%@ include file="dbconn.jsp" %>
 <% 
 	System.out.println("Step1. processAddBook.jsp 입장");
 	//입장
@@ -54,34 +56,29 @@
 		stock = Integer.valueOf(unitsInStock);
 	}
 	
-	//price와 stock의 정수 변환 검사
-	System.out.println(price  + ", " +  stock);
+	PreparedStatement pstmt = null;
+	String sql = "INSERT INTO book VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
-	Book newBook = new Book();
-	newBook.setBookId(bookId);
-	newBook.setName(name);
-	newBook.setUnitPrice(price);
-	newBook.setAuthor(author);
-	newBook.setPublisher(publisher);
-	newBook.setReleaseDate(releaseDate);
-	newBook.setDescription(description);
-	newBook.setCategory(category);
-	newBook.setUnitsInStock(stock);
-	newBook.setCondition(condition);
-	newBook.setFilename(fileName);
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, bookId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, author);
+	pstmt.setString(5, description);
+	pstmt.setString(6, publisher);
+	pstmt.setString(7, category);
+	pstmt.setLong(8, stock);
+	pstmt.setString(9, releaseDate);
+	pstmt.setString(10, condition);
+	pstmt.setString(11, fileName);
 	
-	//전처리 마지막 묶음 검증 :: 객체 print 하면 주소가 나오니까 해당 클래스에 toString() 함수 생성 해주어야 함 -> toString() 자동 실행
-	System.out.println(newBook);
-	
-	//repository 객체 받기
-	BookRepository dao = BookRepository.getInstance();
-	//dao 클래스 내부의 메소드를 가져와 하나씩 출력
-	for(Method m : dao.getClass().getMethods()){
-		System.out.println(m.getName());
+	if(pstmt!=null){
+		pstmt.close();
+	}
+	if(conn!=null){
+		conn.close();
 	}
 	
-	//dto 들고 dao 이동
-	dao.addBook(newBook);
 	System.out.println("저장 완료");
 	
 	response.sendRedirect("books.jsp");
