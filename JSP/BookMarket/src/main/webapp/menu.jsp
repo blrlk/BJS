@@ -6,7 +6,7 @@
 <header class="p-3 border-bottom">
 	<div class="container">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-			<a href="./welcome.jsp" class="d-flex align-items-center text-dark text-decoration-none">
+			<a href="./welcome.jsp" class="d-flex align-items-center mb-3-mb-md-0 me-md-auto text-dark text-decoration-none">
 				<i class="fa-solid fa-house"></i>
 				<span class="fs-4">Home</span>
 			</a>
