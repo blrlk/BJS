@@ -23,7 +23,7 @@
 	String releaseDate = multi.getParameter("releaseDate");
 	String description = multi.getParameter("description");
 	String category = multi.getParameter("category");
-	String unitsInStock = multi.getParameter("unitInStock");
+	String unitInStock = multi.getParameter("unitInStock");
 	String condition = multi.getParameter("condition");
 	
 	Enumeration files= multi.getFileNames();
@@ -38,10 +38,10 @@
 	}
 	
 	long stock;
-	if(unitsInStock.isEmpty()){
+	if(unitInStock.isEmpty()){
 		stock=0;
 	} else{
-		stock = Integer.valueOf(unitsInStock);
+		stock = Integer.valueOf(unitInStock);
 	}
 	
 	PreparedStatement pstmt = null;
@@ -54,7 +54,7 @@
 	
 	if(rs.next()){
 		if(fileName != null){
-			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_description=?, b_publisher=?, b_category=?, b_unitsInStock=?, b_releaseDate=?, b_condition=?, b_fileName=? WHERE b_id=?";
+			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_description=?, b_publisher=?, b_category=?, b_unitInStock=?, b_releaseDate=?, b_condition=?, b_fileName=? WHERE b_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
@@ -69,7 +69,7 @@
 			pstmt.setString(11, bookId);
 			pstmt.executeUpdate();
 		} else{
-			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_description=?, b_publisher=?, b_category=?, b_unitsInStock=?, b_releaseDate=?, b_condition=? WHERE b_id=?";
+			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_description=?, b_publisher=?, b_category=?, b_unitInStock=?, b_releaseDate=?, b_condition=? WHERE b_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);

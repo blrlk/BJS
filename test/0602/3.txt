@@ -1,0 +1,38 @@
+1.
+<%! int a =3; %>
+
+2.
+<%@ page import="java.util.Scanner" %>
+
+3.
+<%@ include file="nav.jsp" %>
+
+4.
+<jsp:forward page="forward.jsp" />
+
+5.
+1) <% out.println(text); %>
+2) <%= text %>
+3) ${text}
+
+6.
+<jsp:useBean id="myBean" class="java.util.Scanner" />
+
+7.
+<% String txt = request.getParameter("itedunet"); %>
+
+8.
+request.setAttribute("maual", test);
+
+9.
+String text = (String)request.getAttribute("maual");
+
+10.
+multipart/form-data
+
+11.
+저장 경로, 인코딩 유형
+
+12.
+multi.getParameter("text1");
+multi.getFilesystemName("img1");

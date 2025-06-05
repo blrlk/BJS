@@ -1,0 +1,46 @@
+1.
+(1) 1byte
+(2) short
+(3) 4byte
+(4) double
+
+2.
+데이터 타입의 크기가 큰 곳에서 작은 곳으로의 변환은 불가능
+데이터의 변형이 있어서는 안 됨
+
+3. true
+
+4. true
+
+5. true
+
+6. if(a>3)
+
+7.
+(1) if(age>19)
+(2) else if(age>=14)
+(3) else if(age>=9)
+(4) else
+
+8.
+(1) 1
+(2) i<=9
+(3) 1
+(4) j<=9
+
+9.
+(1) continue
+(2) break
+
+10.
+String[] arr = new String[3];
+
+11.
+arr[0] = "안녕";
+arr[1] = "하세요";
+arr[2] = "굿바이";
+
+12.
+for(int i=0;i<arr.length;i++){
+	System.out.println(arr[i]);
+}

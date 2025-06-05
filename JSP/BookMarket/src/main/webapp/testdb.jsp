@@ -20,7 +20,7 @@
 		
 		//데베 연결
 		Class.forName("com.mysql.jdbc.Driver");	//드라이버 이름
-		conn = DriverManager.getConnection(url,user,pw);	//연결 url, id, pw
+		conn = DriverManager.getConnection(url,user,pw);	//연결 url, id, pw -> conn 내부는 DB와 연결된 Connection 객체 존재
 		
 		if(conn==null)
 		{
