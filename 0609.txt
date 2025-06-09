@@ -1,0 +1,22 @@
+변수 < DTO < list
+
+table = dto
+
+project -> java ee tools -> generate ~~ :: web.xml 생성
+
+import 단축키: ctrl + shift + o
+
+executeUpdate : 집어넣기
+executeQuery : 가져오기
+
+return datatype
+1. void - C, U, D
+2. 변수
+3. 변수들의 묶음(dto) - readone
+4. list - readsome, readall
+5. map(key, value)
+
+
+select * from table where 조건
+delete from table where 조건
+update table set 바꿀 거 where 조건 

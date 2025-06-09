@@ -1,28 +1,35 @@
-package controller;
+package Controller;
 
 import java.io.IOException;
 
-import dao.personRepository;
+import DAO.memberRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/read")
-public class readController extends HttpServlet{
-	personRepository repo = personRepository.getInstance();
+@WebServlet("/delete")
+public class deleteController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("read 연결 완료");
+		System.out.println("delete : doget");
 		
+		//전처리
+		String id = req.getParameter("id");
+		
+		//모델 이동
+		memberRepository repo = new memberRepository();
+		repo.delete(id);
+		
+		//뷰 이동
+		resp.sendRedirect("readall");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		System.out.println("delete : dopost");
 	}
-	
+
 }
