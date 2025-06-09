@@ -18,10 +18,10 @@ public class readall extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int pageNum = Integer.parseInt(req.getParameter("pageNum")); //pageNum == null 인 경우 오류 발생
 		
-		//String pageno = req.getParameter("pageNum");
-		//if(pageno != null) {	//pageNum이 null이 아닌 경우에만 실행
-		//	int pageNum2 = Integer.parseInt(pageno);
-		//}
+		/*String pageno = req.getParameter("pageNum");
+		if(pageno != null) {	//pageNum이 null이 아닌 경우에만 실행
+			int pageNum2 = Integer.parseInt(pageno);
+		}*/
 		
 		BoardRepository repository = BoardRepository.getInstance();
 		ArrayList arr = repository.readall(pageNum);

@@ -32,7 +32,9 @@ public class createController extends HttpServlet{
 		
 		int hit=0;
 		String ip = req.getRemoteAddr();
+		System.out.println("ip> " + ip);
 		
+		//데이터 묶기
 		BoardDTO dto = new BoardDTO();
 		dto.setId(id);
 		dto.setName(name);

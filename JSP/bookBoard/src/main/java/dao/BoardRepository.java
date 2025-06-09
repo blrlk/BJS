@@ -46,6 +46,7 @@ public class BoardRepository {
         try {
             conn = DBConnection.getConnection();
 
+            //board() 하는 이유: 없으면 자동 증가하는 num까지 데이터 넣어줌 -> num 빼고 할당 
             String sql = "insert into board(id, name, subject, content, regist_day, hit, ip) values(?, ?, ?, ?, ?, ?, ?)";
 
             pstmt = conn.prepareStatement(sql);
@@ -56,8 +57,8 @@ public class BoardRepository {
             pstmt.setString(5, board.getRegist_day());
             pstmt.setInt(6, board.getHit());
             pstmt.setString(7, board.getIp());
-
             pstmt.executeUpdate();
+            
         } catch (Exception ex) {
             System.out.println("insertBoard() ���� : " + ex);
         }
