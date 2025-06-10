@@ -1,0 +1,34 @@
+DBMS: 운영체제
+
+DBMS > database > table > column/row
+
+db는 dto와 매핑되어야 함
+- 변수: column
+
+-- varchar: 동적 길이 - 최대 몇 자
+-- char: 고정 길이
+-- 테이블 삭제:: drop table member; 
+-- db 삭제:: drop database shop_db;
+
+DDL 명령어: object 생성, 수정, 삭제, 읽기
+DML 명령어: 테이블 내용 생성, 수정, 삭제, 읽기
+
+인덱스: primary key
+view: 보안 위해 사용, 바로 가기 아이콘과 유사
+
+BEGIN - END :: {}
+
+프로시저: 프로그래밍
+
+PK vs FK
+1. primary key
+: 테이블에서 각 행(row)을 고유하게 식별할 수 있는 컬럼
+- 중복 불가 (unique)
+- NULL 허용 안 됨
+- 한 테이블에 하나만 존재 가능
+
+2. foreign key
+: 다른 테이블의 primary key를 참조하는 컬럼
+- 참조하는 테이블에 해당 값이 존재해야 함
+- 중복 가능
+- 한 테이블에 여러 개 존재 가능
