@@ -1,0 +1,10 @@
+DDL 명령어: object 생성, 수정, 삭제, 읽기(create, alter, delete, drop)
+-- alter table add: 행 추가
+-- alter table add constraint: 제약사항
+-- alter table alter column: 열 수정
+
+DML 명령어: 테이블 내용 생성, 수정, 삭제, 읽기
+
+foreign key 안 먹을 때
+- set foreign_key_checks=1;
+- select @@foreign_key_checks;
