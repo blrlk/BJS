@@ -1,0 +1,89 @@
+문항 1. start.jsp 페이지에서 int count=10 이라는 변수를 선언하려고 합니다. 이때 이 변수를 전역변수로 선언을  스크립트 태그로 제시하시오.(5점)
+전역변수 선언 코드 : <% int count = 10; %>
+
+
+문항 2. start.jsp 페이지에서 표현문 태그를 사용하여 count변수를 출력하는 방법을 스크립트 태그로 제시하시오.(5점)
+출력문 코드 : <%= count %>
+
+
+문항 3. start.jsp페이지에서 아래의 코드와 같이 Date객체를 사용하여 시간을 표시하려고 합니다. 객체 생성하는 코드를 제시하시오.반드시 참조변수명은 time이 되어야 합니다.(5점)
+객체생성 : <% Date time = new Date() %>
+
+
+문항 4. start.jsp페이지에서 Date객체를 import하는 코드를 제시하시오.(5점)
+import 코드 : <%@ page import="java.uti.Date" %>
+
+
+문항 5. start.jsp에서 <a>태그를 이용하여 요청을 요구사항과 같이 발생시키십시오. 
+(요청명 배점 5점, 파라미터 각 2.5점 총 10점)
+- 요청명 : exam5  
+- 파라미터이름 : name 값: "kim" 
+- 파라미터이름 : age 값 : 39 
+<a href="exam5?name=kim&age=39">요청발생</a>
+
+
+문항 6. Controller패키지의 Server_Controller.java에서 start.jsp에서 발생한 요청을 수신하는 매핑을 구현하시오.(5점)
+@WebServlet("/exam5")
+public class ServerController extends HttpServlet{ }
+
+
+문항 7. 매핑이후 처리할 메서드 doget()을 구현하시오. 단 반드시 상속받아서 구현해야됩니다.(5점)
+- 상속 코드와, doget()  메서드를 구현한 코드를 제출하시오.
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { }
+
+
+문항 8. doget()메서드에서 start.jsp의 요청 파라미터를 수신하는 코드를 작성하시오.(5점)
+변수이름: name, age (데이터타입 둘다 String )
+String name = req.getParameter("name");
+String age = req.getParameter("age");
+
+
+문항 9. DAO패키지의 Repository 클래스를 싱글톤 방식으로 구현하시오.(각 5점 총10점)
+- 객체생성 참조변수 이름 : instance
+- instance 처리 메서드 이름 : getInstance()
+private static Repository instance = new Repository();
+public static Repository getInstance() {
+	return instance;
+}
+
+
+문항 10. Server_Controller클래스의 doget()메서드 에서 Repository 객체를 구현하는 코드를 작성하시오. (5점)
+- 참조변수의 이름 : repo
+Repository repo = Repository.getInstance();
+
+
+문항 11. Repository 클래스의 DBConnection() 메서드에서 url변수의 코드를 완성하시오.(5점)
+- 데이터베이스의 정보가 필요하거나 데이터베이스가 필요하다면 webapp의 exesql.sql을 실행하거나 확인하십시오.
+String url = "jdbc:mysql://localhost:3306/server_test";
+
+
+문항 12. Repository 클래스의 DBConnection() 메서드에서 20번 라인의 conn변수의 대입할 코드를 완성하시오.(5점)
+conn = DriverManager.getConnection(url, user, password);
+
+
+문항 13. ServerController 클래스의 doget()메서드에서 repo참조변수를 이용하여 문항8번에서 수신한 변수 name,age변수를 Repository클래스의 addMember() 메서드 호출하여 전달하는 코드를 구현하시오. (각 5점 총 10점)  
+- DTO객체가 없습니다.
+
+호출 파라미터 코드 : repo.addMember(name, age);
+addMember 매개변수 코드 : public void addMember(String name, String age) { }
+
+
+문항 14. Repository클래스의 addMember() 메서드의 String sql의 코드에서 ? 에 데이터를 삽입하는 코드를 작성하시오.(5점)
+- 두줄 코드 모두 맞아야 정답처리됩니다.
+pstmt.setString(1, name);
+pstmt.setString(2, age);
+
+
+문항 15. Repository클래스의 addMember() 메서드에서 쿼리를 실행하는 명령어를 작성하시오.(5점)
+pstmt.executeUpdate();
+
+
+문항 16. ServerController클래스의 전역변수 message를 end.jsp로 이동할때 request를 활용하여 가지고 가는 코드를 작성하시오.(5점)
+- key는 반드시 "end_message"가 되어야 합니다.
+req.setAttribute("end_message", message);
+
+
+문항 17.ServerController클래스의  doget에서 end.jsp로 이동하는 명령어를 작성하시오. 반드시 forward해야됩니다.(5점) 
+RequestDispatcher ds = req.getRequestDispatcher("end.jsp");
+ds.forward(req, resp);

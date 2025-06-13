@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<% int count = 10; %>\
+	<jsp:useBean id="time" class="java.util.Date" />
+    <p> 현재시간은 : <% out.println(time); %>
+	<p>count변수의 값은 : <%= count %> 
+	<p><a>요청발생</a>
+</body>
+</html>

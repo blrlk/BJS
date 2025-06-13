@@ -1,0 +1,9 @@
+package Controller;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet("/exam5")
+public class ServerController extends HttpServlet{
+	String message="수고하셨습니다.";
+}

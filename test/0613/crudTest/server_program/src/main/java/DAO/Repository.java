@@ -1,0 +1,45 @@
+package DAO;
+import java.sql.*;
+
+public class Repository {
+	//싱글톤
+	private static Repository instance = new Repository();
+	public static Repository getInstance() {
+		return instance;
+	}
+	
+	private Repository() {}
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	public Connection DBConnection() {
+		String url = "jdbc:mysql://localhost:3306/server_test";
+		String user = "root";
+		String password = "1234";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(url, user, password); //??????? 뭘 추가하노		
+			System.out.println("데이터베이스가 연결되었습니다.");
+		}catch(Exception e) {System.out.println("데이터베이스 연결 실패 ");}
+		return conn;
+	}
+	
+	public void addMember(String name, String age) {
+		conn = DBConnection();
+		System.out.println("db 연결 완료");
+		
+		try {
+			String sql = "insert into Member values(?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, age);
+			pstmt.executeUpdate();
+			System.out.println("데이터 추가 완료");
+		}catch(Exception e) {}
+		
+	}
+	
+	
+}

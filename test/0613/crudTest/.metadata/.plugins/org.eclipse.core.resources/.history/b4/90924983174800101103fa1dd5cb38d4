@@ -1,0 +1,6 @@
+package Controller;
+
+@WebServlet("/exam5")
+public class ServerController extends HttpServlet{
+	String message="수고하셨습니다.";
+}

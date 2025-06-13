@@ -1,0 +1,39 @@
+package DAO;
+import java.sql.*;
+
+public class Repository {
+
+	
+	
+	private Repository() {}
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	public Connection DBConnection() {
+		String url = "jdbc:mysql://localhost:3306/__________";
+		String user = "root";
+		String password = "1234";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(url, user, password);		
+			System.out.println("데이터베이스가 연결되었습니다.");
+		}catch(Exception e) {System.out.println("데이터베이스 연결 실패 ");}
+		return conn;
+	}
+	
+	public void addMember() {
+		conn = DBConnection();
+		
+		try {
+			String sql = "insert into Member values(?,?)";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+		}catch(Exception e) {}
+		
+	}
+	
+	
+}
