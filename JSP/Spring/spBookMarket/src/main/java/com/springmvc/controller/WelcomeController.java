@@ -14,7 +14,7 @@ public class WelcomeController {
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String welcome(Model model) {
-		System.out.println("WelcomController의 welcome 함수 입장 완료");
+		System.out.println("WelcomeController의 welcome 함수 입장 완료");
 		model.addAttribute("greeting", "Welcome to BookMarket");
 		model.addAttribute("strapline", "Welcome to WebShopping Mall!");
 		
