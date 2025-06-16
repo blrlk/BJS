@@ -1,0 +1,26 @@
+project name-properties-project facets
+java:17, runtimes의 apache 9.0, dynamic web module: 4.0
+
+src-main-java folder 생성
+
+
+maven repository
+mysql 8.0.3
+8000명꺼 link 복사해서
+dependencies 내부에 붙여넣기 - jar 파일 넣는 거 대신 복붙하면 자기 스스로 다운 받아서 코드 실행함
+
+alt+f5 enter : update
+
+
+
+1. pom.xml
+-> .class 파일 다운로드(확보)
+-> 변경 시 alt+f5 해주기
+
+2. web.xml
+-> dispatcherServlet(객체 생성)
+
+3. servlet-context.xml
+-> 1) 핸들러매핑
+
+WEB-INF 내 리소스들은 보안 폴더로 요청 시 오류 -> spring으로 요청 가능

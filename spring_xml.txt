@@ -1,0 +1,129 @@
+[[ pom.xml ]]
+
+<!-- properties -->
+<properties>
+	<!--자바의 버전을 정의-->
+	<java-version>17</java-version>
+	<!-- 스프링의 버전을 정의-->
+	<org.springframework-version>5.3.19</org.springframework-version>	
+	<!-- aspectj의 버전을 정의-->
+	<org.aspectj-version>1.9.9.1</org.aspectj-version>
+	<!--slf4j의 버전을 정의-->
+	<org.slf4j-version>1.7.36</org.slf4j-version>
+</properties>
+
+
+
+<!-- dependencies -->
+<!--외부 라이브러리 다운로드 경로-->
+<dependencies>
+	<!-- 스프링 프레임워크에서 spring-context 객체를 지정된 버전을 가져옴-->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${org.springframework-version}</version>
+		<!-- 로그를 남기는 commons-logging 객체는 빼고 주세요 -->
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+
+	<!--스프링 프레임워크에서 spring-webmvc 객체들을 주십시요-->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>    
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>3.8.1</version>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
+
+
+
+<!-- build -->
+<build>
+	<!--빌드시 필요한 확장 기능을 추가-->
+	<plugins>
+		<!--스프링 배포를 위한 이클립스 플러긴을 도입 -->
+		<plugin>
+			<artifactId>maven-eclipse-plugin</artifactId>
+			<version>2.9</version>
+			<configuration>
+				<additionalProjectnatures>
+					<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+				</additionalProjectnatures>
+				
+				<additionalBuildcommands>
+					<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+				</additionalBuildcommands>
+				
+				<downloadSources>true</downloadSources>
+				<downloadJavadocs>true</downloadJavadocs>
+			</configuration>
+		</plugin>
+		
+		<!-- 배포시 메이븐컴파일러(자바컴파일러포함)를 해당버전으로 교체-->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.5.1</version>
+			<configuration>
+				<source>17</source>
+				<target>17</target>
+				<compilerArgument>-Xlint:all</compilerArgument>
+				<showWarnings>true</showWarnings>
+				<showDeprecation>true</showDeprecation>
+			</configuration>
+		</plugin>
+        
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>exec-maven-plugin</artifactId>
+			<version>1.2.1</version>
+			<configuration>
+				<mainClass>org.test.int1.Main</mainClass>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
+
+
+[[ web.xml ]]
+
+<!-- xml파일 해당 위치에 넣어주기 -->
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	
+	<!-- Root Context (공유되는 객체의 저장소)를 설정하는 파일의 위치를 지정 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- Servlet Context(각각 개별적으로 유저에게 지급되는 저장소)를 설정하는 파일의 위치 -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>
