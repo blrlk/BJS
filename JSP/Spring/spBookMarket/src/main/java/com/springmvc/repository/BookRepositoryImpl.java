@@ -1,9 +1,14 @@
 package com.springmvc.repository;
 
-import java.util.List;
-import com.springmvc.domain.Book;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.springframework.stereotype.Repository;
+
+import com.springmvc.domain.Book;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
@@ -50,6 +55,70 @@ public class BookRepositoryImpl implements BookRepository {
 	public List<Book> getAllBookList() {
 		// TODO Auto-generated method stub
 		return listOfBooks;
+	}
+
+	@Override
+	public List<Book> getBookListByCategory(String category) {
+		List<Book> booksByCategory = new ArrayList<Book>();
+		for(int i=0;i<listOfBooks.size();i++) {
+			Book book = listOfBooks.get(i);
+			if(category.equalsIgnoreCase(book.getCategory())) {
+				booksByCategory.add(book);
+			}
+		}
+		
+		return booksByCategory;
+	}
+
+	@Override
+	public Set<Book> getBookListByFilter(Map<String, List<String>> filter) {
+		Set<Book> booksByPublisher = new HashSet<Book>();
+		Set<Book> booksByCategory = new HashSet<Book>();
+		
+		Set<String> booksByFilter = filter.keySet();
+		
+		if(booksByFilter.contains("publisher")) {
+			for(int j=0;j<filter.get("publisher").size();j++) {
+				String publisherName = filter.get("publisher").get(j);
+				for(int i=0;i<listOfBooks.size();i++) {
+					Book book = listOfBooks.get(i);
+					
+					if(publisherName.equalsIgnoreCase(book.getPublisher())) {
+						booksByPublisher.add(book);
+					}
+				}
+			}
+		}
+		
+		if(booksByFilter.contains("category")) {
+			for(int i=0;i<filter.get("category").size();i++) {
+				String category = filter.get("category").get(i);
+				List<Book> list = getBookListByCategory(category);
+				booksByCategory.addAll(list);
+			}
+		}
+		
+		booksByCategory.retainAll(booksByPublisher);
+
+		return booksByCategory;
+	}
+
+	@Override
+	public Book getBookById(String bookId) {
+		Book bookInfo = null;
+		for(int i=0;i<listOfBooks.size();i++) {
+			Book book = listOfBooks.get(i);
+			if(book != null && book.getBookId() != null && book.getBookId().equals(bookId)) {
+				bookInfo = book;
+				break;
+			}
+		}
+		
+		if(bookInfo == null) {
+			throw new IllegalArgumentException("도서 ID가 "+bookId + "인 해당 도서를 찾을 수 없습니다.");
+		}
+		
+		return bookInfo;
 	}
 
 }

@@ -30,14 +30,15 @@
 				<div class="col-md-4">
 					<h3>${book.name}</h3>
 					<p>${book.author}<br>${book.publisher} | ${book.releaseDate}</p>
-					<p align=left>${fn:substring(book.description, 0, 100)}</p>
+					<p align=left>${fn:substring(book.description, 0, 100)}...</p>
 					<p>${book.unitPrice }원</p>
+					<p><a href="<c:url value="/books/book?id=${book.bookId}"/>" class="btn btn-Secondary" role="button">상세정보 &raquo;</a>
 				</div>
 			</c:forEach>
 		</div>
 		<hr>
 		<footer>
-			<p>&copy;BookMarket
+			<p>&copy; BookMarket</p>
 		</footer>
 	</div>
 
