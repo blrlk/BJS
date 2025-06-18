@@ -1,0 +1,5 @@
+com.springmvc.controller
+com.springmvc.domain
+com.springmvc.repository
+com.springmvc.service
+
