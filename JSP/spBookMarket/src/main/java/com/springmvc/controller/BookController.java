@@ -1,30 +1,33 @@
 package com.springmvc.controller;
 
+import java.io.File;
 import java.util.List;
-import java.util.Set;
 import java.util.Map;
-import org.springframework.web.bind.annotation.MatrixVariable;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springmvc.domain.Book;
+import com.springmvc.exception.BookIdException;
 import com.springmvc.service.BookService;
-
-import org.springframework.web.bind.annotation.PathVariable;
-
-import org.springframework.web.bind.annotation.RequestParam;
-
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 
 @Controller
 @RequestMapping(value="/books")
@@ -55,7 +58,16 @@ public class BookController {
 	public String requestBooksByCategory(@PathVariable("category") String bookCategory, Model model) {	//category의 값이 bookCategory 변수로 들어가 함수 내부에서 사용
 		System.out.println("[requestBooksByCategory]" + bookCategory + model);
 		
+		if (bookCategory.isEmpty() || bookCategory == null) {
+	        throw new RuntimeException("No books found in category: " + bookCategory);  // 예외 발생
+	    }
+		
 		List<Book> booksByCategory = bookService.getBookListByCategory(bookCategory);
+		
+		if (booksByCategory.isEmpty() || booksByCategory == null) {
+	        throw new RuntimeException("No books found in category: " + booksByCategory);  // 예외 발생
+	    }
+		
 		model.addAttribute("bookList", booksByCategory);
 		System.out.println(model);
 		
@@ -84,7 +96,30 @@ public class BookController {
 	}
 	
 	@PostMapping("/add")
-	public String submitAddBookForm(@ModelAttribute("NewBook") Book book) {
+	public String submitAddBookForm(@Valid @ModelAttribute("NewBook") Book book, BindingResult result, HttpServletRequest request) {
+		if(result.hasErrors()) {
+			return "addBook";
+		}
+		
+		MultipartFile bookImage = book.getBookImage();
+		
+		String uploadDir = request.getServletContext().getRealPath("/resources/images");
+		
+		String saveName = bookImage.getOriginalFilename();
+		System.out.println(saveName);
+		File saveFile = new File(uploadDir, saveName);
+		System.out.println(saveFile);
+		
+		if(bookImage != null && !bookImage.isEmpty()) {
+			try {
+				System.out.println(bookImage);
+				bookImage.transferTo(saveFile);
+				System.out.println("transfer 성공");
+			} catch(Exception e) {
+				throw new RuntimeException("도서 이미지 업로드 실패 ", e);
+			}
+		}
+		
 		bookService.setNewBook(book);
 		return "redirect:/books";
 	}
@@ -96,6 +131,17 @@ public class BookController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		binder.setAllowedFields("bookId", "name", "unitPrice", "author", "description", "publisher", "category", "unitsInStock", "totalPages", "releaseDate", "condition");
+		binder.setAllowedFields("bookId", "name", "unitPrice", "author", "description", "publisher", "category", "unitsInStock", "totalPages", "releaseDate", "condition", "bookImage");
 	}
+	
+	@ExceptionHandler(value= {BookIdException.class})
+	public ModelAndView handleError(HttpServletRequest req, BookIdException exception) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("invalidBookId", exception.getBookId());
+		mav.addObject("exception", exception);
+		mav.addObject("url", req.getRequestURL() + "?" + req.getQueryString());
+		mav.setViewName("errorBook");
+		return mav;
+	}
+	
 }

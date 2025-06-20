@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class WelcomeController {
 	
 	WelcomeController(){
-		System.out.println("WelcomeController 객체 생성 완료");
+	//	System.out.println("WelcomeController 객체 생성 완료");
 	}
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)

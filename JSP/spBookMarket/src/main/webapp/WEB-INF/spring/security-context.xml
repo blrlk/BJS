@@ -9,11 +9,14 @@
 						http://www.springframework.org/schema/security/spring-security.xsd">
 	
 	<http use-expressions="true">
-		<intercept-url pattern="/books/add"
-						access="hasAuthority('ROLE_ADMIN')" />
-		<form-login/>
+		<intercept-url pattern="/books/add" access="hasAuthority('ROLE_ADMIN')" />
+		<form-login login-page="/login"
+					default-target-url="/books/add"
+					authentication-failure-url="/loginfailed"
+					username-parameter="username"
+					password-parameter="password"/>
 		<csrf/>
-		<logout/>
+		<logout logout-success-url="/logout" />
 	</http>
 	
 	<authentication-manager>
@@ -23,5 +26,7 @@
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
+	
+
 
 </beans:beans>
