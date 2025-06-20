@@ -1,0 +1,53 @@
+1.
+create database market;
+
+2. 
+use market;
+
+3.
+create table member(
+    id varchar(10) primary key,
+    name varchar(10) not null,
+    address varchar(2) null,
+    tel varchar(10),
+    height int default 160,
+    date date    
+);
+
+4.
+create table buy(
+    no int primary key auto_increment,
+    id varchar(10) not null,
+    product varchar(10) not null,
+    price int,
+    qnt int default 1,
+    foreign key (id) references member(id)
+);
+
+5.
+alter table buy add Regi_date date;
+
+6.
+alter table member drop column height;
+
+7.
+alter table buy add constraint check(price>=10000);
+
+8.
+alter table buy drop check price;
+
+9.
+insert member(id, name, address, tel, date) values("aaa", "kim", "Busan", "1234", "2025-01-01");
+
+10.
+select * from member;
+
+11.
+select * from buy where no=3;
+
+12.
+update member set address="seoul" where id="aaa";
+
+13.
+drop table buy;
+drop table member;
