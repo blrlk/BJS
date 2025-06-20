@@ -103,11 +103,11 @@ public class BookController {
 		
 		MultipartFile bookImage = book.getBookImage();
 		
-		String uploadDir = request.getServletContext().getRealPath("/resources/images");
+		//String uploadDir = request.getServletContext().getRealPath("/resources/images");
 		
 		String saveName = bookImage.getOriginalFilename();
 		System.out.println(saveName);
-		File saveFile = new File(uploadDir, saveName);
+		File saveFile = new File("D:\\BJS\\JSP\\spBookMarket\\src\\main\\webapp\\resources\\images", saveName);
 		System.out.println(saveFile);
 		
 		if(bookImage != null && !bookImage.isEmpty()) {
