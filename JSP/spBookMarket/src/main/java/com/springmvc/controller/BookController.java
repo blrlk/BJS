@@ -28,6 +28,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springmvc.domain.Book;
 import com.springmvc.exception.BookIdException;
 import com.springmvc.service.BookService;
+import com.springmvc.validator.BookValidator;
+//import com.springmvc.validator.UnitsInStockValidator;
 
 @Controller
 @RequestMapping(value="/books")
@@ -35,7 +37,12 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
-		
+	//@Autowired
+	//private UnitsInStockValidator unitsInStockValidator;	//UnitsInStockValidator의 인스턴스 선언
+	
+	@Autowired
+	private BookValidator bookValidator;
+	
 	@GetMapping
 	public String requestBookList(Model model) {	//model: 뷰에 데이터를 넘겨주는 역할
 		List<Book> list = bookService.getAllBookList();
@@ -96,7 +103,8 @@ public class BookController {
 	}
 	
 	@PostMapping("/add")
-	public String submitAddBookForm(@Valid @ModelAttribute("NewBook") Book book, BindingResult result, HttpServletRequest request) {
+	//bindingresult는 무조건 modelattribute 바로 뒤에 위치 -> modelattribute 오류 발생 시 바로 다음 객체 사용하기 때문
+	public String submitAddBookForm(@Valid @ModelAttribute("NewBook") Book book, BindingResult result, HttpServletRequest request) {	
 		if(result.hasErrors()) {
 			return "addBook";
 		}
@@ -131,6 +139,8 @@ public class BookController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
+		//binder.setValidator(unitsInStockValidator);	//생성한 unitsInStockValidator 설정 -> 얘만 있으면 기존 validator 삭제됨
+		binder.setValidator(bookValidator);	//unitsInStockValidator는 객체 생성해서 bookValidator 안에 넣음
 		binder.setAllowedFields("bookId", "name", "unitPrice", "author", "description", "publisher", "category", "unitsInStock", "totalPages", "releaseDate", "condition", "bookImage");
 	}
 	

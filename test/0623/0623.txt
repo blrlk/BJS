@@ -1,0 +1,77 @@
+1. member 테이블에서 지역, 데뷔일, 이름을 조회하시오.
+select addr, debut_date, mem_name from member;
+
+
+2. member 테이블에서 이름이 ‘블랙핑크’인 멤버의 정보를 조회하시오.
+select * from member where mem_name="블랙핑크";
+
+
+3. member 테이블에서 인원 수가 4명인 멤버의 정보를 조회하시오.
+select * from member where mem_number=4;
+
+
+4. member 테이블에서 키가 162 이하인 멤버의 이름과 키를 조회하시오.
+select mem_name, height from member where height<=162;
+
+
+5. member 테이블에서 키가 165 이상이고 인원수가 6명 초과인 멤버를 조회하시오.
+select * from member where height>=165 && mem_number>6;
+
+
+6. member 테이블에서 키가 165 이상이거나 인원 수가 6명 초과인 멤버를 조회하시오.
+select * from member where height>=165 || mem_number>6;
+
+
+7. member 테이블에서 키가 163 이상 165 이하인 멤버를 조회하시오.
+select * from member where height between 163 and 165;
+
+
+8. member 테이블에서 지역이 ‘경기’, ‘경남’, ‘전남’ 중 하나인 멤버를 조회하시오.
+select * from member where addr in("경기", "경남", "전남");
+
+
+9. member 테이블에서 이름이 ‘우’로 시작하는 멤버를 조회하시오.
+select * from member where mem_name like "우%";
+
+
+10. member 테이블에서 이름이 두 글자이고 ‘핑크’로 끝나는 멤버를 조회하시오.
+select * from member where mem_name like "__핑크";
+
+
+11. member 테이블에서 ID, 이름, 데뷔일, 키를 키 내림차순으로 조회하시오.
+select mem_id, mem_name, debut_date, height from member order by height desc;
+
+
+12. member 테이블에서 데뷔일 기준으로 가장 먼저 데뷔한 3명의 정보를 조회하시오.
+select * from member order by debut_date asc limit 3;
+
+
+13. member 테이블에서 키가 큰 상위 3명 중 2번째와 3번째 멤버의 이름과 키를 조회하시오.
+select mem_name, height from member order by height desc limit 1, 2;
+
+
+14. member 테이블에서 중복 없이 지역 목록만 조회하시오.
+select addr from member group by addr;
+
+
+15. buy 테이블에서 각 멤버가 구매한 총 금액을 조회하시오.
+select mem_id, sum(price*amount) from buy group by mem_id;
+
+
+16. buy 테이블에서 총 구매 금액이 1000을 초과한 멤버의 ID와 금액을 조회하고, 금액이 높은 순으로 정렬하시오.
+select mem_id, sum(price*amount) from buy group by mem_id having sum(price*amount)>1000 order by sum(price*amount) desc;
+
+
+17. buy 테이블과 member 테이블을 조인하여 멤버 이름과 구매한 제품명을 조회하시오.
+select * from member inner join buy on buy.mem_id = member.mem_id;
+
+
+18. buy 테이블과 member 테이블을 조인하여 ‘서울’에 사는 멤버가 구매한 제품명을 조회하시오.
+select buy.prod_name from member where addr="서울" inner join member buy on buy.mem_id = member.mem_id;
+
+
+19.  member 테이블에서 에이핑크보다 키가 큰(초과) 그룹의 이름,키, 멤버숫자를 조회하시오.(서브쿼리활용) 
+
+
+20.  buy 테이블에서 구매이력이 있는 정보를 출력하되 member테이블의 정보를 join하여 출력하시오. 
+select * from buy left outer join member on buy.mem_id = member.mem_id;

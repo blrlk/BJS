@@ -17,7 +17,7 @@
 	 -->
 	<annotation-driven />
 
-	<annotation-driven enable-matrix-variables="true" />
+	<annotation-driven enable-matrix-variables="true" validator="validator" />
 	
 	<!-- css,image,js와 같은 공유되는 파일의 위치를 정하고 MVC외 처리를 실시함
 	     디스페쳐서블리은 관여하지말고 그냥 통과시켜~
@@ -33,6 +33,7 @@
 	
 	
 	<!-- com.springmvc.* 아라고 표시하면 해당 패키지의 모든 클래스의 객체를 만들어서 보관 후 자동주입함 -->
+	<!-- 내부 클래스 객체를 모두 자동 생성 해라: 패키지가 Controller, Service, Repository, Component 중 하나라면 -->
 	<context:component-scan base-package="com.springmvc.*" />
 	<!-- 
 	     1. 핸들러매핑
@@ -68,4 +69,19 @@
 		<beans:property name="basename" value="messages" />
 		<beans:property name="defaultEncoding" value="UTF-8" />
 	</beans:bean>
+	
+	<beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<beans:property name="validationMessageSource" ref="messageSource" />
+	</beans:bean>
+	
+	<beans:bean id="unitsInStockValidator" class="com.springmvc.validator.UnitsInStockValidator" />
+	
+	<beans:bean id="bookvalidator" class="com.springmvc.validator.BookValidator">
+		<beans:property name="springValidators">
+			<beans:set>
+				<beans:ref bean="unitsInStockValidator" />
+			</beans:set>
+		</beans:property>
+	</beans:bean>
+	
 </beans:beans>
