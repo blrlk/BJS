@@ -8,6 +8,13 @@
 </head>
 <body>
 	<h3>home</h3>
-	<h4><< security >></h4>
+	<h4>API connection</h4>
+	
+	
+	<form action="geo" method="get">
+		<p>주소: <input type="text" name="address"></p>
+		<p><input type="submit" value="전송"></p>
+		
+	</form>
 </body>
 </html>
