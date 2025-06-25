@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,12 +84,15 @@ public class HomeController {
 	}
 	
 	@GetMapping("/geo")
-	public void geo(@RequestParam String address, HttpServletRequest request) {
+	public String geo(@RequestParam String address, HttpServletRequest request, Model model) {
 		
 		//before. parameter 확보
 		System.out.println(address);
 		
+		String imagename=null;
+		
 		//API 요청을 위한 step 별 코드
+		//step1 - step2 : url 생성
 		try {
 			//step 1: 전송할 텍스트 인코딩(한글 깨짐 방지)
 			String addr = URLEncoder.encode(address, "UTF-8");
@@ -106,16 +110,16 @@ public class HomeController {
             
             //step 3: 네이버에게 요청 실시
             InputStreamReader getData = new InputStreamReader(con.getInputStream(), "UTF-8");
-            BufferedReader br = new BufferedReader(getData);
+            BufferedReader br = new BufferedReader(getData);	//토큰(데이터)의 단위를 라인으로 변경
             
             //step 4: 문자열 데이터로 변환
+            //String == StringBuffer :: 두 개 유사함
             String line;
             StringBuffer response = new StringBuffer();	//JSON //한 줄씩 읽어서 응답 클래스 안에 한 줄씩 입력
             while( (line = br.readLine()) != null ) {
             	System.out.println("running while : " + line);
             	response.append(line);
             }
-            br.close();  //사용 완료한 버퍼 폐기
             
             //step 5: 자바의 문자열을 JSON 기호를 인식하여 필요한 데이터를 추출하기
             JSONTokener tokener = new JSONTokener(response.toString());	//문자열을 인식하여 JSON배열, JSON객체를 인식할 수 있도록 도움
@@ -148,10 +152,13 @@ public class HomeController {
             System.out.println("eng: " + eng);
             System.out.println("postcode: " + postcode);
             
-            image2(x, y, addr, request);
+            imagename = image2(x, y, addr, request);
+            
             
 		} catch(Exception e) {}
 		
+		model.addAttribute("img", imagename);
+		return "images";
 	}
 	
 	
@@ -197,11 +204,14 @@ public class HomeController {
 		} catch(Exception e){System.out.println("error");}
 	}
 	
-	public void image2(String x, String y, String address, HttpServletRequest request) 
+	public String image2(String x, String y, String address, HttpServletRequest request) 
 	{
 		  System.out.println(x);
 	      System.out.println(y);
 	      System.out.println(address);
+	      
+	      String tempname = null;
+	      
 	      try 
 	      {
 	         //Step 1 : 전송할 텍스트에 한글이 있으므로 깨지지않게 인코딩을 실시: 모든 전송에 필수적으로 필요함
@@ -238,10 +248,11 @@ public class HomeController {
 
 	         
 	         //Step 4 : 문자열 데이터로 변환
-	         String tempname = Long.valueOf(new Date().getTime()).toString(); //파일의 이름생성
+	         tempname = Long.valueOf(new Date().getTime()).toString(); //파일의 이름생성
 	         String path = request.getRealPath("resources/images");	//() 안에 webapp 이후 경로
+	         tempname = tempname + ".jpg";
 	         System.out.println(path);
-	         File f = new File(path+"/"+tempname + ".jpg"); // 빈파일을 생성
+	         File f = new File(path+"/"+tempname); // 빈파일을 생성
 	         f.createNewFile(); //실제 파일생성 명령어
 	         
 	         int read = 0;
@@ -254,7 +265,10 @@ public class HomeController {
 	         outputStream.close();
 	         
 	         System.out.println(f.getAbsolutePath().toString());
+	         
 	      }catch(Exception e) {}
+	      
+	      return tempname;
 
 	}
 	

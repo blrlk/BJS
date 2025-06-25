@@ -1,0 +1,111 @@
+package com.springmvc.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import com.springmvc.validator.UnitsInStockValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import com.springmvc.domain.Book;
+import com.springmvc.domain.Cart;
+import com.springmvc.domain.CartItem;
+import com.springmvc.exception.BookIdException;
+import com.springmvc.service.BookService;
+import com.springmvc.service.CartService;
+
+@Controller
+@RequestMapping(value="/cart")
+public class CartController {
+
+    private final BookController bookController;
+
+    private final UnitsInStockValidator unitsInStockValidator;
+	
+	@Autowired
+	private CartService cartService;
+	
+	@Autowired
+	private BookService bookService;
+
+    CartController(UnitsInStockValidator unitsInStockValidator, BookController bookController) {
+        this.unitsInStockValidator = unitsInStockValidator;
+        this.bookController = bookController;
+    }
+	
+	@GetMapping
+	public String requestCartId(HttpServletRequest request) {
+		String sessionid = request.getSession(true).getId();
+		return "redirect:/cart/" + sessionid;
+	}
+	
+	@PostMapping
+	public @ResponseBody Cart create(@RequestBody Cart cart) {
+		return cartService.create(cart);
+	}
+	
+	@GetMapping("/{cartId}")
+	public String requestCartList(@PathVariable(value="cartId") String cartId, Model model) {
+		Cart cart = cartService.read(cartId);
+		model.addAttribute("cart", cart);
+		return "cart";
+	}
+	
+	@PutMapping("/{cartId}")
+	public @ResponseBody Cart read(@PathVariable(value="cartId") String cartId) {
+		return cartService.read(cartId);
+	}
+	
+	@PutMapping("/add/{bookId}")
+	@ResponseStatus(value=HttpStatus.NO_CONTENT)
+	public void addCartByNewItem(@PathVariable String bookId, HttpServletRequest request) {
+		System.out.println(bookId);
+		
+		String sessionId = request.getSession(true).getId();
+		System.out.println(sessionId);
+		
+		Cart cart = cartService.read(sessionId);
+		if(cart == null) {
+			cart = cartService.create(new Cart(sessionId));
+		}
+		System.out.println(cart);
+		
+		Book book = bookService.getBookById(bookId);
+		if(book==null) {
+			throw new IllegalArgumentException(new BookIdException(bookId));
+		}
+		System.out.println(book);
+		
+		CartItem ci = new CartItem(book);
+		System.out.println("카트아이템생성끝");
+		cart.addCartItem(ci);
+		System.out.println("카트에 추가끝");
+		cartService.update(sessionId, cart);
+	}
+	
+	@PutMapping("/remove/{bookId}")
+	@ResponseStatus(value=HttpStatus.NO_CONTENT)
+	public void removeCartByItem(@PathVariable String bookId, HttpServletRequest request) {
+		String sessionId = request.getSession(true).getId();
+		Cart cart = cartService.read(sessionId);
+		if(cart == null) {
+			cart = cartService.create(new Cart(sessionId));
+		}
+		
+		Book book = bookService.getBookById(bookId);
+		if(book == null) {
+			throw new IllegalArgumentException(new BookIdException(bookId));
+		}
+		
+		cart.removeCartItem(new CartItem(book));
+		cartService.update(sessionId,  cart);
+	}
+}
