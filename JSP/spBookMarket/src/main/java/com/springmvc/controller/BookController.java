@@ -89,6 +89,8 @@ public class BookController {
 		return "books";
 	}
 
+	//@GetMapping("/book/{bookId}")
+	//public String requestBookById(@PathVariable String bookId, Model model)
 	@GetMapping("/book")
 	public String requestBookById(@RequestParam("id") String bookId, Model model) {
 		Book bookById = bookService.getBookById(bookId);

@@ -9,6 +9,11 @@
   <url>http://maven.apache.org</url>
   
   	<properties>
+  		<!-- 
+			like variable
+			<변수명>변수값</변수명>
+		-->
+		
         <!--자바의 버전을 정의-->
         <java-version>17</java-version>
         <!-- 스프링의 버전을 정의-->
@@ -22,6 +27,8 @@
         <commons-fileupload-version>1.4</commons-fileupload-version>
         <commons-io-version>2.11.0</commons-io-version>
     </properties>
+    
+    
   <!--외부 라이브러리 다운로드 경로-->
   <dependencies>
     <!-- 스프링 프레임워크에서 spring-context 객체를 지정된 버전을 가져옴-->
@@ -56,7 +63,6 @@
     	<artifactId>jstl</artifactId>
     	<version>1.2</version>
     </dependency>
-    
     
     <!-- security -->
     <dependency>
@@ -173,6 +179,7 @@
                     <downloadJavadocs>true</downloadJavadocs>
                 </configuration>
             </plugin>
+            
             <!-- 배포시 메이븐컴파일러(자바컴파일러포함)를 해당버전으로 교체-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

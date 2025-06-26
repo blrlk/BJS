@@ -16,7 +16,6 @@
 	     2.@annotation을 사용할 수 있게 설정해줌
 	 -->
 	<annotation-driven />
-
 	<annotation-driven enable-matrix-variables="true" validator="validator" />
 	
 	<!-- css,image,js와 같은 공유되는 파일의 위치를 정하고 MVC외 처리를 실시함

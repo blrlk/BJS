@@ -71,7 +71,7 @@ public class Cart {
 	}
 	
 	public void addCartItem(CartItem item) {
-		System.out.println("입장");
+		System.out.println("= addCartItem 입장 =");
 		System.out.println(item.toString());
 		String bookId = item.getBook().getBookId();
 		
@@ -81,16 +81,17 @@ public class Cart {
 			//등록된 도서 id의 개수 추가 저장
 			cartItem.setQuantity(cartItem.getQuantity() + item.getQuantity());
 			cartItems.put(bookId, cartItem);	//등록된 도서 id에 대한 변경 정보(cartItem) 저장
-			System.out.println("카트에 기존아이템이있음 ");
 		} else {
 			cartItems.put(bookId, item);	//도서 id에 대한 도서 정보(item) 저장
-			System.out.println("카트에 엾음 추가함 ");
 		}
 		
 		updateGrandTotal();
 	}
 	
 	public void removeCartItem(CartItem item) {
+		System.out.println("= removeCartItem 입장 =");
+		System.out.println(item.toString());
+		
 		String bookId = item.getBook().getBookId();
 		cartItems.remove(bookId);
 		updateGrandTotal();
