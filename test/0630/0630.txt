@@ -1,0 +1,32 @@
+1.
+DECLARE myNum INT;
+SET myNum = 200;
+
+2.
+(1) WHEN
+(2) THEN
+
+3.
+WHILE (i<10) THEN
+
+4. 
+DROP PROCEDURE user_proc;
+
+5.
+CREATE PROCEDURE exam5( IN userName VARCHAR(10) )
+
+6.
+CREATE PROCEDURE user_proc3( OUT outValue INT )
+
+7.
+PREPARE myQuery FROM @sqlQuery;
+EXECUTE myQuery;
+
+8.
+RETURNS INT
+
+9.
+AFTER DELETE
+
+10.
+INSERT INTO backup_singer VALUES( OLD.mem_id, OLD.mem_name, OLD.mem_number, OLD.addr, '수정', CURDATE(), CURRENT_USER() );
