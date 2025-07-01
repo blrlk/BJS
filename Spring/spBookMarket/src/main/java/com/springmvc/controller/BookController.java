@@ -7,7 +7,7 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
+import com.springmvc.validator.UnitsInStockValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +29,14 @@ import com.springmvc.domain.Book;
 import com.springmvc.exception.BookIdException;
 import com.springmvc.service.BookService;
 import com.springmvc.validator.BookValidator;
+
 //import com.springmvc.validator.UnitsInStockValidator;
 
 @Controller
 @RequestMapping(value="/books")
 public class BookController {
+
+    private final UnitsInStockValidator unitsInStockValidator;
 	@Autowired
 	private BookService bookService;
 	
@@ -42,6 +45,10 @@ public class BookController {
 	
 	@Autowired
 	private BookValidator bookValidator;
+
+    BookController(UnitsInStockValidator unitsInStockValidator) {
+        this.unitsInStockValidator = unitsInStockValidator;
+    }
 	
 	@GetMapping
 	public String requestBookList(Model model) {	//model: 뷰에 데이터를 넘겨주는 역할
@@ -116,14 +123,16 @@ public class BookController {
 		//String uploadDir = request.getServletContext().getRealPath("/resources/images");
 		
 		String saveName = bookImage.getOriginalFilename();
-		System.out.println(saveName);
-		File saveFile = new File("D:\\BJS\\JSP\\spBookMarket\\src\\main\\webapp\\resources\\images", saveName);
-		System.out.println(saveFile);
+		System.out.println("saveName: " + saveName);
+		File saveFile = new File("D:\\BJS\\Spring\\spBookMarket\\src\\main\\webapp\\resources\\images", saveName);
+		System.out.println("saveFile: " + saveFile);
 		
 		if(bookImage != null && !bookImage.isEmpty()) {
 			try {
-				System.out.println(bookImage);
+				System.out.println("<< if문 통과 >>");
+				System.out.println("bookImage: " + bookImage);
 				bookImage.transferTo(saveFile);
+				book.setFileName(saveName);
 				System.out.println("transfer 성공");
 			} catch(Exception e) {
 				throw new RuntimeException("도서 이미지 업로드 실패 ", e);
@@ -154,6 +163,52 @@ public class BookController {
 		mav.addObject("url", req.getRequestURL() + "?" + req.getQueryString());
 		mav.setViewName("errorBook");
 		return mav;
+	}
+	
+	@GetMapping("/update")
+	public String getUpdateBookForm(@ModelAttribute("updateBook") Book book, @RequestParam("id") String bookId, Model model) {
+		System.out.println("update Get");
+		Book bookById = bookService.getBookById(bookId);
+		model.addAttribute("book", bookById);
+		
+		return "updateForm";
+	}
+	
+	
+	@PostMapping("/update")
+	public String submitUpdateBookForm(@ModelAttribute("updateBook") Book book) {
+		System.out.println("update Post");
+		
+		MultipartFile bookImage = book.getBookImage();
+		String rootDirectory = "D:\\BJS\\Spring\\spBookMarket\\src\\main\\webapp\\resources\\images";
+		System.out.println("directory: " + rootDirectory);
+		System.out.println(book.getAuthor());
+		
+		if(bookImage != null && !bookImage.isEmpty()) {
+			try {
+				String fname=bookImage.getOriginalFilename();
+				System.out.println("image: " + rootDirectory + fname);
+				
+				bookImage.transferTo(new File(rootDirectory, fname));
+				System.out.println("file " + new File(rootDirectory, fname));
+				
+				book.setFileName(fname);
+				System.out.println(fname);
+				System.out.println("업데이트 성공");
+			} catch(Exception e) {
+				throw new RuntimeException("Book Image saving failed", e);
+			}
+		}
+		
+		bookService.setUpdateBook(book);
+		System.out.println(book.getDescription());
+		return "redirect:/books";
+	}
+	
+	@RequestMapping(value="/delete")
+	public String getDeleteBookForm(Model model, @RequestParam("id") String bookId) {
+		bookService.setDeleteBook(bookId);
+		return "redirect:/books";
 	}
 	
 }

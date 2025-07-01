@@ -34,6 +34,7 @@ public class Book implements Serializable{
 	private String releaseDate;	//출판일(월/년)
 	private String condition;	//신규도서/중고도서/전자책
 	private MultipartFile bookImage;	//도서 이미지
+	private String fileName;
 
 	//constructor
 	public Book() {
@@ -136,6 +137,15 @@ public class Book implements Serializable{
 	public void setBookImage(MultipartFile bookImage) {
 		this.bookImage = bookImage;
 	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
 	
 	
 }
