@@ -37,6 +37,7 @@ import com.springmvc.validator.BookValidator;
 public class BookController {
 
     private final UnitsInStockValidator unitsInStockValidator;
+    
 	@Autowired
 	private BookService bookService;
 	
@@ -45,7 +46,8 @@ public class BookController {
 	
 	@Autowired
 	private BookValidator bookValidator;
-
+	
+	
     BookController(UnitsInStockValidator unitsInStockValidator) {
         this.unitsInStockValidator = unitsInStockValidator;
     }
